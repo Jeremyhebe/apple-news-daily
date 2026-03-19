@@ -92,6 +92,7 @@
       gap: 10px;
     }
     .header-date { font-size: 12px; color: var(--apple-mid); white-space: nowrap; }
+    #header-title-date { font-size: 16px; font-weight: 600; color: var(--apple-mid); margin-left: 4px; }
 
     /* 分享按钮（Header） */
     .share-btn-header {
@@ -430,6 +431,7 @@
     <div class="logo">
       <span class="logo-icon"></span>
       <span>Apple 每日热点</span>
+      <span id="header-title-date"></span>
       <span class="badge-live">LIVE</span>
     </div>
     <div class="header-right">
@@ -789,6 +791,8 @@
   /* ===== 日期 ===== */
   const now = new Date();
   const pad = n => String(n).padStart(2,'0');
+  const dateStr = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}`;
+  document.getElementById('header-title-date').textContent = dateStr;
   document.getElementById('header-date').textContent =
     `${now.getFullYear()}年${now.getMonth()+1}月${now.getDate()}日`;
   document.getElementById('stat-update-time').textContent =
