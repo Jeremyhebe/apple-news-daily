@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>🍎 Apple 每日热点资讯</title>
+
+  <!-- ===== SEO & Open Graph (转发预览卡片) ===== -->
+  <meta name="description" content="每日自动收集苹果公司全网热点资讯，去重筛选，按热度排序。" />
+  <meta name="keywords" content="苹果,Apple,iPhone,Mac,iOS,新闻,资讯" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="🍎 Apple 每日热点资讯" />
+  <meta property="og:description" content="全网实时追踪，经过去重筛选，按热度排序。每日 08:00 自动更新。" />
+  <meta property="og:image" content="https://www.apple.com/newsroom/images/default/apple-newsroom-og-image.jpg" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="🍎 Apple 每日热点资讯" />
+  <meta name="twitter:description" content="全网实时追踪苹果最新资讯，每日 08:00 自动更新。" />
+
+  <!-- 二维码生成库 -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+
+  <style>
+    :root {
+      --apple-gray: #f5f5f7;
+      --apple-blue: #0071e3;
+      --apple-dark: #1d1d1f;
+      --apple-mid: #6e6e73;
+      --apple-border: #d2d2d7;
+      --hot1: #ff3b30;
+      --hot2: #ff9500;
+      --hot3: #ffcc00;
+      --green: #34c759;
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      background: var(--apple-gray);
+      color: var(--apple-dark);
+      min-height: 100vh;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--apple-border);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      padding: 0 20px;
+      padding-top: env(safe-area-inset-top, 0);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+      gap: 12px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .logo-icon { font-size: 24px; }
+    .badge-live {
+      background: var(--hot1);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.6} }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-date { font-size: 12px; color: var(--apple-mid); white-space: nowrap; }
+
+    /* 分享按钮（Header） */
+    .share-btn-header {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--apple-blue);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .18s, transform .18s;
+      white-space: nowrap;
+    }
+    .share-btn-header:hover { opacity: .85; transform: scale(1.03); }
+    .share-btn-header:active { transform: scale(.97); }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: linear-gradient(135deg, #1d1d1f 0%, #2c2c2e 55%, #0071e3 100%);
+      color: #fff;
+      text-align: center;
+      padding: 48px 20px 40px;
+    }
+    .hero h1 { font-size: clamp(26px, 5vw, 42px); font-weight: 800; letter-spacing: -1px; }
+    .hero p { font-size: 16px; color: rgba(255,255,255,.72); margin-top: 10px; max-width: 500px; margin-inline: auto; line-height: 1.65; }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 26px; font-weight: 800; color: #fff; }
+    .stat-label { font-size: 11px; color: rgba(255,255,255,.55); margin-top: 2px; }
+
+    /* 分享操作区（Hero 下方） */
+    .share-bar {
+      max-width: 960px;
+      margin: 20px auto 0;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .share-label { font-size: 13px; color: var(--apple-mid); font-weight: 500; flex-shrink: 0; }
+    .share-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .share-chip {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: #fff;
+      border: 1px solid var(--apple-border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .18s;
+      color: var(--apple-dark);
+      user-select: none;
+    }
+    .share-chip:hover { background: var(--apple-blue); color: #fff; border-color: var(--apple-blue); }
+    .share-chip:active { transform: scale(.96); }
+    .share-chip.copied { background: var(--green); color: #fff; border-color: var(--green); }
+
+    /* ===== 二维码弹层 ===== */
+    .qr-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .qr-overlay.show { display: flex; }
+    .qr-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px 28px 24px;
+      text-align: center;
+      max-width: 300px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+    }
+    .qr-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+    .qr-sub { font-size: 13px; color: var(--apple-mid); margin-bottom: 20px; }
+    #qrcanvas { border-radius: 10px; }
+    .qr-close {
+      margin-top: 18px;
+      background: var(--apple-gray);
+      border: none;
+      border-radius: 12px;
+      padding: 10px 28px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--apple-dark);
+      transition: background .15s;
+      width: 100%;
+    }
+    .qr-close:hover { background: #e5e5ea; }
+
+    /* ===== Filter Bar ===== */
+    .filter-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 16px 20px 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .filter-wrap::-webkit-scrollbar { display: none; }
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      white-space: nowrap;
+      min-width: max-content;
+    }
+    .filter-label-txt { font-size: 13px; color: var(--apple-mid); font-weight: 500; }
+    .tag-btn {
+      background: #fff;
+      border: 1px solid var(--apple-border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all .18s;
+      color: var(--apple-dark);
+      font-weight: 500;
+    }
+    .tag-btn:hover, .tag-btn.active {
+      background: var(--apple-blue);
+      color: #fff;
+      border-color: var(--apple-blue);
+    }
+
+    /* ===== Update Info ===== */
+    .update-info {
+      max-width: 960px;
+      margin: 12px auto 0;
+      padding: 0 20px;
+      font-size: 12px;
+      color: var(--apple-mid);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .update-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; flex-shrink: 0; }
+
+    /* ===== Auto Refresh Tip ===== */
+    .auto-tip {
+      max-width: 960px;
+      margin: 12px auto 0;
+      padding: 0 20px;
+    }
+    .tip-box {
+      background: linear-gradient(135deg, #e1f0ff 0%, #e8f8ee 100%);
+      border: 1px solid #c3daf0;
+      border-radius: 14px;
+      padding: 13px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--apple-dark);
+      line-height: 1.5;
+    }
+    .tip-icon { font-size: 20px; flex-shrink: 0; }
+
+    /* ===== News Grid ===== */
+    .news-container {
+      max-width: 960px;
+      margin: 16px auto 72px;
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* ===== News Card ===== */
+    .news-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 20px 22px;
+      box-shadow: 0 1px 8px rgba(0,0,0,.06);
+      border: 1px solid var(--apple-border);
+      transition: transform .18s, box-shadow .18s;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .news-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.1); }
+
+    .rank { min-width: 38px; text-align: center; flex-shrink: 0; padding-top: 2px; }
+    .rank-num { font-size: 26px; font-weight: 900; line-height: 1; }
+    .rank-1 .rank-num { color: var(--hot1); }
+    .rank-2 .rank-num { color: var(--hot2); }
+    .rank-3 .rank-num { color: var(--hot3); }
+    .rank-n .rank-num { color: #c7c7cc; }
+    .rank-label { font-size: 10px; color: var(--apple-mid); margin-top: 2px; }
+
+    .card-body { flex: 1; min-width: 0; }
+    .card-header { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 7px; }
+    .card-tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 12px;
+    }
+    .tag-product   { background: #e1f0ff; color: #0071e3; }
+    .tag-software  { background: #e8f8ee; color: #1a7f3c; }
+    .tag-business  { background: #fff3e0; color: #bf5a00; }
+    .tag-ai        { background: #f0e6ff; color: #7b2be2; }
+    .tag-health    { background: #ffe6e6; color: #c0392b; }
+    .tag-community { background: #e6faf7; color: #0e7c6a; }
+    .tag-milestone { background: #fff8e1; color: #a06a00; }
+    .tag-market    { background: #f0f4ff; color: #2c4a9e; }
+
+    .hot-bars { display: flex; gap: 2px; align-items: flex-end; }
+    .hot-bar { width: 4px; background: var(--hot1); border-radius: 2px; }
+    .heat-score { font-size: 11px; color: var(--apple-mid); }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--apple-dark);
+      line-height: 1.45;
+      margin-bottom: 7px;
+    }
+    .card-summary {
+      font-size: 14px;
+      color: #3a3a3c;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .card-date { font-size: 12px; color: var(--apple-mid); display: flex; align-items: center; gap: 3px; }
+    .card-actions { display: flex; align-items: center; gap: 8px; }
+    .card-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--apple-blue);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      transition: opacity .15s;
+      padding: 4px 0;
+    }
+    .card-link:hover { opacity: .7; }
+    .card-share-btn {
+      background: none;
+      border: 1px solid var(--apple-border);
+      border-radius: 10px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--apple-mid);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all .15s;
+    }
+    .card-share-btn:hover { background: var(--apple-gray); color: var(--apple-dark); }
+    .card-share-btn.copied { color: var(--green); border-color: var(--green); }
+
+    /* ===== 悬浮分享按钮（移动端） ===== */
+    .fab {
+      display: none;
+      position: fixed;
+      right: 20px;
+      bottom: calc(24px + var(--safe-bottom));
+      z-index: 150;
+      background: var(--apple-blue);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 14px 20px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(0,113,227,.4);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: transform .18s, opacity .18s;
+    }
+    .fab:active { transform: scale(.95); }
+    @media (min-width: 680px) { .fab { display: none !important; } }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #fff;
+      border-top: 1px solid var(--apple-border);
+      text-align: center;
+      padding: 24px 20px calc(24px + var(--safe-bottom));
+      font-size: 13px;
+      color: var(--apple-mid);
+      line-height: 1.8;
+    }
+    footer a { color: var(--apple-blue); text-decoration: none; }
+
+    /* ===== 响应式 ===== */
+    @media (max-width: 600px) {
+      .news-card { flex-direction: column; gap: 10px; padding: 16px 14px; }
+      .rank { display: flex; align-items: center; gap: 10px; }
+      .rank-label { display: none; }
+      .hero { padding: 36px 16px 32px; }
+      .hero-stats { gap: 18px; }
+      .card-title { font-size: 15px; }
+      .share-btn-header span { display: none; }
+      .share-btn-header { padding: 7px 11px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-icon"></span>
+      <span>Apple 每日热点</span>
+      <span class="badge-live">LIVE</span>
+    </div>
+    <div class="header-right">
+      <div class="header-date" id="header-date"></div>
+      <button class="share-btn-header" onclick="sharePage()">
+        <span>📤</span><span>分享</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<div class="hero">
+  <h1>苹果全球热点资讯</h1>
+  <p>全网实时追踪，经过去重筛选，按热度排序。每日 08:00 自动更新，不错过任何重要动态。</p>
+    <div class="hero-stats">
+    <div class="stat"><div class="stat-num" id="stat-count">12</div><div class="stat-label">今日资讯</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-label">天内收录</div></div>
+    <div class="stat"><div class="stat-num" id="stat-update-time">—</div><div class="stat-label">最近更新</div></div>
+  </div>
+</div>
+
+<!-- ===== 分享操作区 ===== -->
+<div class="share-bar">
+  <span class="share-label">📤 分享此页：</span>
+  <div class="share-actions">
+    <button class="share-chip" id="btn-copy" onclick="copyLink(this)">🔗 复制链接</button>
+    <button class="share-chip" id="btn-qr" onclick="showQR()">📱 生成二维码</button>
+    <button class="share-chip" id="btn-native" onclick="nativeShare()" style="display:none">↗ 系统分享</button>
+  </div>
+</div>
+
+<!-- ===== 二维码弹层 ===== -->
+<div class="qr-overlay" id="qr-overlay" onclick="hideQR(event)">
+  <div class="qr-box" onclick="event.stopPropagation()">
+    <div class="qr-title">📱 扫码查看</div>
+    <div class="qr-sub">用手机扫描二维码即可阅读与转发</div>
+    <canvas id="qrcanvas"></canvas>
+    <button class="qr-close" onclick="hideQR()">关闭</button>
+  </div>
+</div>
+
+<!-- ===== Auto Refresh Tip ===== -->
+<div class="auto-tip" style="margin-top:14px">
+  <div class="tip-box">
+    <span class="tip-icon">🤖</span>
+    <span>此工具每天 <strong>08:00</strong> 自动搜集全网苹果最新资讯，经去重筛选后按热度排序，每次不少于 <strong>10 条</strong>。</span>
+  </div>
+</div>
+
+<!-- ===== Filter Bar ===== -->
+<div class="filter-wrap">
+  <div class="filter-bar">
+    <span class="filter-label-txt">筛选：</span>
+    <button class="tag-btn active" onclick="filterNews('all', this)">全部</button>
+    <button class="tag-btn" onclick="filterNews('product', this)">产品发布</button>
+    <button class="tag-btn" onclick="filterNews('software', this)">软件系统</button>
+    <button class="tag-btn" onclick="filterNews('business', this)">商业政策</button>
+    <button class="tag-btn" onclick="filterNews('ai', this)">AI 智能</button>
+    <button class="tag-btn" onclick="filterNews('health', this)">健康功能</button>
+    <button class="tag-btn" onclick="filterNews('market', this)">市场动态</button>
+    <button class="tag-btn" onclick="filterNews('milestone', this)">里程碑</button>
+    <button class="tag-btn" onclick="filterNews('community', this)">开发者</button>
+  </div>
+</div>
+
+<!-- ===== Update Info ===== -->
+<div class="update-info">
+  <div class="update-dot"></div>
+  <span id="update-text">数据收集范围：2026 年 3 月 17 日 — 3 月 19 日（今日更新）</span>
+</div>
+
+<!-- ===== News List ===== -->
+<div class="news-container" id="news-container">
+
+  <!-- #1 -->
+  <article class="news-card rank-1" data-category="milestone">
+    <div class="rank">
+      <div class="rank-num">1</div>
+      <div class="rank-label">🔥热榜</div>
+    </div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-milestone">里程碑</span>
+        <div class="hot-bars">
+          <div class="hot-bar" style="height:14px"></div>
+          <div class="hot-bar" style="height:11px"></div>
+          <div class="hot-bar" style="height:9px"></div>
+          <div class="hot-bar" style="height:7px"></div>
+          <div class="hot-bar" style="height:5px"></div>
+        </div>
+        <span class="heat-score">热度极高</span>
+      </div>
+      <div class="card-title">库克亲赴成都出席苹果 50 周年全球庆典，高喊"我爱成都"</div>
+      <div class="card-summary">3 月 18 日，苹果 CEO 蒂姆·库克现身成都太古里苹果零售店，亲自出席苹果公司成立 50 周年庆典活动，高调宣称"我爱成都"，引发大量围观。这也是库克 2026 年内首次访华，随后还将前往北京继续行程，显示出苹果对中国市场的高度重视。苹果将于 4 月 1 日正式迎来创立 50 周年纪念日。</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-03-18</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, '库克亲赴成都出席苹果 50 周年全球庆典', 'https://news.qq.com/rain/a/20260318A0825300')">🔗 分享</button>
+          <a class="card-link" href="https://news.qq.com/rain/a/20260318A0825300" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- #2 -->
+  <article class="news-card rank-2" data-category="software">
+    <div class="rank">
+      <div class="rank-num">2</div>
+      <div class="rank-label">🔥热榜</div>
+    </div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-software">软件系统</span>
+        <div class="hot-bars">
+          <div class="hot-bar" style="height:14px"></div>
+          <div class="hot-bar" style="height:11px"></div>
+          <div class="hot-bar" style="height:9px"></div>
+          <div class="hot-bar" style="height:7px"></div>
+        </div>
+        <span class="heat-score">热度很高</span>
+      </div>
+      <div class="card-title">苹果紧急推送 iOS / iPadOS / macOS 26.3.1 后台安全改进更新</div>
+      <div class="card-summary">3 月 17–18 日，苹果面向全球用户正式推送 iOS 26.3.1、iPadOS 26.3.1 及 macOS Tahoe 26.3.1，修复了追踪编号 CVE-2026-20643 的 WebKit 跨源漏洞，并引入"后台安全改进"（BSI）机制，无需完整系统升级即可即时修补安全漏洞。苹果官方建议所有用户尽快更新，以防被恶意利用。</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-03-17 ~ 18</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, '苹果紧急推送 iOS / macOS 26.3.1 后台安全改进更新', 'https://news.qq.com/rain/a/20260318A01P7Z00')">🔗 分享</button>
+          <a class="card-link" href="https://news.qq.com/rain/a/20260318A01P7Z00" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- #3 -->
+  <article class="news-card rank-3" data-category="software">
+    <div class="rank">
+      <div class="rank-num">3</div>
+      <div class="rank-label">🔥热榜</div>
+    </div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-software">软件系统</span>
+        <div class="hot-bars">
+          <div class="hot-bar" style="height:14px"></div>
+          <div class="hot-bar" style="height:11px"></div>
+          <div class="hot-bar" style="height:9px"></div>
+        </div>
+        <span class="heat-score">热度较高</span>
+      </div>
+      <div class="card-title">WWDC 2026 前瞻：iOS 27 引入全新 Siri "Campo" 与全局"液态玻璃"UI</div>
+      <div class="card-summary">彭博社记者马克·古尔曼披露，苹果将在 6 月 WWDC 2026 发布代号"Campo"的全新 Siri，AI 能力大幅重构；iOS 27 同步引入全局"液态玻璃"视觉效果，用户可通过滑动条自由调节全系统外观风格。完整版 Siri 预计延至 9 月随 iPhone 18 正式上线，WWDC 期间将提前向开发者展示预览版并开放适配。</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-03-17</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, 'WWDC 2026 前瞻：iOS 27 全新 Siri 与液态玻璃 UI', 'https://www.ithome.com/0/929/732.htm')">🔗 分享</button>
+          <a class="card-link" href="https://www.ithome.com/0/929/732.htm" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- #4 -->
+  <article class="news-card rank-n" data-category="business">
+    <div class="rank"><div class="rank-num">4</div></div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-business">商业政策</span>
+        <span class="heat-score">热度较高</span>
+      </div>
+      <div class="card-title">苹果 COO 访华走访富士康与欣旺达，深化中国供应链合作</div>
+      <div class="card-summary">3 月 17 日，苹果首席运营官 Sabih Khan 开启年内首次访华，首站抵达深圳，先后走访欣旺达电池工厂和富士康 iPhone 总装产线，与富士康事业群总经理蒋集恒亲自参观生产线。与库克成都之行相互呼应，苹果高管此轮密集访华被业界解读为在贸易摩擦背景下进一步巩固中国供应链战略布局的重要信号。</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-03-17 ~ 18</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, '苹果 COO 访华走访富士康与欣旺达', 'https://www.36kr.com/p/3728101824985985')">🔗 分享</button>
+          <a class="card-link" href="https://www.36kr.com/p/3728101824985985" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- #5 -->
+  <article class="news-card rank-n" data-category="product">
+    <div class="rank"><div class="rank-num">5</div></div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-product">产品发布</span>
+        <span class="heat-score">热度较高</span>
+      </div>
+      <div class="card-title">iPhone Fold 确认 9 月发布，顶配版定价或超 2 万元，备货量上调至千万级</div>
+      <div class="card-summary">多家供应链媒体及 Digitimes 确认，苹果首款折叠屏手机 iPhone Fold 将于 2026 年 9 月与 iPhone 18 Pro 同步亮相，搭载 A20 Pro 芯片，技术上实现近乎无折痕显示屏，顶配版售价或超 2 万元人民币。苹果已将首批备货量目标上调约 20% 至千万级别，显示对折叠屏市场信心十足。</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-03-12 ~ 16</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, 'iPhone Fold 确认 9 月发布，备货量上调至千万级', 'https://news.qq.com/rain/a/20260316A05L0600')">🔗 分享</button>
+          <a class="card-link" href="https://news.qq.com/rain/a/20260316A05L0600" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- #6 -->
+  <article class="news-card rank-n" data-category="product">
+    <div class="rank"><div class="rank-num">6</div></div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-product">产品发布</span>
+        <span class="heat-score">热度较高</span>
+      </div>
+      <div class="card-title">苹果正式发布 AirPods Max 2：H2 芯片加持，降噪与音质大幅升级</div>
+      <div class="card-summary">3 月 16 日，苹果官方正式发布 AirPods Max 2，这是这款标志性包耳式耳机的首次重大换代。新款搭载 H2 芯片，主动降噪效果大幅提升，并新增自适应音频、个性化空间音频及实时翻译等 AI 功能。根据苹果官方新闻稿，新品已在全球同步发售，进一步巩固苹果在高端无线耳机市场的领先地位。</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-03-16</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, '苹果正式发布 AirPods Max 2：H2 芯片加持', 'https://www.apple.com.cn/newsroom/2026/03/apple-introduces-airpods-max-2-powered-by-h2/')">🔗 分享</button>
+          <a class="card-link" href="https://www.apple.com.cn/newsroom/2026/03/apple-introduces-airpods-max-2-powered-by-h2/" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- #7 -->
+  <article class="news-card rank-n" data-category="business">
+    <div class="rank"><div class="rank-num">7</div></div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-business">商业政策</span>
+        <span class="heat-score">热度中等</span>
+      </div>
+      <div class="card-title">苹果下调中国 App Store 佣金至 25%，"苹果税"历史性松动已生效</div>
+      <div class="card-summary">3 月 13 日，苹果宣布自 2026 年 3 月 15 日起，将中国内地 App Store 标准佣金率从 30% 下调至 25%，小型开发者 15% 优惠费率不变，游戏与小程序开发者均受益。这是苹果在中国市场首次主动回应监管压力而进行的历史性调整，新费率目前已正式生效，央视等官方媒体均作了重点报道。</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-03-13 ~ 15</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, '苹果下调中国 App Store 佣金至 25%', 'https://news.cctv.cn/2026/03/13/ARTIgR3dEbXeVBKCwwkLdCds260313.shtml')">🔗 分享</button>
+          <a class="card-link" href="https://news.cctv.cn/2026/03/13/ARTIgR3dEbXeVBKCwwkLdCds260313.shtml" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- #8 -->
+  <article class="news-card rank-n" data-category="ai">
+    <div class="rank"><div class="rank-num">8</div></div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-ai">AI 智能</span>
+        <span class="heat-score">热度中等</span>
+      </div>
+      <div class="card-title">Apple Intelligence 国行落地倒计时：iOS 26.4 将推中文版 Siri，联手百度合规推进</div>
+      <div class="card-summary">据苹果 2026 年 AI 路线图显示，苹果将在 iOS 26.4 中正式为中国大陆用户开放中文版 Apple Intelligence，包括中文 Siri 理解与生成能力的全面升级。苹果正与百度等国内 AI 厂商推进数据合规合作，分析师指出该功能的落地节奏将直接影响 iPhone 在华换机周期，是苹果中国区业务的重要战略里程碑。</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-03-17 ~ 19</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, 'Apple Intelligence 国行落地倒计时：iOS 26.4 将推中文版 Siri', 'https://k.sina.cn/article_7879848900_1d5acf3c401902qatu.html')">🔗 分享</button>
+          <a class="card-link" href="https://k.sina.cn/article_7879848900_1d5acf3c401902qatu.html" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- #9 -->
+  <article class="news-card rank-n" data-category="market">
+    <div class="rank"><div class="rank-num">9</div></div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-market">市场动态</span>
+        <span class="heat-score">热度中等</span>
+      </div>
+      <div class="card-title">苹果市值升至 3.74 万亿美元，重回全球第二；中国区 Q1 营收同比增 38% 创历史新高</div>
+      <div class="card-summary">截至 3 月 17 日，苹果市值达到约 3.74 万亿美元，全球排名第二，股价在 250 美元附近运行。苹果 2026 财年 Q1 财报显示大中华区营收同比大涨 38% 至 255 亿美元，创历史新高，成为当季增速最快地区。服务业务持续保持高毛利率，正成为苹果利润的核心引擎，分析师上调全年目标价。</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-03-17 ~ 19</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, '苹果市值升至 3.74 万亿，中国区 Q1 营收创历史新高', 'https://xueqiu.com/8295091535/379924791')">🔗 分享</button>
+          <a class="card-link" href="https://xueqiu.com/8295091535/379924791" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- #10 -->
+  <article class="news-card rank-n" data-category="milestone">
+    <div class="rank"><div class="rank-num">10</div></div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-milestone">里程碑</span>
+        <span class="heat-score">热度中等</span>
+      </div>
+      <div class="card-title">苹果成立 50 周年庆典全球盛大启幕，Alicia Keys 纽约中央车站献唱</div>
+      <div class="card-summary">苹果 3 月 13 日在纽约中央火车站举行 50 周年庆典开幕秀，邀请 17 座格莱美奖得主 Alicia Keys 登台演出，正式拉开全球庆祝活动序幕。苹果将于 4 月 1 日迎来创立 50 周年，库克发表公开信致敬半世纪创新历程，各地苹果零售店同步举办系列纪念活动，库克随后亲赴成都延续庆典。</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-03-13 ~ 18</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, '苹果成立 50 周年庆典全球盛大启幕', 'https://www.apple.com.cn/newsroom/2026/03/apple-hosts-50th-anniversary-celebrations-around-the-world/')">🔗 分享</button>
+          <a class="card-link" href="https://www.apple.com.cn/newsroom/2026/03/apple-hosts-50th-anniversary-celebrations-around-the-world/" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- #11 -->
+  <article class="news-card rank-n" data-category="product">
+    <div class="rank"><div class="rank-num">11</div></div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-product">产品发布</span>
+        <span class="heat-score">热度中等</span>
+      </div>
+      <div class="card-title">MacBook Neo / iPhone 17e 等 8 款春季新品正式发售，苹果平价战略全面落地</div>
+      <div class="card-summary">3 月 11 日，苹果 MacBook Neo（599 美元起）、iPhone 17e、iPad Air M4、MacBook Air M5、MacBook Pro M5 系列及新款 Studio Display 等 8 款春季新品在全球同步开售。其中 MacBook Neo 与 iPhone 17e 以同为 599 美元的入门定价备受关注，标志着苹果平价产品策略的全面落地，TrendForce 预测 MacBook Neo 全年出货可达数百万台。</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-03-11</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, 'MacBook Neo / iPhone 17e 等 8 款春季新品正式发售', 'https://www.apple.com.cn/newsroom/2026/03/macbook-neo-iphone-17e-ipad-air-with-m4-and-more-are-now-available/')">🔗 分享</button>
+          <a class="card-link" href="https://www.apple.com.cn/newsroom/2026/03/macbook-neo-iphone-17e-ipad-air-with-m4-and-more-are-now-available/" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- #12 -->
+  <article class="news-card rank-n" data-category="health">
+    <div class="rank"><div class="rank-num">12</div></div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-health">健康功能</span>
+        <span class="heat-score">热度中等</span>
+      </div>
+      <div class="card-title">国行 Apple Watch 房颤历史记录功能正式上线，等待四年终于落地</div>
+      <div class="card-summary">3 月 17 日，苹果宣布国行 Apple Watch 的"移动脉率房颤迹象记录"功能正式向中国大陆用户开放，该功能已于 2025 年 12 月底获国家药监局批准，是苹果在华获批的首个医疗级心脏监测功能。用户可持续追踪心律异常频率，为临床诊断提供更完整参考数据，配合心脏科医生使用效果更佳。</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-03-17</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, '国行 Apple Watch 房颤历史记录功能正式上线', 'https://news.qq.com/rain/a/20260317A05EQP00')">🔗 分享</button>
+          <a class="card-link" href="https://news.qq.com/rain/a/20260317A05EQP00" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+<!-- ===== 悬浮分享按钮（移动端） ===== -->
+<button class="fab" onclick="sharePage()">📤 分享</button>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div style="font-size:15px;font-weight:700;color:var(--apple-dark);margin-bottom:5px">🍎 Apple 每日热点资讯</div>
+  <div>数据来源：苹果官方新闻中心 · 腾讯新闻 · IT之家 · 彭博社 · MacRumors 等</div>
+  <div style="margin-top:3px">去重筛选 · 热度排序 · 每日 <strong>08:00</strong> 自动更新 · 不少于 10 条</div>
+  <div style="margin-top:8px;color:#aeaeb2;font-size:12px">本页面由 WorkBuddy 自动生成与更新</div>
+</footer>
+
+<script>
+  /* ===== 日期 ===== */
+  const now = new Date();
+  const pad = n => String(n).padStart(2,'0');
+  document.getElementById('header-date').textContent =
+    `${now.getFullYear()}年${now.getMonth()+1}月${now.getDate()}日`;
+  document.getElementById('stat-update-time').textContent =
+    `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+
+  /* ===== 原生 Web Share API 检测 ===== */
+  if (navigator.share) {
+    document.getElementById('btn-native').style.display = 'flex';
+  }
+
+  /* ===== 页面分享（顶部按钮 & FAB） ===== */
+  function sharePage() {
+    if (navigator.share) {
+      navigator.share({
+        title: '🍎 Apple 每日热点资讯',
+        text: '全网实时追踪苹果最新资讯，每日 08:00 自动更新，不少于 10 条！',
+        url: window.location.href
+      }).catch(() => {});
+    } else {
+      copyToClipboard(window.location.href, document.getElementById('btn-copy'));
+    }
+  }
+
+  function nativeShare() { sharePage(); }
+
+  /* ===== 复制链接 ===== */
+  function copyLink(btn) {
+    copyToClipboard(window.location.href, btn);
+  }
+
+  function copyToClipboard(text, btn) {
+    const origText = btn.innerHTML;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.innerHTML = '✅ 已复制';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.innerHTML = origText; btn.classList.remove('copied'); }, 2200);
+    }).catch(() => {
+      /* 兼容旧浏览器 */
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.innerHTML = '✅ 已复制';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.innerHTML = origText; btn.classList.remove('copied'); }, 2200);
+    });
+  }
+
+  /* ===== 单条资讯分享 ===== */
+  function shareCard(btn, title, url) {
+    const text = `📰 ${title}\n🔗 ${url}\n\n来自：🍎 Apple 每日热点资讯`;
+    if (navigator.share) {
+      navigator.share({ title, text, url }).catch(() => {});
+    } else {
+      copyToClipboard(text, btn);
+    }
+  }
+
+  /* ===== 二维码 ===== */
+  function showQR() {
+    const overlay = document.getElementById('qr-overlay');
+    overlay.classList.add('show');
+    const canvas = document.getElementById('qrcanvas');
+    QRCode.toCanvas(canvas, window.location.href, {
+      width: 220,
+      margin: 2,
+      color: { dark: '#1d1d1f', light: '#ffffff' }
+    });
+  }
+  function hideQR(e) {
+    if (!e || e.target === document.getElementById('qr-overlay') || !e.target) {
+      document.getElementById('qr-overlay').classList.remove('show');
+    }
+  }
+
+  /* ===== 分类筛选 ===== */
+  function filterNews(cat, btn) {
+    document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    let count = 0;
+    document.querySelectorAll('.news-card').forEach(card => {
+      const show = cat === 'all' || card.dataset.category === cat;
+      card.style.display = show ? '' : 'none';
+      if (show) count++;
+    });
+    document.getElementById('stat-count').textContent = count;
+  }
+</script>
+</body>
+</html>
