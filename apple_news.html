@@ -20,7 +20,7 @@
   <meta name="twitter:description" content="全网实时追踪苹果最新资讯，每日 08:00 自动更新。" />
 
   <!-- 二维码生成库 -->
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
   <style>
     :root {
@@ -471,7 +471,7 @@
   <div class="qr-box" onclick="event.stopPropagation()">
     <div class="qr-title">📱 扫码查看</div>
     <div class="qr-sub">用手机扫描二维码即可阅读与转发</div>
-    <canvas id="qrcanvas"></canvas>
+    <div id="qrcanvas" style="display:inline-block"></div>
     <button class="qr-close" onclick="hideQR()">关闭</button>
   </div>
 </div>
@@ -858,14 +858,19 @@
   }
 
   /* ===== 二维码 ===== */
+  let qrInstance = null;
   function showQR() {
     const overlay = document.getElementById('qr-overlay');
     overlay.classList.add('show');
-    const canvas = document.getElementById('qrcanvas');
-    QRCode.toCanvas(canvas, window.location.href, {
+    const container = document.getElementById('qrcanvas');
+    container.innerHTML = '';
+    qrInstance = new QRCode(container, {
+      text: window.location.href,
       width: 220,
-      margin: 2,
-      color: { dark: '#1d1d1f', light: '#ffffff' }
+      height: 220,
+      colorDark: '#1d1d1f',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.H
     });
   }
   function hideQR(e) {
