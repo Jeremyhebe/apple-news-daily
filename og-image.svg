@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1d1d1f"/>
+  <g transform="translate(600, 280)">
+    <!-- Apple Logo -->
+    <path fill="#ffffff" d="M-90 -130c0 0 15 -15 30 -15s25 10 30 20c5 -10 15 -20 30 -20s30 15 30 15s-30 20 -30 35c0 15 20 25 20 45c0 20 -15 35 -30 35s-30 -20 -30 -35c0 -20 20 -30 20 -45c0 -20 -30 -35 -30 -35z M-50 -120c5 -10 15 -15 20 -15s10 5 10 10s-5 15 -15 25c-5 -5 -10 -10 -15 -20z"/>
+  </g>
+  <text x="600" y="420" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="48" font-weight="700" fill="#ffffff" text-anchor="middle">Apple 每日热点资讯</text>
+  <text x="600" y="480" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="24" fill="#888888" text-anchor="middle">每日 09:15 自动更新</text>
+</svg>
