@@ -141,10 +141,45 @@
 11. iPhone Fold 7.8 英寸无痕折叠屏最新曝光，内折设计媲美三星且无明显折痕
 12. 苹果 Q1 FY2026 财报创历史纪录：营收 4356 亿美元同比增 16%，AI 预期令股价承压
 
+
+---
+
+## 2026-03-26 09:15 第五次执行
+
+**执行状态：** 成功
+
+**本次更新摘要：**
+- 执行了 12 次以上不同维度网络搜索 + 多次 web_fetch，覆盖：iOS 26.4 发布、MacBook Neo 正式上市、iPhone Fold CoE 屏幕技术/折痕/打孔方案、CarPlay 第三方 AI、App Store 中国佣金降至 25%、苹果 3 月产品大年总览、watchOS/tvOS 全线更新、MacBook Pro M5 Pro/M5 Max 发布、三星 iPhone Fold 屏幕量产、Studio Display XDR 停产 Pro Display、HomePod mini/Apple TV 推迟等方向
+- 共收集并筛选出 12 条热点资讯（全部为上次未收录内容），按热度排序后写入两个 HTML 文件
+- 数据收集范围：2026 年 3 月 24 日 — 3 月 26 日
+- 更新统计数字：今日资讯 12 条
+- 页面日期更新为 2026-03-26（含 title、og:title、twitter:title、update-text、wechat header-date）
+
+**本次热度最高新闻（前5条）：**
+1. iOS 26.4 正式发布：CarPlay 开放第三方 AI 助手，Gemini 版 Siri 缺席（软件系统）
+2. 苹果发布 MacBook Neo：A18 Pro 芯片，国行 4599 元起（来源：Apple Newsroom）
+3. iPhone Fold 折痕有新进展：内屏改打孔，CoE 技术减薄，三星 5 月量产（产品发布）
+4. CarPlay 正式开放 ChatGPT/Gemini/Claude，结束 Siri 十余年车载独占（AI 智能）
+5. 苹果中国 App Store 佣金正式降至 25%，3 月 15 日起生效（商业政策）
+
+**本次收录的所有新闻标题（供下次去重参考）：**
+1. iOS 26.4 正式发布：8 个新 Emoji、CarPlay 开放第三方 AI 助手，Gemini 版 Siri 缺席
+2. 你好，MacBook Neo！苹果推出史上最亲民 Mac：A18 Pro 芯片，国行 4599 元起
+3. iPhone Fold 折痕问题新进展：内屏改打孔方案，CoE 新技术助力更薄机身
+4. CarPlay 开放 ChatGPT / Gemini / Claude 第三方语音 AI，苹果结束 Siri 车载独占时代
+5. 苹果中国 App Store 佣金正式降至 25%，3 月 15 日生效，开发者无需重新签约
+6. 苹果 3 月产品大年：一周发布 7 款新品，iPhone 17e / MacBook Air M5 / iPad Air M4 同步亮相
+7. 苹果全线系统同步更新：watchOS / tvOS / HomePod 26.4 伴随 iOS 26.4 一齐推送
+8. 苹果 MacBook Pro M5 Pro / M5 Max 正式发布：全新 Fusion 架构，取消 512GB 起步存储
+9. 三星拿下苹果 iPhone Fold 2000 万块屏幕订单，5 月开始量产备货
+10. iOS 26.4 深度解析：新增失窃设备保护默认开启、Apple Music AI 歌单、播客视频直播全面升级
+11. 苹果新款 Studio Display XDR 亮相：120Hz Mini-LED + Thunderbolt 5，Pro Display XDR 正式停产
+12. 苹果新款 HomePod mini 与 Apple TV 因等待 AI Siri 功能延迟上市，已"准备就绪"但未开卖
+
 **注意事项：**
-- AirPods Max 2 于 3 月 25 日开启预购，下月初发货，国行 3999 元（搭载 H2 芯片）
-- iPhone 18 Pro 9 月亮相确定，屏下 Face ID + A20 Pro 2nm + 红色新配色
-- Siri 个性化 AI 进阶功能延至 2026 年底至 2027 年，与 Gemini 版 Siri（iOS 26.4）为不同层级
-- AAPL 股价约 251 美元，年内跌 7%，机构目标价区间 315–340 美元
-- MacBook Pro OLED（M6，支持触控）+ iPad mini OLED 均预计 2026 年底发布
-- BOE 对苹果出货量骤降超 40%，韩系供应商接盘所有高端新品显示屏
+- iOS 26.4 于 3 月 25 日正式推送，Gemini 版 Siri 推迟至 iOS 26.5（预计 WWDC 前后）
+- MacBook Neo 国行 4599 元（A18 Pro）已于 3 月 11 日上市，是苹果最低价 Mac
+- iPhone Fold 内屏已确认改回打孔方案，CoE 屏幕技术处于工程验证阶段，三星 5 月量产
+- CarPlay 第三方 AI 语音助手功能随 iOS 26.4 正式落地（需开发者更新适配）
+- 国行 App Store 标准佣金已于 3 月 15 日起正式降至 25%（小开发者 12.5%）
+
