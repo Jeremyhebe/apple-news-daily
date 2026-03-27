@@ -183,3 +183,47 @@
 - CarPlay 第三方 AI 语音助手功能随 iOS 26.4 正式落地（需开发者更新适配）
 - 国行 App Store 标准佣金已于 3 月 15 日起正式降至 25%（小开发者 12.5%）
 
+---
+
+## 2026-03-27 09:15 第六次执行
+
+**执行状态：** 成功
+
+**本次更新摘要：**
+- 执行了 12 次以上不同维度网络搜索 + 多次 web_fetch，覆盖：AirPods Max 2 发货、iOS 27 Siri 开放第三方AI接口、iPhone Fold 发货时间/起售价最新消息、苹果美国制造合作伙伴、iOS 27 液态玻璃强制适配、Mac Pro 停售、Swift 6.3 Android 支持、苹果本地AI策略、App Store Connect 更新、苹果留才奖金、WWDC前瞻、医疗App审核收紧等方向
+- IT之家苹果频道 web_fetch 获取 3 月 25–27 日最新资讯列表，内容新鲜
+- 共收集并筛选出 12 条热点资讯（全部为上次未收录内容），按热度排序后写入两个 HTML 文件
+- 数据收集范围：2026 年 3 月 25 日 — 3 月 27 日
+- 更新统计数字：今日资讯 12 条
+- 页面日期更新为 2026-03-27（含 title、og:title、twitter:title、update-text、wechat header-date）
+
+**本次热度最高新闻（前5条）：**
+1. AirPods Max 2 今日正式发货：H2 芯片降噪提升 1.5 倍，首批预购用户已在路上（来源：Apple Newsroom）
+2. 古尔曼：iOS 27 将开放 Siri 第三方 AI 接口，谷歌 Gemini 与 Claude 均可接入
+3. 古尔曼：iPhone Fold 因折叠屏工艺复杂，发货时间晚于 iPhone 18 Pro，起售价或超 2000 美元
+4. 苹果新增博世、Cirrus Logic 等四家美国制造合作伙伴，投资 4 亿美元
+5. iOS 27 将强制所有 App 适配"液态玻璃"设计语言，100% 全面铺开
+
+**本次收录的所有新闻标题（供下次去重参考）：**
+1. AirPods Max 2 今日正式发货：H2 芯片降噪提升 1.5 倍，首批预购用户已在路上
+2. 古尔曼：iOS 27 将开放 Siri 第三方 AI 接口，谷歌 Gemini 与 Claude 均可接入
+3. 古尔曼：iPhone Fold 因折叠屏工艺复杂，发货时间晚于 iPhone 18 Pro，起售价或超 2000 美元，首搭 Touch ID
+4. 苹果新增博世、Cirrus Logic 等四家美国制造合作伙伴，2030 年前投资 4 亿美元
+5. iOS 27 将强制所有 App 适配"液态玻璃"设计语言，100% 全面铺开
+6. 苹果正式停售 Mac Pro：跌宕 13 年更迭 3 代，官方确认暂无继任计划
+7. Swift 6.3 正式发布：首次支持编写原生 Android 应用，C 语言互操作性全面增强
+8. 苹果拆解谷歌 Gemini 模型，为 iPhone 打造专属端侧 AI
+9. 苹果 App Store Connect 史上最大更新：新增逾百项指标，深度解锁 App 变现数据
+10. 苹果豪掷数十万美元非周期性奖金，应对 OpenAI、Meta 等激烈人才争夺
+11. WWDC 2026 前瞻：iOS 27 或成"史上最稳"系统，Siri 迎 15 年来最大进化
+12. 苹果在欧美收紧医疗 App 审核：要求明确标注监管认证，未达标应用面临下架
+
+**注意事项：**
+- AirPods Max 2 于 4 月 1 日首批发货（3 月 25 日预购），国行 3999 元（H2 芯片）
+- 古尔曼 3 月 27 日爆料：iPhone Fold 12 月发货（晚于 Pro 3 个月），起售价超 2000 美元，Touch ID 替代 Face ID
+- iOS 27 将开放 Siri 第三方 AI（Gemini/Claude），预计 WWDC 2026 官宣
+- iOS 27 将强制所有 App 适配液态玻璃，目前 4 月 28 日前须用 iOS 26 SDK 提交
+- Mac Pro 已正式停售，苹果暂无继任计划
+- Swift 6.3 首次支持 Android 原生开发，是 Swift 跨平台重要里程碑
+- 苹果新增 4 家美国制造伙伴（博世/Cirrus Logic/TDK/Qnity），4 亿美元扩大本土生产
+
