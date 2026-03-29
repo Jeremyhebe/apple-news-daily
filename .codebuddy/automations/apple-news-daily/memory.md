@@ -273,3 +273,48 @@
 - 苹果 50 周年庆典全球收官，东京门店邀请虚拟主播献演创历史先例
 - Swift 学生挑战赛 2026 获奖名单已公布，AI 类作品占比首超游戏类
 
+---
+
+## 2026-03-29 09:15 第八次执行
+
+**执行状态：** 成功
+
+**本次更新摘要：**
+- 执行了 12 次以上不同维度网络搜索 + 多次 web_fetch，覆盖：独立Siri应用/WWDC前瞻、库克接班人、苹果下半年新品路线图、沃兹尼亚克AI评论、库克AI投资表态、AI胸针新品、3月密集上新回顾、MacBook Neo评测、iOS 27雪豹路线、OLED屏战略、亚马逊大促、Apple Business新版等方向
+- 共收集并筛选出 12 条热点资讯（全部为上次未收录内容），按热度排序后写入两个 HTML 文件
+- 数据收集范围：2026 年 3 月 27 日 — 3 月 29 日
+- 更新统计数字：今日资讯 12 条
+- 页面日期更新为 2026-03-29（含 title、og:title、twitter:title、update-text、wechat header-date）
+- 已推送到 GitHub Pages（commit: 8d57101）
+
+**本次热度最高新闻（前5条）：**
+1. 苹果正测试独立 Siri 应用"Campo"：聊天机器人形态，6 月 WWDC 2026 正式亮相（AI 智能）
+2. 库克加快 CEO 交接：特努斯被普遍视为接班人，最早今年完成换帅（里程碑）
+3. 苹果 2026 下半年超 15 款新品：iPhone Fold、iPad mini OLED、MacBook Pro OLED 齐发（产品发布）
+4. 苹果联合创始人沃兹尼亚克：自己几乎不用 AI，AI 内容"太完美但缺乏人情味"（AI 智能）
+5. 库克罕见全员动员：苹果"必须赢下 AI 这场仗"，将大幅加码投资并开放并购（AI 智能）
+
+**本次收录的所有新闻标题（供下次去重参考）：**
+1. 苹果正测试独立 Siri 应用"Campo"：聊天机器人形态，6 月 WWDC 2026 正式亮相
+2. 库克加快 CEO 交接：特努斯被普遍视为接班人，最早今年完成换帅
+3. 苹果 2026 下半年火力全开：超 15 款新品覆盖全生态，iPhone Fold、iPad mini OLED、MacBook Pro OLED 齐发
+4. 苹果联合创始人沃兹尼亚克：自己几乎不用 AI，AI 内容"太完美但缺乏人情味"
+5. 库克罕见全员动员：苹果"必须赢下 AI 这场仗"，将大幅加码投资并开放并购
+6. 苹果秘密研发"AI 胸针"：外形类似 AirTag，依托 iPhone 运行，最早 2027 年面世
+7. 苹果 3 月史上最密集上新：两周发布 8 款新品，横跨 iPhone / iPad / Mac 全线
+8. MacBook Neo 评测：599 美元最便宜苹果笔电，A18 Pro 芯片日常使用绰绰有余
+9. WWDC 2026 再添新料：iOS 27 或走"雪豹"路线主打稳定，AI Siri 同台登场
+10. 苹果下半年 OLED 屏战略成形：iPad mini 首搭 OLED、MacBook Pro 带触控屏、Apple Watch 加 Touch ID
+11. 亚马逊"大春季促销"苹果产品大幅降价：AirPods Pro 3 创史低 199 美元
+12. 苹果 4 月 14 日上线"Apple Business"统一企业平台新版，整合 Maps 广告与 Apple Intelligence
+
+**注意事项：**
+- 独立 Siri App 代号"Campo"已在苹果内部测试，WWDC 2026（6月9日）主角级别产品
+- 库克 CEO 交接计划已提速，最早今年卸任，特努斯为头号热门接班人
+- 苹果下半年共超 15 款新品，iPhone Fold 为核心旗舰（9 月发布、12 月开售）
+- iPad mini 首搭 OLED 屏，MacBook Pro OLED 版含触控屏和灵动岛，均为 2026 下半年
+- Apple Watch 新款预计加入 Touch ID，HomePod mini/Apple TV 等待 AI Siri 就绪
+- AI 胸针内部代号"AI Pin"，依托 iPhone 运行，最快 2027 年发布
+- MacBook Neo（国行 4599 元/A18 Pro）是苹果最低价 Mac，评测口碑良好
+- Apple Business 统一平台 4 月 14 日上线，含 Maps 广告位整合
+
