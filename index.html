@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>🍎 Apple 每日热点 | 资讯速览</title>
+  <meta name="description" content="每日自动收集苹果公司全网热点资讯，涵盖产品、软件、AI、商业等维度，去重筛选按热度排序。来源包括 Apple 官网 Newsroom、腾讯新闻、IT之家、36氪等，每日 09:15 自动更新。" />
+
+  <!-- 微信/社交分享预览 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="🍎 Apple 每日热点 | 资讯速览" />
+  <meta property="og:description" content="每日自动收集苹果公司全网热点资讯，涵盖产品、软件、AI、商业等维度，去重筛选按热度排序。来源包括 Apple 官网 Newsroom、腾讯新闻、IT之家、36氪等，每日 09:15 自动更新。" />
+  <meta property="og:image" content="https://jeremyhebe.github.io/apple-news-daily/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="🍎 Apple 每日热点 | 资讯速览" />
+  <meta name="twitter:description" content="每日 09:15 自动更新" />
+  <meta name="twitter:image" content="https://jeremyhebe.github.io/apple-news-daily/og-image.png" />
+
+  <!-- 微信小程序 web-view 适配 -->
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="browsermode" content="application" />
+  <meta name="x5-page-mode" content="app" />
+
+  <style>
+    :root {
+      --apple-gray: #f5f5f7;
+      --apple-blue: #0071e3;
+      --apple-dark: #1d1d1f;
+      --apple-mid: #6e6e73;
+      --apple-border: #d2d2d7;
+      --hot1: #ff3b30;
+      --hot2: #ff9500;
+      --hot3: #ffcc00;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background: var(--apple-gray);
+      color: var(--apple-dark);
+      min-height: 100vh;
+      padding-bottom: calc(20px + var(--safe-bottom));
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* ===== 顶部导航 ===== */
+    .wechat-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--apple-border);
+      padding-top: var(--safe-top);
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 44px;
+      padding: 0 16px;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .header-icon { font-size: 20px; }
+    .header-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--apple-dark);
+    }
+    .header-date {
+      font-size: 12px;
+      color: var(--apple-mid);
+    }
+
+    /* ===== 刷新提示 ===== */
+    .refresh-tip {
+      background: linear-gradient(135deg, #0071e3 0%, #00c7be 100%);
+      color: #fff;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .refresh-tip span {
+      background: rgba(255,255,255,0.2);
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+    }
+
+    /* ===== 统计卡片 ===== */
+    .stats-card {
+      background: #fff;
+      margin: 12px;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--apple-blue);
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--apple-mid);
+      margin-top: 2px;
+    }
+
+    /* ===== 筛选标签 ===== */
+    .filter-scroll {
+      padding: 0 12px 12px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .filter-scroll::-webkit-scrollbar { display: none; }
+    .filter-tags {
+      display: flex;
+      gap: 8px;
+      white-space: nowrap;
+    }
+    .filter-tag {
+      background: #fff;
+      border: 1px solid var(--apple-border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--apple-dark);
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .filter-tag.active {
+      background: var(--apple-blue);
+      color: #fff;
+      border-color: var(--apple-blue);
+    }
+
+    /* ===== 资讯列表 ===== */
+    .news-list {
+      padding: 0 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* 热门卡片 */
+    .news-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform .2s;
+    }
+    .news-card:active { transform: scale(0.99); }
+
+    .card-rank {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px 8px;
+    }
+    .rank-num {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rank-num .num {
+      width: 24px;
+      height: 24px;
+      background: var(--apple-blue);
+      color: #fff;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .rank-num .num.hot {
+      background: linear-gradient(135deg, #ff3b30, #ff9500);
+    }
+    .rank-label {
+      font-size: 11px;
+      color: var(--hot1);
+      font-weight: 600;
+      background: rgba(255,59,48,0.1);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+    .card-tag {
+      font-size: 11px;
+      color: var(--apple-mid);
+      background: var(--apple-gray);
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+
+    .card-body { padding: 0 16px 16px; }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+      color: var(--apple-dark);
+      margin-bottom: 8px;
+    }
+    .card-summary {
+      font-size: 14px;
+      color: var(--apple-mid);
+      line-height: 1.6;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-date {
+      font-size: 12px;
+      color: #999;
+    }
+    .card-link {
+      font-size: 13px;
+      color: var(--apple-blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .card-link:active { opacity: 0.7; }
+
+    /* 分类标签颜色 */
+    .tag-milestone { color: #ff2d55; background: rgba(255,45,85,0.1); }
+    .tag-product { color: #007aff; background: rgba(0,122,255,0.1); }
+    .tag-software { color: #5856d6; background: rgba(88,86,214,0.1); }
+    .tag-business { color: #ff9500; background: rgba(255,149,0,0.1); }
+    .tag-ai { color: #32d74b; background: rgba(50,215,75,0.1); }
+    .tag-market { color: #ff3b30; background: rgba(255,59,48,0.1); }
+    .tag-health { color: #ff2d55; background: rgba(255,45,85,0.1); }
+    .tag-community { color: #5e5ce6; background: rgba(94,92,230,0.1); }
+
+    /* ===== 底部提示 ===== */
+    .footer-tip {
+      text-align: center;
+      padding: 20px;
+      color: #999;
+      font-size: 12px;
+    }
+    .footer-tip a {
+      color: var(--apple-blue);
+      text-decoration: none;
+    }
+
+    /* ===== 骨架屏 ===== */
+    .skeleton {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <div class="wechat-header">
+    <div class="header-content">
+      <div class="header-left">
+        <span class="header-icon">🍎</span>
+        <span class="header-title">Apple 每日热点</span>
+      </div>
+      <span class="header-date" id="header-date">2026-04-29</span>
+    </div>
+  </div>
+
+  <!-- 刷新提示 -->
+  <div class="refresh-tip">
+    📡 每日 09:15 自动更新 · 今日收录 <span id="news-count">13</span> 条
+  </div>
+
+  <!-- 统计卡片 -->
+  <div class="stats-card">
+    <div class="stat-item">
+      <div class="stat-num" id="stat-count">13</div>
+      <div class="stat-label">今日资讯</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">29</div>
+      <div class="stat-label">天内收录</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" id="update-hour">09:15</div>
+      <div class="stat-label">更新时间</div>
+    </div>
+  </div>
+
+  <!-- 筛选标签 -->
+  <div class="filter-scroll">
+    <div class="filter-tags">
+      <div class="filter-tag active" onclick="filterNews('all', this)">全部</div>
+      <div class="filter-tag" onclick="filterNews('milestone', this)">里程碑</div>
+      <div class="filter-tag" onclick="filterNews('product', this)">产品</div>
+      <div class="filter-tag" onclick="filterNews('software', this)">软件</div>
+      <div class="filter-tag" onclick="filterNews('ai', this)">AI</div>
+      <div class="filter-tag" onclick="filterNews('business', this)">商业</div>
+      <div class="filter-tag" onclick="filterNews('market', this)">市场</div>
+      <div class="filter-tag" onclick="filterNews('health', this)">健康</div>
+    </div>
+  </div>
+
+  <!-- 资讯列表 -->
+  <div class="news-list" id="news-list">
+    <!-- ===== 新闻内容 ===== -->
+
+  <!-- #1 头条 -->
+  <article class="news-card" data-category="milestone">
+    <div class="card-rank">
+      <div class="rank-num">
+        <div class="num hot">1</div>
+        <div class="rank-label">🔥头条</div>
+      </div>
+      <span class="card-tag tag-milestone">里程碑</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">📢 重磅！苹果官宣 CEO 交接：库克 9 月 1 日卸任，John Ternus 正式接棒</div>
+      <div class="card-summary">4 月 20 日苹果正式宣布：现任 CEO 蒂姆·库克将于 2026 年 9 月 1 日卸任，转任董事会执行董事长；硬件工程高级副总裁约翰·特努斯（John Ternus）将同日接任 CEO 并加入董事会。这是苹果自 2011 年乔布斯卸任以来首次完成最高层领导交接，标志着苹果正式告别"库克时代"。（来源：Apple Newsroom）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-04-21</span>
+        <a class="card-link" href="https://www.apple.com/hk/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/" target="_blank">阅读原文 →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- #2 -->
+  <article class="news-card" data-category="market">
+    <div class="card-rank">
+      <div class="rank-num">
+        <div class="num hot">2</div>
+        <div class="rank-label">🔥热榜</div>
+      </div>
+      <span class="card-tag tag-market">市场</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">📊 明日揭晓！苹果 2026 财年 Q2 财报将于 4 月 30 日公布，营收能否首破千亿？</div>
+      <div class="card-summary">苹果宣布将于 4 月 30 日发布 2026 财年第二季度财务业绩，并举行分析师与投资者电话会议。市场普遍预期，在 iPhone 17 系列和 Mac 新品驱动下，苹果有望首次突破第二财季千亿美元营收大关。（来源：CNMO）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-04-27</span>
+        <a class="card-link" href="https://finance.sina.com.cn/roll/2026-04-27/doc-inhvwwms7950112.shtml" target="_blank">阅读原文 →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- #3 -->
+  <article class="news-card" data-category="product">
+    <div class="card-rank">
+      <div class="rank-num">
+        <div class="num hot">3</div>
+        <div class="rank-label">🔥热榜</div>
+      </div>
+      <span class="card-tag tag-product">产品</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">📱 iPhone Fold 试产启动！确认 9 月发布，内折双屏 + 自研铰链</div>
+      <div class="card-summary">4 月 8 日消息，苹果已于 4 月 6 日正式启动 iPhone Fold 试产流程，富士康承接生产。作为苹果十余年来首款折叠屏手机，iPhone Fold 采用内折双屏设计，配备自研铰链技术，预计将于今年 9 月与 iPhone 18 系列同台发布。（来源：新浪财经）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-04-08</span>
+        <a class="card-link" href="https://finance.sina.com.cn/roll/2026-04-08/doc-inhttxki6579081.shtml" target="_blank">阅读原文 →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- #4 -->
+  <article class="news-card" data-category="product">
+    <div class="card-rank">
+      <div class="rank-num">
+        <div class="num hot">4</div>
+        <div class="rank-label">🔥热榜</div>
+      </div>
+      <span class="card-tag tag-product">产品</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">🍎 Ultra 帝国！苹果计划统一全产品线 Ultra 命名，iPhone Ultra 要来了</div>
+      <div class="card-summary">4 月 28 日业内消息，苹果正在筹划将各产品线顶级型号统一命名为"Ultra"。目前 iPhone 最高端为 Pro Max、iPad 为 Pro、MacBook Pro 为 Pro、Mac Studio 独立存在，分析师预测苹果将推出 iPhone Ultra、MacBook Ultra 等 Ultra 级别产品，形成统一的高端产品矩阵。（来源：搜狐科技）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-04-28</span>
+        <a class="card-link" href="https://www.sohu.com/a/1015657988_114822" target="_blank">阅读原文 →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- #5 -->
+  <article class="news-card" data-category="ai">
+    <div class="card-rank">
+      <div class="rank-num">
+        <div class="num">5</div>
+      </div>
+      <span class="card-tag tag-ai">AI 智能</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">🤖 国行苹果 AI "偷跑" 事件复盘：3 月 31 日短暂上线后紧急撤下</div>
+      <div class="card-summary">3 月 31 日凌晨，苹果通过 iOS 26.4 系统向国行用户灰度推送了 Apple Intelligence 功能入口，下载约 9.5GB 的 AI 模型包。然而数小时后服务端接口被切断，功能随之失效。彭博社分析称此举或因未完成算法备案和数据出境合规，苹果表示"正在积极推进"。（来源：知乎）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-04-01</span>
+        <a class="card-link" href="https://zhuanlan.zhihu.com/p/2022272869594349916" target="_blank">阅读原文 →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- #6 -->
+  <article class="news-card" data-category="business">
+    <div class="card-rank">
+      <div class="rank-num">
+        <div class="num">6</div>
+      </div>
+      <span class="card-tag tag-business">商业</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">💰 库克 14 年功过簿：苹果营收从 1080 亿飙至 4160 亿美元，市值增长 10 倍</div>
+      <div class="card-summary">苹果 CEO 交接之际，媒体回顾库克 14 年任期成绩单：年营收从 1080 亿美元扩张至 4160 亿美元，翻了近四番；iPhone 单品营收从 471 亿跃升至 2096 亿美元，单品年收入已相当于 2011 年整个苹果的近两倍。但批评声音认为苹果创新节奏放缓，产品缺乏突破性。（来源：腾讯新闻）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-04-22</span>
+        <a class="card-link" href="https://news.qq.com/rain/a/20260422A01I8V00" target="_blank">阅读原文 →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- #7 -->
+  <article class="news-card" data-category="software">
+    <div class="card-rank">
+      <div class="rank-num">
+        <div class="num">7</div>
+      </div>
+      <span class="card-tag tag-software">软件</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">🖥️ WWDC 2026 前瞻：iOS 27 修炼内功，AI 全面上桌，还有 M5 硬件</div>
+      <div class="card-summary">WWDC 2026 将于 6 月 9 日至 13 日举办，本届大会首次明确以"人工智能重大进展"为核心主题。iOS 27 将搭载代号"Campo"的全新独立 Siri App，支持屏幕感知及跨设备记忆；同时配合 iPhone Fold 发布，系统将全面适配折叠屏多任务交互。此外 M5 芯片 Mac 系列也将在大会亮相。（来源：腾讯新闻）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-03-25</span>
+        <a class="card-link" href="https://news.qq.com/rain/a/20260325A06HR600" target="_blank">阅读原文 →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- #8 -->
+  <article class="news-card" data-category="market">
+    <div class="card-rank">
+      <div class="rank-num">
+        <div class="num">8</div>
+      </div>
+      <span class="card-tag tag-market">市场</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">💻 全球笔电集体涨价！存储芯片缺货，联想/惠普/戴尔/华硕 4 月全线提价</div>
+      <div class="card-summary">4 月 26 日消息，笔记本电脑市场迎来显著涨价潮。联想、惠普、戴尔、华硕、宏碁等主流品牌旗下多款机型陆续提价，覆盖轻薄本、商用本及高性能游戏本等产品线。业内分析主要原因是存储芯片持续缺货，导致供应链成本上升。（来源：ZOL）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-04-26</span>
+        <a class="card-link" href="https://nb.zol.com.cn/1170/11708081.html" target="_blank">阅读原文 →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- #9 -->
+  <article class="news-card" data-category="product">
+    <div class="card-rank">
+      <div class="rank-num">
+        <div class="num">9</div>
+      </div>
+      <span class="card-tag tag-product">产品</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">⌚ Apple Watch 大改版曝光：2026 年迎环形传感器设计，八个传感器呈环形排列</div>
+      <div class="card-summary">据《电子时报》报道，苹果计划在 2026 年对 Apple Watch 进行"重大革新"，高端型号将采用环形排列的八个传感器设计，透过表底玻璃可见，可实现更精准的健康数据监测。watchOS 26 也将同步推出多项新功能，Apple Watch Ultra 3 将支持卫星紧急短信。（来源：IT之家）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-03-23</span>
+        <a class="card-link" href="https://www.ithome.com/0/875/775.htm" target="_blank">阅读原文 →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- #10 -->
+  <article class="news-card" data-category="business">
+    <div class="card-rank">
+      <div class="rank-num">
+        <div class="num">10</div>
+      </div>
+      <span class="card-tag tag-business">商业</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">🌍 苹果首次"地球日促销"：4 月 16 日起大量产品打九折，需以旧换新</div>
+      <div class="card-summary">4 月 16 日，苹果官网推出首次"地球日促销"活动（4 月 16 日 - 5 月 16 日），部分产品享受 10% 优惠。用户需携带符合条件的旧设备（iPhone、iPad、Mac 或 Apple Watch）前往苹果零售店进行回收才能参与，低价配件无法参与此次促销。（来源：腾讯新闻）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-04-17</span>
+        <a class="card-link" href="https://news.qq.com/rain/a/20260417A02GNX00" target="_blank">阅读原文 →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- #11 -->
+  <article class="news-card" data-category="product">
+    <div class="card-rank">
+      <div class="rank-num">
+        <div class="num">11</div>
+      </div>
+      <span class="card-tag tag-product">产品</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">📉 iPhone Fold 参数全曝光！网友担忧：可能阉割了太多东西</div>
+      <div class="card-summary">随着 iPhone Fold 试产启动，更多参数信息浮出水面。部分网友担忧苹果可能为了控制成本和机身厚度，在某些配置上做出妥协。目前曝光的信息显示，iPhone Fold 可能在屏幕刷新率、摄像头规格或电池容量方面有所"精简"，引发部分消费者不满。（来源：腾讯新闻）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-04-27</span>
+        <a class="card-link" href="https://news.qq.com/rain/a/20260427A07JTD00" target="_blank">阅读原文 →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- #12 -->
+  <article class="news-card" data-category="business">
+    <div class="card-rank">
+      <div class="rank-num">
+        <div class="num">12</div>
+      </div>
+      <span class="card-tag tag-business">商业</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">🎯 苹果"告别库克时代"：特努斯接班进入执行阶段，iPhone Fold 将是首份成绩单</div>
+      <div class="card-summary">苹果董事会已确认加速 CEO 接班计划，特努斯主导了 iPhone Air、iPhone Fold 及 Apple Silicon 系列芯片开发。业内人士指出，iPhone Fold 是否成功、iOS 27 的 AI 战略能否落地，将成为特努斯接任后的首份"成绩单"。（来源：OFweek）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-04-21</span>
+        <a class="card-link" href="https://ce.ofweek.com/2026-03/ART-2022112-8420-30683892.html" target="_blank">阅读原文 →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- #13 -->
+  <article class="news-card" data-category="product">
+    <div class="card-rank">
+      <div class="rank-num">
+        <div class="num">13</div>
+      </div>
+      <span class="card-tag tag-product">产品</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">🛒 2026 苹果春季新品选购指南：iPhone 17e 值得等，iPad mini 迎来重大升级</div>
+      <div class="card-summary">2026 年苹果春季新品选购指南出炉：入门款 iPad 将搭载 A18/A19 芯片支持苹果智能，iPad mini 迎来 2021 年以来首次重大升级，配备 OLED 屏幕和防水功能。M4 iPad Air 已升级完毕可放心购买，M5 iPad Pro 短期内不会更新，无需等待。（来源：新浪财经）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-04-19</span>
+        <a class="card-link" href="https://finance.sina.com.cn/roll/2026-04-19/doc-inhuyvrm9543393.shtml" target="_blank">阅读原文 →</a>
+      </div>
+    </div>
+  </article>
+
+  </div>
+
+  <!-- 底部提示 -->
+  <div class="footer-tip">
+    数据来源：Apple Newsroom · 腾讯新闻 · IT之家 · 36氪 · 知乎等<br>
+    <a href="https://jeremyhebe.github.io/apple-news-daily/apple_news.html" target="_blank">查看完整桌面版 →</a>
+  </div>
+
+<script>
+  // 分类筛选
+  function filterNews(cat, btn) {
+    document.querySelectorAll('.filter-tag').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    let count = 0;
+    document.querySelectorAll('.news-card').forEach(card => {
+      const show = cat === 'all' || card.dataset.category === cat;
+      card.style.display = show ? '' : 'none';
+      if (show) count++;
+    });
+    document.getElementById('news-count').textContent = count;
+    document.getElementById('stat-count').textContent = count;
+  }
+
+  // 获取当前日期
+  const today = new Date();
+  const dateStr = today.getFullYear() + '-' + 
+    String(today.getMonth() + 1).padStart(2, '0') + '-' + 
+    String(today.getDate()).padStart(2, '0');
+  document.getElementById('header-date').textContent = dateStr;
+</script>
+
+</body>
+</html>
