@@ -516,11 +516,11 @@
     <p class="hero-subtitle">追踪苹果公司最新动态，涵盖产品发布、软件更新、AI 进展与市场趋势</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num" id="stat-count">10</div>
+        <div class="hero-stat-num" id="stat-count">15</div>
         <div class="hero-stat-label">今日资讯</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">7</div>
+        <div class="hero-stat-num">2</div>
         <div class="hero-stat-label">天内覆盖</div>
       </div>
     </div>
@@ -530,7 +530,7 @@
 <!-- Info Strip -->
 <div class="info-strip">
   <div class="dot"></div>
-  <span>数据收集范围：过去 7 天内的最新资讯</span>
+  <span>数据收集范围：过去 48 小时内的最新资讯（周二至周日规则）</span>
 </div>
 
 <!-- Share -->
@@ -572,13 +572,13 @@
 <main class="main">
   <div class="section-head">
     <h2 class="section-title">今日热点</h2>
-    <span class="section-count">共 <span id="total-count">10</span> 条</span>
+    <span class="section-count">共 <span id="total-count">15</span> 条</span>
   </div>
 
   <div id="news-container">
 
     <!-- #1 头条 -->
-    <article class="news-card top rank-1" data-category="market">
+    <article class="news-card top rank-1" data-category="ai">
       <div class="card-rank">
         <div class="rank-num">1</div>
         <div class="heat-indicator">
@@ -593,25 +593,25 @@
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-market">市场</span>
+          <span class="card-tag tag-ai">AI 智能</span>
         </div>
-        <div class="card-title">📊 四巨头财报日！苹果 Q2 明日揭晓，库克告别秀成焦点</div>
-        <div class="card-summary">4月29日，Meta、微软、谷歌、亚马逊四大科技巨头同日发布财报，引发市场震荡。4月30日盘后，苹果将发布2026财年Q2财报，这将是库克9月卸任前的最后一份正式成绩单。市场预期苹果有望首次突破第二财季千亿美元营收大关，服务业务剑指260亿美元新高。</div>
+        <div class="card-title">🖼️ iOS 27 AI 修图功能曝光：三大重磅功能秋季登场</div>
+        <div class="card-summary">彭博社 Mark Gurman 4月29日爆料，苹果正为 iOS 27（WWDC26 预览，秋季正式推送）研发三大 AI 照片编辑功能，由 Apple Intelligence 平台驱动。新功能包括：智能扩图（生成式 AI 扩展照片背景边缘）、AI 智能消除（去除照片中不需要的对象）、智能重照（重新构图并自动调整光线）。内部测试仍在进行中，缩小与安卓旗舰机型在 AI 照片编辑上的体验差距将是重点目标。</div>
         <div class="card-footer">
           <div class="card-meta">
             <span class="card-date">📅 2026-04-29</span>
             <span class="card-days">🔥 今日</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, '四巨头财报日！苹果Q2明日揭晓', 'https://www.36kr.com/p/3785014810451202')">分享</button>
-            <a class="card-link" href="https://www.36kr.com/p/3785014810451202" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, 'iOS 27 AI修图功能曝光：三大重磅功能秋季登场', 'https://finance.sina.com.cn/world/2026-04-29/doc-inhwaxzu7012282.shtml')">分享</button>
+            <a class="card-link" href="https://finance.sina.com.cn/world/2026-04-29/doc-inhwaxzu7012282.shtml" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
     <!-- #2 -->
-    <article class="news-card rank-2" data-category="ai">
+    <article class="news-card rank-2" data-category="product">
       <div class="card-rank">
         <div class="rank-num">2</div>
         <div class="heat-indicator">
@@ -627,18 +627,18 @@
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-ai">AI 智能</span>
+          <span class="card-tag tag-product">产品</span>
         </div>
-        <div class="card-title">🤖 iOS 27 将全面重构 Siri！AirPods 变"全天候 AI 伴侣"</div>
-        <div class="card-summary">9to5Mac 报道称苹果将在 iOS 27 系统中全面重构 Siri，大幅增强 AirPods 的 AI 交互能力。新版 Siri 将支持无缝语音对话，实现类似电影《Her》中的全天候智能伴侣体验，用户可通过 AirPods 与 AI 深度交互、操控设备、对话 ChatGPT。WWDC26（6月9日）将正式亮相。</div>
+        <div class="card-title">📱 iPhone Ultra 折叠屏正式进入 EVT 试产！网上"真机图"均为 AI 伪造</div>
+        <div class="card-summary">快科技 4 月 29 日确认，苹果折叠屏 iPhone Ultra 于 4 月初正式进入 EVT（工程验证测试）试产阶段，内部路线图为：4 月 EVT → 7 月 PVT → 9 月正式发布。目前苹果内部都没有配备真机，网络上流传的所有"真机上手图"均为 AI 生成，数码博主"定焦数码"已发文辟谣，保密等级极高。这是苹果 2026 年最受关注的新品，9 月将与 iPhone 18 Pro 系列同期亮相。</div>
         <div class="card-footer">
           <div class="card-meta">
             <span class="card-date">📅 2026-04-29</span>
             <span class="card-days">🔥 今日</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, 'iOS 27全面重构Siri，AirPods变AI伴侣', 'https://finance.sina.com.cn/tech/digi/2026-04-29/doc-inhwckrm1089787.shtml')">分享</button>
-            <a class="card-link" href="https://finance.sina.com.cn/tech/digi/2026-04-29/doc-inhwckrm1089787.shtml" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, 'iPhone Ultra折叠屏进入EVT试产，真机图均为AI伪造', 'https://finance.sina.com.cn/tech/roll/2026-04-29/doc-inhwcqxk7862314.shtml')">分享</button>
+            <a class="card-link" href="https://finance.sina.com.cn/tech/roll/2026-04-29/doc-inhwcqxk7862314.shtml" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
@@ -663,112 +663,112 @@
         <div class="card-header">
           <span class="card-tag tag-ai">AI 智能</span>
         </div>
-        <div class="card-title">🖼️ iOS 27 AI 修图功能曝光：三大编辑功能即将登场</div>
-        <div class="card-summary">彭博社 4 月 29 日爆料，苹果将在 WWDC26（6月8日）大会上为 iOS 27 引入三大 AI 照片编辑功能，由 Apple Intelligence 平台驱动。新功能包括：智能扩图（利用生成式AI扩展照片背景）、AI 消除（去除照片中不需要的对象）、智能重照（重新构图并调整光线）。内部测试仍在进行中，正式版将于秋季随 iPhone 18 系列推出。</div>
+        <div class="card-title">🤖 iOS 27 全面重构 Siri！AirPods 化身《Her》式 AI 全天候伴侣</div>
+        <div class="card-summary">9to5Mac 报道称苹果将在 iOS 27 系统中全面重构 Siri，并大幅增强 AirPods 的 AI 交互能力。新版 Siri 将支持无缝全双工语音对话，实现类似电影《Her》中的全天候智能伴侣体验——用户可通过 AirPods 与 AI 深度交互、操控设备、调用 ChatGPT。同时，AirPods 将在 iOS 27 中获得独立的 AI 处理能力，可在不掏出手机的情况下完成复杂任务。WWDC26（6月9日）将正式发布预览。</div>
         <div class="card-footer">
           <div class="card-meta">
             <span class="card-date">📅 2026-04-29</span>
             <span class="card-days">🔥 今日</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, 'iOS 27 AI修图功能曝光：三大编辑功能', 'https://www.ithome.com/0/944/735.htm')">分享</button>
-            <a class="card-link" href="https://www.ithome.com/0/944/735.htm" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, 'iOS 27全面重构Siri，AirPods化身AI伴侣', 'https://www.sohu.com/a/1011973076_122480024')">分享</button>
+            <a class="card-link" href="https://www.sohu.com/a/1011973076_122480024" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
     <!-- #4 -->
-    <article class="news-card" data-category="software">
+    <article class="news-card" data-category="market">
       <div class="card-rank">
         <div class="rank-num">4</div>
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-software">软件</span>
+          <span class="card-tag tag-market">市场</span>
         </div>
-        <div class="card-title">🗺️ iOS 26.5 Beta 4 发布：地图广告现身，RCS 加密重启</div>
-        <div class="card-summary">苹果向开发者及公测用户推送 iOS/iPadOS 26.5 Beta 4（版本号 23F5069b）。本次更新亮点：地图应用新增"建议地点"功能，代码显示苹果正为地图引入广告；同时重启了 RCS 消息端到端加密测试。Siri 相关新功能将推迟至 iOS 27。正式版预计5月推送。</div>
+        <div class="card-title">📊 苹果 Q2 财报明日揭晓：库克告别秀，市场预期首破千亿美元</div>
+        <div class="card-summary">苹果将于美东时间 4 月 30 日盘后发布 2026 财年第二季度财报，这将是库克 9 月卸任前的最后一份正式成绩单。华尔街预测 EPS 为 1.94 美元，市场预期苹果有望首次突破第二财季千亿美元营收大关，iPhone 17 系列超级周期持续发力，服务业务剑指 260 亿美元新高。同时正处三大历史拐点：产品超级周期、AI 平台发布前夜、CEO 权力交接真空期，备受投资者关注。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-04-28</span>
-            <span class="card-days">📍 1天前</span>
+            <span class="card-date">📅 2026-04-29</span>
+            <span class="card-days">🔥 今日</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, 'iOS 26.5 Beta 4发布：地图广告+RCS加密重启', 'https://news.pconline.com.cn/2140/21408451.html')">分享</button>
-            <a class="card-link" href="https://news.pconline.com.cn/2140/21408451.html" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, '苹果Q2财报明日揭晓，库克告别秀', 'https://www.163.com/dy/article/KRLTFDER053159A3.html')">分享</button>
+            <a class="card-link" href="https://www.163.com/dy/article/KRLTFDER053159A3.html" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
     <!-- #5 -->
-    <article class="news-card" data-category="software">
+    <article class="news-card" data-category="business">
       <div class="card-rank">
         <div class="rank-num">5</div>
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-software">软件</span>
+          <span class="card-tag tag-business">商业</span>
         </div>
-        <div class="card-title">🖥️ WWDC26 进入倒计时：苹果公布28场全球社区活动</div>
-        <div class="card-summary">苹果正式公布 WWDC26 全球开发者社区活动名单，涵盖28场线下开发者聚会，覆盖美国、英国、中国、日本、新加坡等主要市场。WWDC26 将于北京时间6月9日至13日举办，核心看点包括 iOS 27 完整预览（含全新 Siri AI）、M5 芯片 Mac 系列亮相。</div>
+        <div class="card-title">👔 库克告别秀：任期 15 年市值增长 24 倍，特努斯 9 月正式接棒</div>
+        <div class="card-summary">苹果于 4 月 20 日正式宣布，现任 CEO 蒂姆·库克将于 9 月 1 日卸任，转任执行董事长；硬件工程高级副总裁约翰·特努斯（50岁）将接任苹果第八任 CEO。库克在任 15 年间，苹果市值从约 3000 亿美元增长至约 4 万亿美元，增长约 24 倍，推出 Apple Watch、AirPods、Vision Pro 等新产品。市场普遍预期 AI 将成为特努斯任内的首要任务，其首个百日计划将在财报电话会议上初露端倪。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-04-28</span>
-            <span class="card-days">📍 1天前</span>
+            <span class="card-date">📅 2026-04-27</span>
+            <span class="card-days">📍 2天前</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, 'WWDC26公布28场全球社区活动', 'https://www.ithome.com/0/944/207.htm')">分享</button>
-            <a class="card-link" href="https://www.ithome.com/0/944/207.htm" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, '库克告别秀：市值15年增长24倍，特努斯9月接棒', 'https://m.gmw.cn/2026-04/21/content_1304426798.htm')">分享</button>
+            <a class="card-link" href="https://m.gmw.cn/2026-04/21/content_1304426798.htm" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
     <!-- #6 -->
-    <article class="news-card" data-category="software">
+    <article class="news-card" data-category="business">
       <div class="card-rank">
         <div class="rank-num">6</div>
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-software">软件</span>
+          <span class="card-tag tag-business">商业</span>
         </div>
-        <div class="card-title">🔧 iOS 26.4.2 紧急修复：通知 BUG 终于解决</div>
-        <div class="card-summary">苹果紧急推送 iOS 26.4.2 正式版，主要修复了一个存在已久且影响 FBI 取证的通知 BUG。该 BUG 导致 iPhone 通知在某些情况下无法正常显示或被错误处理。更新描述仅提及安全修复，但内部人士透露此次修复意义重大，FBI 在一场庭审中因该 BUG 导致部分证据无法提交。</div>
+        <div class="card-title">💰 印度对苹果开天价罚单：380 亿美元！相当于去年净利润的 34%</div>
+        <div class="card-summary">印度竞争委员会（CCI）于 4 月 20 日正式宣布，苹果反垄断案最终听证会定于 5 月 21 日举行，若按顶格处罚计算，苹果将面临高达 380 亿美元（约合人民币 2600 亿元）的天价罚单，这一数字相当于苹果 2025 年全球净利润的 34%。印度指控苹果利用 App Store 垄断地位强迫开发者使用其支付系统。业内普遍认为 380 亿美元是博弈筹码，最终罚款将大幅缩水，但此次事件已引发全球对外资营商环境的担忧。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-04-23</span>
-            <span class="card-days">📍 6天前</span>
+            <span class="card-date">📅 2026-04-22</span>
+            <span class="card-days">📍 7天前</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, 'iOS 26.4.2紧急修复通知BUG', 'https://news.qq.com/rain/a/20260423A01CGV00')">分享</button>
-            <a class="card-link" href="https://news.qq.com/rain/a/20260423A01CGV00" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, '印度对苹果开380亿美元天价罚单', 'https://news.qq.com/rain/a/20260422A03G3B00')">分享</button>
+            <a class="card-link" href="https://news.qq.com/rain/a/20260422A03G3B00" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
     <!-- #7 -->
-    <article class="news-card" data-category="business">
+    <article class="news-card" data-category="market">
       <div class="card-rank">
         <div class="rank-num">7</div>
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-business">商业</span>
+          <span class="card-tag tag-market">市场</span>
         </div>
-        <div class="card-title">🏭 iPhone"美国造"梦碎！成本或达3500美元，供应链95%依赖海外</div>
-        <div class="card-summary">苹果短期内无法在美国量产 iPhone：整机成本预计将飙升至约3500美元，供应链95%以上零部件仍依赖海外供应。随着特朗普关税政策影响，苹果已加速将美国市场 iPhone 生产全面转移至印度——2025年4月印度对美 iPhone 出口同比增长76%至300万部。</div>
+        <div class="card-title">🇨🇳 iPhone 中国 Q1 销量暴增 42%：1310 万台，超越华为小米</div>
+        <div class="card-summary">36氪 4 月 15 日报道，依托 iPhone 17 系列的强势表现，苹果 2026 年第一季度在中国市场的出货量同比暴增 42%，达到 1310 万台，超越华为、小米等本土竞争对手，市场份额与销量双爆发。摩根大通数据同步显示，Q1 iPhone 中国销量同比增长 20%，iPhone 17 系列强劲需求、促销活动及政府补贴共同推动了这一增长，iPhone 正在中国这一关键战略市场重拾增长势头。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-04-24</span>
-            <span class="card-days">📍 5天前</span>
+            <span class="card-date">📅 2026-04-15</span>
+            <span class="card-days">📍 14天前</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, 'iPhone美国造梦碎，成本或达3500美元', 'https://news.sina.cn/bignews/2026-04-24/detail-inhvrhty3107035.d.html')">分享</button>
-            <a class="card-link" href="https://news.sina.cn/bignews/2026-04-24/detail-inhvrhty3107035.d.html" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, 'iPhone中国Q1销量暴增42%达1310万台', 'https://www.36kr.com/p/3767464235254278')">分享</button>
+            <a class="card-link" href="https://www.36kr.com/p/3767464235254278" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
@@ -783,16 +783,16 @@
         <div class="card-header">
           <span class="card-tag tag-product">产品</span>
         </div>
-        <div class="card-title">🎧 古尔曼爆料：苹果 2026 可穿戴全家桶来了</div>
-        <div class="card-summary">彭博社 Mark Gurman 披露苹果 2026 年可穿戴及智能家居战略全貌：除 Apple Glasses 外，苹果还将推出搭载 AI 能力的 AirPods（代号 N107）、智能挂饰设备（N360）、HomePad 智能显示屏、智能桌面机器人及全套安防产品。这是 Apple Watch 之后最大规模的可穿戴设备扩张。</div>
+        <div class="card-title">📱 iPhone Ultra 折叠屏 9 月发布：起售价超 2000 美元，备货激进</div>
+        <div class="card-summary">多方供应链消息确认，苹果首款折叠屏手机 iPhone Ultra 计划于 2026 年 9 月正式发布，将与同期推出的 iPhone 18 Pro 系列同台亮相。据可靠消息源透露，新任 CEO 约翰·特努斯对这款产品寄予厚望，供应链备货异常激进，剑指超高端折叠屏市场。起售价预计将超 2000 美元（约合人民币 14500 元），搭载 2nm 芯片、钛合金铰链等顶级配置，是苹果应对三星、华为折叠屏竞争的战略级产品。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-04-24</span>
-            <span class="card-days">📍 5天前</span>
+            <span class="card-date">📅 2026-04-27</span>
+            <span class="card-days">📍 2天前</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, '古尔曼爆料苹果2026可穿戴全家桶', 'https://mobile.pconline.com.cn/2136/21368811.html')">分享</button>
-            <a class="card-link" href="https://mobile.pconline.com.cn/2136/21368811.html" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, 'iPhone Ultra折叠屏9月发布，起售价超2000美元', 'https://finance.sina.com.cn/roll/2026-04-27/doc-inhvwwmk9162666.shtml')">分享</button>
+            <a class="card-link" href="https://finance.sina.com.cn/roll/2026-04-27/doc-inhvwwmk9162666.shtml" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
@@ -807,40 +807,160 @@
         <div class="card-header">
           <span class="card-tag tag-product">产品</span>
         </div>
-        <div class="card-title">🍎 Ultra 统一帝国！苹果筹划全产品线 Ultra 命名</div>
-        <div class="card-summary">苹果正在筹划将各产品线顶级型号统一命名为"Ultra"。目前 iPhone 最高端为 Pro Max、iPad 为 Pro、MacBook Pro 为 Pro，分析师预测苹果将推出 iPhone Ultra、MacBook Ultra 等 Ultra 级别产品，形成统一的高端产品矩阵。配合 iPhone Fold 的到来，产品线将迎来史上最大幅度命名体系调整。</div>
+        <div class="card-title">🖥️ M5 Mac Studio 曝光：最高 256GB 内存，WWDC26 有望亮相</div>
+        <div class="card-summary">IT之家 4 月 18 日报道，MacRumors 汇总郭明錤、马克·古尔曼等权威爆料，2026 款 Mac Studio 预估将搭载 M5 Max 和 M5 Ultra 芯片。M5 Max 配备最高 18 核 CPU 和 40 核 GPU，内存带宽达 614GB/s，专业性能较 M4 Max 提升约 30%；M5 Ultra 由两枚 M5 Max 拼接而成，拥有最高 36 核 CPU 和 80 核 GPU，内存上限达 256GB。苹果可能最早在 6 月 WWDC26 大会上发布，起售价维持 1999 美元不变。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-04-28</span>
-            <span class="card-days">📍 1天前</span>
+            <span class="card-date">📅 2026-04-18</span>
+            <span class="card-days">📍 11天前</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, '苹果筹划全产品线Ultra命名', 'https://www.sohu.com/a/1015657988_114822')">分享</button>
-            <a class="card-link" href="https://www.sohu.com/a/1015657988_114822" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, 'M5 Mac Studio曝光：最高256GB内存WWDC发布', 'https://www.msn.cn/zh-cn/news/other/%E8%8B%B9%E6%9E%9C-2026-%E6%AC%BE-mac-studio-%E5%89%8D%E7%9E%BB-%E5%B0%81%E9%A1%B6-256gb-%E5%86%85%E5%AD%98/ar-AA219Skl')">分享</button>
+            <a class="card-link" href="https://www.msn.cn/zh-cn/news/other/%E8%8B%B9%E6%9E%9C-2026-%E6%AC%BE-mac-studio-%E5%89%8D%E7%9E%BB-%E5%B0%81%E9%A1%B6-256gb-%E5%86%85%E5%AD%98/ar-AA219Skl" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
     <!-- #10 -->
-    <article class="news-card" data-category="market">
+    <article class="news-card" data-category="business">
       <div class="card-rank">
         <div class="rank-num">10</div>
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-market">市场</span>
+          <span class="card-tag tag-business">商业</span>
         </div>
-        <div class="card-title">💻 全球笔电集体涨价！存储芯片缺货，四大品牌全线提价</div>
-        <div class="card-summary">笔记本电脑市场迎来显著涨价潮。联想、惠普、戴尔、华硕、宏碁等主流品牌旗下多款机型陆续提价，覆盖轻薄本、商用本及高性能游戏本产品线。业内分析主要原因是存储芯片（DRAM/NAND）持续缺货。苹果 MacBook 虽暂未跟进涨价，但供应链压力已在积累中。</div>
+        <div class="card-title">🍎 Ultra 统一帝国：苹果筹划全产品线 Ultra 级别命名</div>
+        <div class="card-summary">4 月 28 日业内观察显示，苹果正在筹划将各产品线顶级型号统一命名为"Ultra"。目前 iPhone 最高端为 Pro Max、iPad 为 Pro、MacBook Pro 为 Pro，命名体系分散。分析师预测苹果将推出 iPhone Ultra（折叠屏）、MacBook Ultra（配合 M5 Ultra 芯片）、Apple Watch Ultra 第三代等产品，形成统一的高端产品矩阵。这将是 iPhone 诞生以来最大幅度的产品线命名体系调整，配合特努斯时代开启。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-04-26</span>
-            <span class="card-days">📍 3天前</span>
+            <span class="card-date">📅 2026-04-28</span>
+            <span class="card-days">📍 1天前</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, '全球笔电涨价潮，存储芯片缺货', 'https://nb.zol.com.cn/1170/11708081.html')">分享</button>
-            <a class="card-link" href="https://nb.zol.com.cn/1170/11708081.html" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, '苹果筹划全产品线Ultra命名', 'https://news.zol.com.cn/1172/11727724.html')">分享</button>
+            <a class="card-link" href="https://news.zol.com.cn/1172/11727724.html" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #11 -->
+    <article class="news-card" data-category="software">
+      <div class="card-rank">
+        <div class="rank-num">11</div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-software">软件</span>
+        </div>
+        <div class="card-title">🗺️ iOS 26.5 Beta 4 发布：地图建议地点功能现身，RCS 加密重启</div>
+        <div class="card-summary">苹果向开发者及公测用户推送 iOS/iPadOS 26.5 Beta 4（版本号 23F5069b）。本次更新亮点：地图应用新增"建议地点"功能，代码显示苹果正为地图引入广告推荐机制，地图变现正式提上日程；同时重启了 RCS 消息端到端加密测试，进一步改善 iPhone 与安卓设备之间的消息互通体验。Siri 相关重大 AI 功能将推迟至 iOS 27。正式版预计 5 月推送。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-04-28</span>
+            <span class="card-days">📍 1天前</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, 'iOS 26.5 Beta 4发布：地图广告+RCS加密', 'https://news.pconline.com.cn/2140/21408451.html')">分享</button>
+            <a class="card-link" href="https://news.pconline.com.cn/2140/21408451.html" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #12 -->
+    <article class="news-card" data-category="software">
+      <div class="card-rank">
+        <div class="rank-num">12</div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-software">软件</span>
+        </div>
+        <div class="card-title">🖥️ WWDC26 全球预热启动：28 场线下开发者活动覆盖主要市场</div>
+        <div class="card-summary">苹果正式公布 WWDC26 全球开发者社区活动名单，涵盖 28 场线下开发者聚会，覆盖美国、英国、中国、日本、新加坡、澳大利亚等主要市场。WWDC26 将于北京时间 6 月 9 日至 13 日举办，主题演讲和 Platforms State of the Union 将于 6 月 9 日凌晨拉开帷幕。核心看点包括 iOS 27 完整预览（含全新 AI Siri）、macOS 27、watchOS 11 以及 M5 芯片 Mac 系列首次亮相。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-04-20</span>
+            <span class="card-days">📍 9天前</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, 'WWDC26启动：28场全球线下开发者活动', 'https://www.apple.com.cn/newsroom/2026/03/apples-worldwide-developers-conference-returns-the-week-of-june-8/')">分享</button>
+            <a class="card-link" href="https://www.apple.com.cn/newsroom/2026/03/apples-worldwide-developers-conference-returns-the-week-of-june-8/" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #13 -->
+    <article class="news-card" data-category="ai">
+      <div class="card-rank">
+        <div class="rank-num">13</div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-ai">AI 智能</span>
+        </div>
+        <div class="card-title">🤖 谷歌 CEO 库里安确认：基于 Gemini 的新版 Siri 将于 2026 年发布</div>
+        <div class="card-summary">IT之家 4 月 23 日报道，谷歌云首席执行官托马斯·库里安在 Google Cloud Next '26 大会上正式确认，基于 Gemini 技术构建的苹果新一代 Siri 将于 2026 年发布。这一合作源于 2026 年 1 月双方签署的多年期协议。苹果将在 iOS 27 中集成 Gemini AI 能力，为 Siri 提供更强大的自然语言理解和生成式 AI 功能。此举被业内视为苹果在 AI 竞争中"弯道超车"的重要战略。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-04-23</span>
+            <span class="card-days">📍 6天前</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, '谷歌确认基于Gemini的新版Siri 2026年发布', 'https://tech.ifeng.com/c/8sYDgvuJ2BH')">分享</button>
+            <a class="card-link" href="https://tech.ifeng.com/c/8sYDgvuJ2BH" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #14 -->
+    <article class="news-card" data-category="business">
+      <div class="card-rank">
+        <div class="rank-num">14</div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-business">商业</span>
+        </div>
+        <div class="card-title">💻 iPhone"美国造"梦碎：成本或达 3500 美元，供应链 95% 依赖海外</div>
+        <div class="card-summary">苹果短期内无法在美国本土量产 iPhone：整机成本预计将飙升至约 3500 美元，供应链 95% 以上零部件仍依赖海外供应。特朗普关税政策持续施压，苹果已加速将美国市场 iPhone 生产全面转移至印度——2025 年 4 月印度对美 iPhone 出口同比增长 76% 至 300 万部。同时，美国海关与边境保护局于 4 月 20 日正式开通关税退税系统（CAPE），向约 33 万家进口商退还总额达 1660 亿美元的"非法关税"，苹果或成受益者之一。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-04-24</span>
+            <span class="card-days">📍 5天前</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, 'iPhone美国造成本或达3500美元', 'https://www.sohu.com/a/1014159793_121617557')">分享</button>
+            <a class="card-link" href="https://www.sohu.com/a/1014159793_121617557" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #15 -->
+    <article class="news-card" data-category="product">
+      <div class="card-rank">
+        <div class="rank-num">15</div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-product">产品</span>
+        </div>
+        <div class="card-title">🕶️ 古尔曼爆料：苹果 2026 可穿戴全家桶即将登场</div>
+        <div class="card-summary">彭博社 Mark Gurman 披露苹果 2026 年可穿戴及智能家居战略全貌：除 Apple Glasses 外，苹果还将推出搭载 AI 能力的 AirPods 新款（代号 N107）、智能挂饰设备（N360）、HomePad 智能显示屏、智能桌面机器人及全套智能安防产品线。这是 Apple Watch 2015 年问世之后，苹果最大规模的可穿戴设备扩张。分析师预计可穿戴业务将在 2026 年为苹果贡献超过 500 亿美元营收，成为服务业务之外的新增长引擎。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-04-20</span>
+            <span class="card-days">📍 9天前</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, '古尔曼爆料苹果2026可穿戴全家桶', 'https://mobile.pconline.com.cn/2136/21368811.html')">分享</button>
+            <a class="card-link" href="https://mobile.pconline.com.cn/2136/21368811.html" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
@@ -851,7 +971,7 @@
 
 <!-- Footer -->
 <footer>
-  <p>数据来源：Apple Newsroom · IT之家 · 36氪 · 新浪财经 · 腾讯新闻 · MacRumors 等<br>每日 09:15 自动更新</p>
+  <p>数据来源：彭博社 · IT之家 · 36氪 · 新浪财经 · 腾讯新闻 · DoNews · MacRumors · 极客公园 · 界面新闻 · 快科技 · 爱范儿<br>每日 09:15 自动更新 · 资讯覆盖过去 48 小时</p>
 </footer>
 
 <!-- FAB -->
