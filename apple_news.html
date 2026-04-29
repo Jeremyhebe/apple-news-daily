@@ -432,7 +432,7 @@
 <header>
   <div class="header-inner">
     <div class="logo">
-      <span class="logo-icon"></span>
+      <span class="logo-icon">🍎</span>
       <span>Apple 每日热点</span>
       <span id="header-title-date"></span>
       <span class="badge-live">LIVE</span>
@@ -451,9 +451,9 @@
   <h1>苹果全球热点资讯</h1>
   <p>全网实时追踪，经过去重筛选，按热度排序。每日 09:15 自动更新，不错过任何重要动态。</p>
     <div class="hero-stats">
-    <div class="stat"><div class="stat-num" id="stat-count">13</div><div class="stat-label">今日资讯</div></div>
-    <div class="stat"><div class="stat-num">29</div><div class="stat-label">天内收录</div></div>
-    <div class="stat"><div class="stat-num" id="stat-update-time">—</div><div class="stat-label">最近更新</div></div>
+    <div class="stat"><div class="stat-num" id="stat-count">15</div><div class="stat-label">今日资讯</div></div>
+    <div class="stat"><div class="stat-num">30</div><div class="stat-label">天内收录</div></div>
+    <div class="stat"><div class="stat-num" id="stat-update-time">09:15</div><div class="stat-label">更新时间</div></div>
   </div>
 </div>
 
@@ -511,16 +511,46 @@
 <div class="news-container" id="news-container">
 
   <!-- #1 头条 -->
-  <article class="news-card rank-1" data-category="milestone">
+  <article class="news-card rank-1" data-category="market">
     <div class="rank">
       <div class="rank-num">1</div>
       <div class="rank-label">🔥头条</div>
     </div>
     <div class="card-body">
       <div class="card-header">
-        <span class="card-tag tag-milestone">里程碑</span>
+        <span class="card-tag tag-market">市场</span>
         <div class="hot-bars">
           <div class="hot-bar" style="height:14px"></div>
+          <div class="hot-bar" style="height:12px"></div>
+          <div class="hot-bar" style="height:10px"></div>
+          <div class="hot-bar" style="height:8px"></div>
+          <div class="hot-bar" style="height:6px"></div>
+        </div>
+        <span class="heat-score">热度极高</span>
+      </div>
+      <div class="card-title">📊 今日四巨头财报来袭！苹果 Q2 成绩单明日揭晓，库克告别秀成焦点</div>
+      <div class="card-summary">4月29日（周三），Meta、微软、谷歌、亚马逊四大科技巨头同日发布财报，引发市场剧烈震荡——科技股全线收跌，AI 投资回报忧虑重燃。美东时间4月30日（周四）盘后，苹果将发布2026财年第二季度财报，这将是库克9月卸任前的最后一份正式成绩单。市场预期苹果有望首次突破第二财季千亿美元营收大关，服务业务则剑指260亿美元新高。（来源：36氪、华尔街见闻）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-04-29</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, '今日四巨头财报来袭！苹果Q2明日揭晓，库克告别秀成焦点', 'https://www.36kr.com/p/3785014810451202')">🔗 分享</button>
+          <a class="card-link" href="https://www.36kr.com/p/3785014810451202" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- #2 -->
+  <article class="news-card rank-2" data-category="ai">
+    <div class="rank">
+      <div class="rank-num">2</div>
+      <div class="rank-label">🔥热榜</div>
+    </div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-ai">AI 智能</span>
+        <div class="hot-bars">
+          <div class="hot-bar" style="height:13px"></div>
           <div class="hot-bar" style="height:11px"></div>
           <div class="hot-bar" style="height:9px"></div>
           <div class="hot-bar" style="height:7px"></div>
@@ -528,270 +558,307 @@
         </div>
         <span class="heat-score">热度极高</span>
       </div>
-      <div class="card-title">📢 重磅！苹果官宣 CEO 交接：库克 9 月 1 日卸任，John Ternus 正式接棒</div>
-      <div class="card-summary">4 月 20 日苹果正式宣布：现任 CEO 蒂姆·库克将于 2026 年 9 月 1 日卸任，转任董事会执行董事长；硬件工程高级副总裁约翰·特努斯（John Ternus）将同日接任 CEO 并加入董事会。这是苹果自 2011 年乔布斯卸任以来首次完成最高层领导交接，标志着苹果正式告别"库克时代"。库克在任 14 年间，苹果年营收从 1080 亿美元扩张至 4160 亿美元，市值增长超 10 倍。（来源：Apple Newsroom）</div>
+      <div class="card-title">🤖 iOS 27 将全面重构 Siri！AirPods 变"全天候 AI 伴侣"，《Her》式交互来了</div>
+      <div class="card-summary">4月29日最新消息，9to5Mac 报道称苹果将在 iOS 27 系统中全面重构 Siri，大幅增强 AirPods 的 AI 交互能力。新版 Siri 将支持无缝语音对话，实现类似电影《Her》中的全天候智能伴侣体验，用户可通过 AirPods 与 AI 深度交互、操控设备、对话 ChatGPT。WWDC26（6月9日）将正式亮相。（来源：IT之家、新浪财经）</div>
       <div class="card-footer">
-        <span class="card-date">📅 2026-04-21</span>
+        <span class="card-date">📅 2026-04-29</span>
         <div class="card-actions">
-          <button class="card-share-btn" onclick="shareCard(this, '苹果官宣 CEO 交接：库克 9 月 1 日卸任，John Ternus 接棒', 'https://www.apple.com/hk/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/')">🔗 分享</button>
-          <a class="card-link" href="https://www.apple.com/hk/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/" target="_blank" rel="noopener">阅读原文 →</a>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- #2 -->
-  <article class="news-card rank-2" data-category="market">
-    <div class="rank">
-      <div class="rank-num">2</div>
-      <div class="rank-label">🔥热榜</div>
-    </div>
-    <div class="card-body">
-      <div class="card-header">
-        <span class="card-tag tag-market">市场</span>
-        <div class="hot-bars">
-          <div class="hot-bar" style="height:14px"></div>
-          <div class="hot-bar" style="height:11px"></div>
-          <div class="hot-bar" style="height:9px"></div>
-          <div class="hot-bar" style="height:7px"></div>
-        </div>
-        <span class="heat-score">热度很高</span>
-      </div>
-      <div class="card-title">📊 明日揭晓！苹果 2026 财年 Q2 财报将于 4 月 30 日公布，营收能否首破千亿？</div>
-      <div class="card-summary">苹果宣布将于 4 月 30 日发布 2026 财年第二季度财务业绩，并举行分析师与投资者电话会议。市场普遍预期，在 iPhone 17 系列和 Mac 新品驱动下，苹果有望首次突破第二财季千亿美元营收大关。分析师重点关注大中华区表现、服务业务增长以及 iPhone Fold 发布前的市场预期管理。（来源：CNMO）</div>
-      <div class="card-footer">
-        <span class="card-date">📅 2026-04-27</span>
-        <div class="card-actions">
-          <button class="card-share-btn" onclick="shareCard(this, '苹果 Q2 财报明日揭晓：营收能否首破千亿？', 'https://finance.sina.com.cn/roll/2026-04-27/doc-inhvwwms7950112.shtml')">🔗 分享</button>
-          <a class="card-link" href="https://finance.sina.com.cn/roll/2026-04-27/doc-inhvwwms7950112.shtml" target="_blank" rel="noopener">阅读原文 →</a>
+          <button class="card-share-btn" onclick="shareCard(this, 'iOS 27全面重构Siri，AirPods变《Her》式AI伴侣', 'https://finance.sina.com.cn/tech/digi/2026-04-29/doc-inhwckrm1089787.shtml')">🔗 分享</button>
+          <a class="card-link" href="https://finance.sina.com.cn/tech/digi/2026-04-29/doc-inhwckrm1089787.shtml" target="_blank" rel="noopener">阅读原文 →</a>
         </div>
       </div>
     </div>
   </article>
 
   <!-- #3 -->
-  <article class="news-card rank-3" data-category="product">
+  <article class="news-card rank-3" data-category="software">
     <div class="rank">
       <div class="rank-num">3</div>
       <div class="rank-label">🔥热榜</div>
     </div>
     <div class="card-body">
       <div class="card-header">
-        <span class="card-tag tag-product">产品</span>
+        <span class="card-tag tag-software">软件</span>
         <div class="hot-bars">
-          <div class="hot-bar" style="height:14px"></div>
-          <div class="hot-bar" style="height:11px"></div>
-          <div class="hot-bar" style="height:9px"></div>
+          <div class="hot-bar" style="height:12px"></div>
+          <div class="hot-bar" style="height:10px"></div>
+          <div class="hot-bar" style="height:8px"></div>
+          <div class="hot-bar" style="height:6px"></div>
+          <div class="hot-bar" style="height:4px"></div>
         </div>
-        <span class="heat-score">热度较高</span>
+        <span class="heat-score">热度高</span>
       </div>
-      <div class="card-title">📱 iPhone Fold 试产启动！确认 9 月发布，内折双屏 + 自研铰链</div>
-      <div class="card-summary">4 月 8 日消息，苹果已于 4 月 6 日正式启动 iPhone Fold 试产流程，富士康承接生产。作为苹果十余年来首款折叠屏手机，iPhone Fold 采用内折双屏设计，配备自研铰链技术，预计将于今年 9 月与 iPhone 18 系列同台发布。分析师郭明錤指出，iPhone Fold 将是 2026 年苹果"核心旗舰"，为下一个 50 年奠基。</div>
+      <div class="card-title">🗺️ iOS 26.5 Beta 4 发布：地图广告现身，重启 RCS 端到端加密测试</div>
+      <div class="card-summary">4月28日，苹果向开发者及公测用户推送 iOS/iPadOS 26.5 Beta 4（版本号 23F5069b）。本次更新亮点：地图应用新增"建议地点"功能，代码显示苹果正为地图引入广告（将面向美国、加拿大用户上线）；同时重启了 RCS 消息端到端加密测试。Siri 相关新功能未出现，将推迟至 iOS 27。正式版预计5月推送。（来源：IT之家、SOHU）</div>
       <div class="card-footer">
-        <span class="card-date">📅 2026-04-08</span>
+        <span class="card-date">📅 2026-04-28</span>
         <div class="card-actions">
-          <button class="card-share-btn" onclick="shareCard(this, 'iPhone Fold 试产启动！确认 9 月发布', 'https://finance.sina.com.cn/roll/2026-04-08/doc-inhttxki6579081.shtml')">🔗 分享</button>
-          <a class="card-link" href="https://finance.sina.com.cn/roll/2026-04-08/doc-inhttxki6579081.shtml" target="_blank" rel="noopener">阅读原文 →</a>
+          <button class="card-share-btn" onclick="shareCard(this, 'iOS 26.5 Beta 4发布：地图广告+RCS加密重启', 'https://news.pconline.com.cn/2140/21408451.html')">🔗 分享</button>
+          <a class="card-link" href="https://news.pconline.com.cn/2140/21408451.html" target="_blank" rel="noopener">阅读原文 →</a>
         </div>
       </div>
     </div>
   </article>
 
   <!-- #4 -->
-  <article class="news-card rank-n" data-category="product">
-    <div class="rank"><div class="rank-num">4</div></div>
+  <article class="news-card" data-category="business">
+    <div class="rank">
+      <div class="rank-num" style="color: var(--apple-mid)">4</div>
+      <div class="rank-label"></div>
+    </div>
     <div class="card-body">
       <div class="card-header">
-        <span class="card-tag tag-product">产品</span>
-        <span class="heat-score">热度较高</span>
+        <span class="card-tag tag-business">商业</span>
       </div>
-      <div class="card-title">🍎 Ultra 帝国！苹果计划统一全产品线 Ultra 命名，iPhone Ultra 要来了</div>
-      <div class="card-summary">4 月 28 日业内消息，苹果正在筹划将各产品线顶级型号统一命名为"Ultra"。目前 iPhone 最高端为 Pro Max、iPad 为 Pro、MacBook Pro 为 Pro、Mac Studio 独立存在，分析师预测苹果将推出 iPhone Ultra、MacBook Ultra 等 Ultra 级别产品，形成统一的高端产品矩阵，进一步巩固超高端市场地位。</div>
+      <div class="card-title">🍎 库克告别秀倒计时！iPhone Fold 将成特努斯接棒"首份成绩单"</div>
+      <div class="card-summary">苹果 CEO 交接进入最后冲刺阶段：库克将于2026年9月1日正式卸任，转任董事会执行董事长，由硬件工程高级副总裁约翰·特努斯（John Ternus）接棒。目前特努斯已主导了 iPhone Air、iPhone Fold 及 Apple Silicon 全系芯片开发。业内普遍认为，iPhone Fold 是否成功、iOS 27 的 AI 战略能否落地，将成为特努斯时代"开门红"的决定性检验。（来源：腾讯新闻、OFweek）</div>
       <div class="card-footer">
-        <span class="card-date">📅 2026-04-28</span>
+        <span class="card-date">📅 2026-04-21</span>
         <div class="card-actions">
-          <button class="card-share-btn" onclick="shareCard(this, '苹果计划统一 Ultra 命名，iPhone Ultra 要来了', 'https://www.sohu.com/a/1015657988_114822')">🔗 分享</button>
-          <a class="card-link" href="https://www.sohu.com/a/1015657988_114822" target="_blank" rel="noopener">阅读原文 →</a>
+          <button class="card-share-btn" onclick="shareCard(this, '库克告别秀倒计时，iPhone Fold将成特努斯首份成绩单', 'https://news.qq.com/rain/a/20260421A059RN00')">🔗 分享</button>
+          <a class="card-link" href="https://news.qq.com/rain/a/20260421A059RN00" target="_blank" rel="noopener">阅读原文 →</a>
         </div>
       </div>
     </div>
   </article>
 
   <!-- #5 -->
-  <article class="news-card rank-n" data-category="ai">
-    <div class="rank"><div class="rank-num">5</div></div>
+  <article class="news-card" data-category="product">
+    <div class="rank">
+      <div class="rank-num" style="color: var(--apple-mid)">5</div>
+      <div class="rank-label"></div>
+    </div>
     <div class="card-body">
       <div class="card-header">
-        <span class="card-tag tag-ai">AI 智能</span>
-        <span class="heat-score">热度较高</span>
+        <span class="card-tag tag-product">产品</span>
       </div>
-      <div class="card-title">🤖 国行苹果 AI "偷跑" 事件复盘：3 月 31 日短暂上线后紧急撤下</div>
-      <div class="card-summary">3 月 31 日凌晨，苹果通过 iOS 26.4 系统向国行用户灰度推送了 Apple Intelligence 功能入口，下载约 9.5GB 的 AI 模型包。然而数小时后服务端接口被切断，功能随之失效。彭博社分析称此举或因未完成算法备案和数据出境合规，苹果表示"正在积极推进"。国行 AI 调用百度文心+阿里千问双模型，正式推出预计最快随 iOS 27 落地。</div>
+      <div class="card-title">🕶️ 苹果 AI 眼镜 N50 定档：2026年底发布，2027年量产，四版设计已定型</div>
+      <div class="card-summary">4月14日，彭博社 Mark Gurman 曝光苹果首款智能眼镜最新进展：内部代号 N50，已完成四种核心设计定型，形态接近普通光学眼镜（轻至约40-50克），无显示屏，核心功能为 AI+Siri+音频。用户可选择类似库克日常佩戴的经典设计。该产品预计2026年底发布、2027年正式量产上市，剑指 Meta Ray-Ban 智能眼镜市场。（来源：澎湃新闻、36氪）</div>
       <div class="card-footer">
-        <span class="card-date">📅 2026-04-01</span>
+        <span class="card-date">📅 2026-04-14</span>
         <div class="card-actions">
-          <button class="card-share-btn" onclick="shareCard(this, '国行苹果 AI 偷跑事件复盘：短暂上线后紧急撤下', 'https://zhuanlan.zhihu.com/p/2022272869594349916')">🔗 分享</button>
-          <a class="card-link" href="https://zhuanlan.zhihu.com/p/2022272869594349916" target="_blank" rel="noopener">阅读原文 →</a>
+          <button class="card-share-btn" onclick="shareCard(this, '苹果AI眼镜N50定档2026年底，四版设计已定型', 'https://news.qq.com/rain/a/20260414A07GQL00')">🔗 分享</button>
+          <a class="card-link" href="https://news.qq.com/rain/a/20260414A07GQL00" target="_blank" rel="noopener">阅读原文 →</a>
         </div>
       </div>
     </div>
   </article>
 
   <!-- #6 -->
-  <article class="news-card rank-n" data-category="business">
-    <div class="rank"><div class="rank-num">6</div></div>
+  <article class="news-card" data-category="software">
+    <div class="rank">
+      <div class="rank-num" style="color: var(--apple-mid)">6</div>
+      <div class="rank-label"></div>
+    </div>
     <div class="card-body">
       <div class="card-header">
-        <span class="card-tag tag-business">商业</span>
-        <span class="heat-score">热度较高</span>
+        <span class="card-tag tag-software">软件</span>
       </div>
-      <div class="card-title">💰 库克 14 年功过簿：苹果营收从 1080 亿飙至 4160 亿美元，市值增长 10 倍</div>
-      <div class="card-summary">苹果 CEO 交接之际，媒体回顾库克 14 年任期成绩单：年营收从 1080 亿美元扩张至 4160 亿美元，翻了近四番；iPhone 单品营收从 471 亿跃升至 2096 亿美元，单品年收入已相当于 2011 年整个苹果的近两倍。但批评声音认为苹果创新节奏放缓，产品缺乏突破性，从乔布斯时代的"灵感与美感"逐渐变成追求商业利益的公司。</div>
+      <div class="card-title">🖥️ WWDC26 进入倒计时：苹果公布28场全球社区活动，iOS 27 完整预览即将揭晓</div>
+      <div class="card-summary">4月28日，苹果正式公布 WWDC26 全球开发者社区活动名单，涵盖28场线下开发者聚会，时间从5月延续至11月，覆盖美国、英国、中国、日本、新加坡等主要市场。WWDC26 将于北京时间6月9日至13日举办，核心看点包括 iOS 27 完整预览（含全新 Siri AI）、M5 芯片 Mac 系列亮相，以及 macOS 27、watchOS 27 等系统更新。（来源：IT之家）</div>
       <div class="card-footer">
-        <span class="card-date">📅 2026-04-22</span>
+        <span class="card-date">📅 2026-04-28</span>
         <div class="card-actions">
-          <button class="card-share-btn" onclick="shareCard(this, '库克 14 年功过：苹果营收翻 4 倍，市值增长 10 倍', 'https://news.qq.com/rain/a/20260422A01I8V00')">🔗 分享</button>
-          <a class="card-link" href="https://news.qq.com/rain/a/20260422A01I8V00" target="_blank" rel="noopener">阅读原文 →</a>
+          <button class="card-share-btn" onclick="shareCard(this, 'WWDC26公布28场全球社区活动，iOS 27完整预览即将揭晓', 'https://www.ithome.com/0/944/207.htm')">🔗 分享</button>
+          <a class="card-link" href="https://www.ithome.com/0/944/207.htm" target="_blank" rel="noopener">阅读原文 →</a>
         </div>
       </div>
     </div>
   </article>
 
   <!-- #7 -->
-  <article class="news-card rank-n" data-category="software">
-    <div class="rank"><div class="rank-num">7</div></div>
+  <article class="news-card" data-category="product">
+    <div class="rank">
+      <div class="rank-num" style="color: var(--apple-mid)">7</div>
+      <div class="rank-label"></div>
+    </div>
     <div class="card-body">
       <div class="card-header">
-        <span class="card-tag tag-software">软件</span>
-        <span class="heat-score">热度中等</span>
+        <span class="card-tag tag-product">产品</span>
       </div>
-      <div class="card-title">🖥️ WWDC 2026 前瞻：iOS 27 修炼内功，AI 全面上桌，还有 M5 硬件</div>
-      <div class="card-summary">WWDC 2026 将于 6 月 9 日至 13 日举办，本届大会首次明确以"人工智能重大进展"为核心主题。iOS 27 将搭载代号"Campo"的全新独立 Siri 应用，支持屏幕感知及跨设备记忆；同时配合 iPhone Fold 发布，系统将全面适配折叠屏多任务交互。此外 M5 芯片 Mac 系列也将在大会亮相。</div>
+      <div class="card-title">📱 iPhone Fold 试产启动！确认9月发布，内折双屏 + 自研铰链</div>
+      <div class="card-summary">4月8日，苹果正式启动 iPhone Fold 试产，富士康承接生产。作为苹果十余年来首款折叠屏手机，iPhone Fold 采用内折双屏设计，配备自研铰链技术，预计与 iPhone 18 系列同台发布（9月）。不过，随着参数陆续曝光，部分消费者担忧苹果为控制成本和厚度在配置上有所"精简"——可能包括屏幕刷新率、摄像头规格或电池容量。（来源：新浪财经、腾讯新闻）</div>
       <div class="card-footer">
-        <span class="card-date">📅 2026-03-25</span>
+        <span class="card-date">📅 2026-04-08</span>
         <div class="card-actions">
-          <button class="card-share-btn" onclick="shareCard(this, 'WWDC 2026 前瞻：iOS 27 AI 全面上桌', 'https://news.qq.com/rain/a/20260325A06HR600')">🔗 分享</button>
-          <a class="card-link" href="https://news.qq.com/rain/a/20260325A06HR600" target="_blank" rel="noopener">阅读原文 →</a>
+          <button class="card-share-btn" onclick="shareCard(this, 'iPhone Fold试产启动，确认9月发布', 'https://finance.sina.com.cn/roll/2026-04-08/doc-inhttxki6579081.shtml')">🔗 分享</button>
+          <a class="card-link" href="https://finance.sina.com.cn/roll/2026-04-08/doc-inhttxki6579081.shtml" target="_blank" rel="noopener">阅读原文 →</a>
         </div>
       </div>
     </div>
   </article>
 
   <!-- #8 -->
-  <article class="news-card rank-n" data-category="market">
-    <div class="rank"><div class="rank-num">8</div></div>
+  <article class="news-card" data-category="business">
+    <div class="rank">
+      <div class="rank-num" style="color: var(--apple-mid)">8</div>
+      <div class="rank-label"></div>
+    </div>
     <div class="card-body">
       <div class="card-header">
-        <span class="card-tag tag-market">市场</span>
-        <span class="heat-score">热度中等</span>
+        <span class="card-tag tag-business">商业</span>
       </div>
-      <div class="card-title">💻 全球笔电集体涨价！存储芯片缺货，联想/惠普/戴尔/华硕 4 月全线提价</div>
-      <div class="card-summary">4 月 26 日消息，笔记本电脑市场迎来显著涨价潮。联想、惠普、戴尔、华硕、宏碁等主流品牌旗下多款机型陆续提价，覆盖轻薄本、商用本及高性能游戏本等产品线。业内分析主要原因是存储芯片持续缺货，导致供应链成本上升。苹果 MacBook 系列暂未跟进涨价。</div>
+      <div class="card-title">🏭 iPhone"美国造"梦碎！成本或达3500美元，供应链95%依赖海外</div>
+      <div class="card-summary">4月24日最新分析显示，苹果短期内无法在美国量产 iPhone：整机成本预计将飙升至约3500美元，供应链95%以上零部件仍依赖海外供应，技术工人严重短缺。此前受特朗普关税政策影响，苹果已加速将美国市场 iPhone 生产全面转移至印度——2025年4月印度对美 iPhone 出口同比激增76%至300万部，预计2026年印度承担苹果近40% iPhone 产能。（来源：新浪新闻、知乎）</div>
       <div class="card-footer">
-        <span class="card-date">📅 2026-04-26</span>
+        <span class="card-date">📅 2026-04-24</span>
         <div class="card-actions">
-          <button class="card-share-btn" onclick="shareCard(this, '全球笔电集体涨价：存储芯片缺货', 'https://nb.zol.com.cn/1170/11708081.html')">🔗 分享</button>
-          <a class="card-link" href="https://nb.zol.com.cn/1170/11708081.html" target="_blank" rel="noopener">阅读原文 →</a>
+          <button class="card-share-btn" onclick="shareCard(this, 'iPhone美国造梦碎，成本或达3500美元', 'https://news.sina.cn/bignews/2026-04-24/detail-inhvrhty3107035.d.html')">🔗 分享</button>
+          <a class="card-link" href="https://news.sina.cn/bignews/2026-04-24/detail-inhvrhty3107035.d.html" target="_blank" rel="noopener">阅读原文 →</a>
         </div>
       </div>
     </div>
   </article>
 
   <!-- #9 -->
-  <article class="news-card rank-n" data-category="product">
-    <div class="rank"><div class="rank-num">9</div></div>
+  <article class="news-card" data-category="product">
+    <div class="rank">
+      <div class="rank-num" style="color: var(--apple-mid)">9</div>
+      <div class="rank-label"></div>
+    </div>
     <div class="card-body">
       <div class="card-header">
         <span class="card-tag tag-product">产品</span>
-        <span class="heat-score">热度中等</span>
       </div>
-      <div class="card-title">⌚ Apple Watch 大改版曝光：2026 年迎环形传感器设计，八个传感器呈环形排列</div>
-      <div class="card-summary">据《电子时报》报道，苹果计划在 2026 年对 Apple Watch 进行"重大革新"，高端型号将采用环形排列的八个传感器设计，透过表底玻璃可见，可实现更精准的健康数据监测。watchOS 26 也将同步推出多项新功能，Apple Watch Ultra 3 将支持卫星紧急短信。</div>
+      <div class="card-title">🍎 Ultra 统一帝国！苹果筹划全产品线 Ultra 命名，iPhone Ultra 要来了</div>
+      <div class="card-summary">4月28日业内消息，苹果正在筹划将各产品线顶级型号统一命名为"Ultra"。目前 iPhone 最高端为 Pro Max、iPad 为 Pro、MacBook Pro 为 Pro，分析师预测苹果将推出 iPhone Ultra、MacBook Ultra 等 Ultra 级别产品，形成统一的高端产品矩阵。配合 iPhone Fold 的到来，苹果产品线将迎来史上最大幅度的命名体系调整。（来源：搜狐科技）</div>
       <div class="card-footer">
-        <span class="card-date">📅 2026-03-23</span>
+        <span class="card-date">📅 2026-04-28</span>
         <div class="card-actions">
-          <button class="card-share-btn" onclick="shareCard(this, 'Apple Watch 大改版：环形传感器设计', 'https://www.ithome.com/0/875/775.htm')">🔗 分享</button>
-          <a class="card-link" href="https://www.ithome.com/0/875/775.htm" target="_blank" rel="noopener">阅读原文 →</a>
+          <button class="card-share-btn" onclick="shareCard(this, '苹果筹划全产品线Ultra命名，iPhone Ultra要来了', 'https://www.sohu.com/a/1015657988_114822')">🔗 分享</button>
+          <a class="card-link" href="https://www.sohu.com/a/1015657988_114822" target="_blank" rel="noopener">阅读原文 →</a>
         </div>
       </div>
     </div>
   </article>
 
   <!-- #10 -->
-  <article class="news-card rank-n" data-category="business">
-    <div class="rank"><div class="rank-num">10</div></div>
+  <article class="news-card" data-category="product">
+    <div class="rank">
+      <div class="rank-num" style="color: var(--apple-mid)">10</div>
+      <div class="rank-label"></div>
+    </div>
     <div class="card-body">
       <div class="card-header">
-        <span class="card-tag tag-business">商业</span>
-        <span class="heat-score">热度中等</span>
+        <span class="card-tag tag-product">产品</span>
       </div>
-      <div class="card-title">🌍 苹果首次"地球日促销"：4 月 16 日起大量产品打九折，需以旧换新</div>
-      <div class="card-summary">4 月 16 日，苹果官网推出首次"地球日促销"活动（4 月 16 日 - 5 月 16 日），部分产品享受 10% 优惠。用户需携带符合条件的旧设备（iPhone、iPad、Mac 或 Apple Watch）前往苹果零售店进行回收才能参与，低价配件无法参与此次促销。</div>
+      <div class="card-title">🎧 古尔曼爆料：苹果 2026 可穿戴全家桶来了，AI AirPods 领衔</div>
+      <div class="card-summary">4月24日，彭博社 Mark Gurman 披露苹果 2026 年可穿戴及智能家居战略全貌：除 Apple Glasses 外，苹果还将推出搭载 AI 能力的 AirPods（代号 N107）、智能挂饰设备（N360）、HomePad 智能显示屏、智能桌面机器人及全套安防产品。这是苹果在 Apple Watch 之后最大规模的可穿戴设备扩张，其中 AI AirPods 最受关注。（来源：太平洋电脑网）</div>
       <div class="card-footer">
-        <span class="card-date">📅 2026-04-17</span>
+        <span class="card-date">📅 2026-04-24</span>
         <div class="card-actions">
-          <button class="card-share-btn" onclick="shareCard(this, '苹果首次地球日促销：产品打九折', 'https://news.qq.com/rain/a/20260417A02GNX00')">🔗 分享</button>
-          <a class="card-link" href="https://news.qq.com/rain/a/20260417A02GNX00" target="_blank" rel="noopener">阅读原文 →</a>
+          <button class="card-share-btn" onclick="shareCard(this, '古尔曼爆料苹果2026可穿戴全家桶，AI AirPods领衔', 'https://mobile.pconline.com.cn/2136/21368811.html')">🔗 分享</button>
+          <a class="card-link" href="https://mobile.pconline.com.cn/2136/21368811.html" target="_blank" rel="noopener">阅读原文 →</a>
         </div>
       </div>
     </div>
   </article>
 
   <!-- #11 -->
-  <article class="news-card rank-n" data-category="product">
-    <div class="rank"><div class="rank-num">11</div></div>
+  <article class="news-card" data-category="business">
+    <div class="rank">
+      <div class="rank-num" style="color: var(--apple-mid)">11</div>
+      <div class="rank-label"></div>
+    </div>
     <div class="card-body">
       <div class="card-header">
-        <span class="card-tag tag-product">产品</span>
-        <span class="heat-score">热度中等</span>
+        <span class="card-tag tag-business">商业</span>
       </div>
-      <div class="card-title">📉 iPhone Fold 参数全曝光！网友担忧：可能阉割了太多东西</div>
-      <div class="card-summary">随着 iPhone Fold 试产启动，更多参数信息浮出水面。部分网友担忧苹果可能为了控制成本和机身厚度，在某些配置上做出妥协。目前曝光的信息显示，iPhone Fold 可能在屏幕刷新率、摄像头规格或电池容量方面有所"精简"，引发部分消费者不满。</div>
+      <div class="card-title">💰 App Store 爆发式增长！AI 驱动一季度新应用发布量创历史新高</div>
+      <div class="card-summary">市场情报机构 Appfigures 数据显示，2026年第一季度 App Store 新应用发布数量创历史新高，AI 相关应用成为最大驱动力。分析指出，尽管 AI 被普遍认为会"消灭应用"，但实际情况恰恰相反——生成式 AI 反而催生了大量垂直应用需求，涵盖 AI 写作、图像生成、代码辅助、个性化助手等多个品类。苹果服务业务已连续多年保持两位数增长。（来源：腾讯新闻）</div>
       <div class="card-footer">
-        <span class="card-date">📅 2026-04-27</span>
+        <span class="card-date">📅 2026-04-20</span>
         <div class="card-actions">
-          <button class="card-share-btn" onclick="shareCard(this, 'iPhone Fold 参数曝光：网友担忧配置阉割', 'https://news.qq.com/rain/a/20260427A07JTD00')">🔗 分享</button>
-          <a class="card-link" href="https://news.qq.com/rain/a/20260427A07JTD00" target="_blank" rel="noopener">阅读原文 →</a>
+          <button class="card-share-btn" onclick="shareCard(this, 'App Store爆发式增长，AI驱动新应用创历史新高', 'https://news.qq.com/rain/a/20260420A07AM500')">🔗 分享</button>
+          <a class="card-link" href="https://news.qq.com/rain/a/20260420A07AM500" target="_blank" rel="noopener">阅读原文 →</a>
         </div>
       </div>
     </div>
   </article>
 
   <!-- #12 -->
-  <article class="news-card rank-n" data-category="business">
-    <div class="rank"><div class="rank-num">12</div></div>
+  <article class="news-card" data-category="ai">
+    <div class="rank">
+      <div class="rank-num" style="color: var(--apple-mid)">12</div>
+      <div class="rank-label"></div>
+    </div>
     <div class="card-body">
       <div class="card-header">
-        <span class="card-tag tag-business">商业</span>
-        <span class="heat-score">热度中等</span>
+        <span class="card-tag tag-ai">AI 智能</span>
       </div>
-      <div class="card-title">🎯 苹果"告别库克时代"：特努斯接班进入执行阶段，iPhone Fold 将是首份成绩单</div>
-      <div class="card-summary">苹果董事会已确认加速 CEO 接班计划，特努斯主导了 iPhone Air、iPhone Fold 及 Apple Silicon 系列芯片的开发。业内人士指出，iPhone Fold 是否成功、iOS 27 的 AI 战略能否落地，将成为特努斯接任后的首份"成绩单"。</div>
+      <div class="card-title">🤖 国行苹果 AI "偷跑"复盘：3月31日短暂上线后紧急撤下，仍在推进中</div>
+      <div class="card-summary">3月31日凌晨，苹果通过 iOS 26.4 系统向国行用户灰度推送了 Apple Intelligence 功能入口，下载约 9.5GB 的 AI 模型包后数小时接口被切断，功能随之失效。彭博社分析称此举或因未完成算法备案和数据出境合规要求。苹果随后表示"正在积极推进"国行 AI 功能，目前国行 Apple Intelligence 仍未正式上线。（来源：知乎、36氪）</div>
       <div class="card-footer">
-        <span class="card-date">📅 2026-04-21</span>
+        <span class="card-date">📅 2026-03-31</span>
         <div class="card-actions">
-          <button class="card-share-btn" onclick="shareCard(this, '苹果告别库克时代，特努斯接班进入执行阶段', 'https://ce.ofweek.com/2026-03/ART-2022112-8420-30683892.html')">🔗 分享</button>
-          <a class="card-link" href="https://ce.ofweek.com/2026-03/ART-2022112-8420-30683892.html" target="_blank" rel="noopener">阅读原文 →</a>
+          <button class="card-share-btn" onclick="shareCard(this, '国行苹果AI偷跑复盘：短暂上线后撤下，仍在推进', 'https://zhuanlan.zhihu.com/p/2022272869594349916')">🔗 分享</button>
+          <a class="card-link" href="https://zhuanlan.zhihu.com/p/2022272869594349916" target="_blank" rel="noopener">阅读原文 →</a>
         </div>
       </div>
     </div>
   </article>
 
   <!-- #13 -->
-  <article class="news-card rank-n" data-category="product">
-    <div class="rank"><div class="rank-num">13</div></div>
+  <article class="news-card" data-category="product">
+    <div class="rank">
+      <div class="rank-num" style="color: var(--apple-mid)">13</div>
+      <div class="rank-label"></div>
+    </div>
     <div class="card-body">
       <div class="card-header">
         <span class="card-tag tag-product">产品</span>
-        <span class="heat-score">热度中等</span>
       </div>
-      <div class="card-title">🛒 2026 苹果春季新品选购指南：iPhone 17e 值得等，iPad mini 迎来重大升级</div>
-      <div class="card-summary">2026 年苹果春季新品选购指南出炉：入门款 iPad 将搭载 A18/A19 芯片支持苹果智能，iPad mini 迎来 2021 年以来首次重大升级，配备 OLED 屏幕和防水功能。M4 iPad Air 已升级完毕可放心购买，M5 iPad Pro 短期内不会更新，无需等待。</div>
+      <div class="card-title">⌚ Apple Watch 大改版曝光：2026 年迎环形传感器设计，八传感器环形排列</div>
+      <div class="card-summary">据《电子时报》报道，苹果计划在 2026 年对 Apple Watch 进行"重大革新"，高端型号将采用环形排列的八个传感器设计，透过表底蓝宝石玻璃可见，可实现更精准的健康数据监测。watchOS 26 也将同步推出多项新功能，Apple Watch Ultra 3 将支持卫星紧急短信功能。2026年苹果有望迎来 Apple Watch 自 2017 年 Series 4 以来最大幅度的硬件更新。（来源：IT之家）</div>
       <div class="card-footer">
-        <span class="card-date">📅 2026-04-19</span>
+        <span class="card-date">📅 2026-03-23</span>
         <div class="card-actions">
-          <button class="card-share-btn" onclick="shareCard(this, '2026 苹果春季新品选购指南', 'https://finance.sina.com.cn/roll/2026-04-19/doc-inhuyvrm9543393.shtml')">🔗 分享</button>
-          <a class="card-link" href="https://finance.sina.com.cn/roll/2026-04-19/doc-inhuyvrm9543393.shtml" target="_blank" rel="noopener">阅读原文 →</a>
+          <button class="card-share-btn" onclick="shareCard(this, 'Apple Watch大改版曝光：环形传感器八设计', 'https://www.ithome.com/0/875/775.htm')">🔗 分享</button>
+          <a class="card-link" href="https://www.ithome.com/0/875/775.htm" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- #14 -->
+  <article class="news-card" data-category="business">
+    <div class="rank">
+      <div class="rank-num" style="color: var(--apple-mid)">14</div>
+      <div class="rank-label"></div>
+    </div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-business">商业</span>
+      </div>
+      <div class="card-title">🌍 苹果首次"地球日促销"：4月16日起大量产品打九折，需以旧换新</div>
+      <div class="card-summary">4月16日，苹果官网推出首次"地球日促销"活动（4月16日-5月16日），部分产品享受10%优惠。用户需携带符合条件的旧设备（iPhone、iPad、Mac 或 Apple Watch）前往苹果零售店进行回收才能参与。这是苹果首次将环保主题与促销活动相结合，标志着其可持续战略从品牌宣传向消费者激励的延伸。（来源：腾讯新闻）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-04-17</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, '苹果首次地球日促销，大量产品打九折', 'https://news.qq.com/rain/a/20260417A02GNX00')">🔗 分享</button>
+          <a class="card-link" href="https://news.qq.com/rain/a/20260417A02GNX00" target="_blank" rel="noopener">阅读原文 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- #15 -->
+  <article class="news-card" data-category="market">
+    <div class="rank">
+      <div class="rank-num" style="color: var(--apple-mid)">15</div>
+      <div class="rank-label"></div>
+    </div>
+    <div class="card-body">
+      <div class="card-header">
+        <span class="card-tag tag-market">市场</span>
+      </div>
+      <div class="card-title">💻 全球笔电集体涨价！存储芯片缺货，联想/惠普/戴尔/华硕4月全线提价</div>
+      <div class="card-summary">4月26日，笔记本电脑市场迎来显著涨价潮。联想、惠普、戴尔、华硕、宏碁等主流品牌旗下多款机型陆续提价，覆盖轻薄本、商用本及高性能游戏本产品线。业内分析主要原因是存储芯片（DRAM/NAND）持续缺货，导致供应链成本上升。苹果 MacBook 虽暂未跟进涨价，但供应链压力已在积累中。（来源：中关村在线）</div>
+      <div class="card-footer">
+        <span class="card-date">📅 2026-04-26</span>
+        <div class="card-actions">
+          <button class="card-share-btn" onclick="shareCard(this, '全球笔电涨价潮，存储芯片缺货', 'https://nb.zol.com.cn/1170/11708081.html')">🔗 分享</button>
+          <a class="card-link" href="https://nb.zol.com.cn/1170/11708081.html" target="_blank" rel="noopener">阅读原文 →</a>
         </div>
       </div>
     </div>
@@ -799,108 +866,31 @@
 
 </div>
 
-<!-- ===== 悬浮分享按钮（移动端） ===== -->
-<button class="fab" onclick="sharePage()">📤 分享</button>
-
 <!-- ===== Footer ===== -->
 <footer>
-  <div style="font-size:15px;font-weight:700;color:var(--apple-dark);margin-bottom:5px">🍎 Apple 每日热点资讯</div>
-  <div>数据来源：苹果官方新闻中心 · 腾讯新闻 · IT之家 · 彭博社 · MacRumors 等</div>
-  <div style="margin-top:3px">去重筛选 · 热度排序 · 每日 <strong>09:15</strong> 自动更新 · 不少于 10 条</div>
-  <div style="margin-top:8px;color:#aeaeb2;font-size:12px">本页面由 WorkBuddy 自动生成与更新</div>
+  数据来源：Apple Newsroom · 腾讯新闻 · IT之家 · 36氪 · 知乎 · 新浪财经等<br>
+  <a href="https://jeremyhebe.github.io/apple-news-daily/apple_news_wechat.html" target="_blank">📱 查看微信友好版 →</a>
 </footer>
 
+<!-- ===== Mobile FAB ===== -->
+<button class="fab" onclick="sharePage()">📤 分享</button>
+
 <script>
-  /* ===== 日期 ===== */
-  const now = new Date();
-  const pad = n => String(n).padStart(2,'0');
-  const dateStr = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}`;
-  document.getElementById('header-title-date').textContent = dateStr;
-  document.getElementById('header-date').textContent =
-    `${now.getFullYear()}年${now.getMonth()+1}月${now.getDate()}日`;
-  document.getElementById('stat-update-time').textContent =
-    `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+  // ===== Header 日期 =====
+  const today = new Date();
+  const dateStr = today.getFullYear() + '-' +
+    String(today.getMonth() + 1).padStart(2, '0') + '-' +
+    String(today.getDate()).padStart(2, '0');
+  const monthDay = String(today.getMonth() + 1) + '月' + today.getDate() + '日';
+  document.getElementById('header-date').textContent = dateStr;
+  document.getElementById('header-title-date').textContent = '· ' + monthDay;
+  document.title = '🍎 Apple 每日热点资讯 | ' + dateStr;
 
-  /* ===== 原生 Web Share API 检测 ===== */
-  if (navigator.share) {
-    document.getElementById('btn-native').style.display = 'flex';
-  }
+  // ===== OG Title 更新 =====
+  document.querySelector('meta[property="og:title"]').setAttribute('content', '🍎 Apple 每日热点资讯 | ' + dateStr);
+  document.querySelector('meta[name="twitter:title"]').setAttribute('content', '🍎 Apple 每日热点资讯 | ' + dateStr);
 
-  /* ===== 页面分享（顶部按钮 & FAB） ===== */
-  function sharePage() {
-    if (navigator.share) {
-      navigator.share({
-        title: '🍎 Apple 每日热点资讯',
-        text: '全网实时追踪苹果最新资讯，每日 09:15 自动更新，不少于 10 条！',
-        url: window.location.href
-      }).catch(() => {});
-    } else {
-      copyToClipboard(window.location.href, document.getElementById('btn-copy'));
-    }
-  }
-
-  function nativeShare() { sharePage(); }
-
-  /* ===== 复制链接 ===== */
-  function copyLink(btn) {
-    copyToClipboard(window.location.href, btn);
-  }
-
-  function copyToClipboard(text, btn) {
-    const origText = btn.innerHTML;
-    navigator.clipboard.writeText(text).then(() => {
-      btn.innerHTML = '✅ 已复制';
-      btn.classList.add('copied');
-      setTimeout(() => { btn.innerHTML = origText; btn.classList.remove('copied'); }, 2200);
-    }).catch(() => {
-      /* 兼容旧浏览器 */
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-      btn.innerHTML = '✅ 已复制';
-      btn.classList.add('copied');
-      setTimeout(() => { btn.innerHTML = origText; btn.classList.remove('copied'); }, 2200);
-    });
-  }
-
-  /* ===== 单条资讯分享 ===== */
-  function shareCard(btn, title, url) {
-    const text = `📰 ${title}\n🔗 ${url}\n\n来自：🍎 Apple 每日热点资讯`;
-    if (navigator.share) {
-      navigator.share({ title, text, url }).catch(() => {});
-    } else {
-      copyToClipboard(text, btn);
-    }
-  }
-
-  /* ===== 二维码 ===== */
-  let qrInstance = null;
-  function showQR() {
-    const overlay = document.getElementById('qr-overlay');
-    overlay.classList.add('show');
-    const container = document.getElementById('qrcanvas');
-    container.innerHTML = '';
-    qrInstance = new QRCode(container, {
-      text: window.location.href,
-      width: 220,
-      height: 220,
-      colorDark: '#1d1d1f',
-      colorLight: '#ffffff',
-      correctLevel: QRCode.CorrectLevel.H
-    });
-  }
-  function hideQR(e) {
-    if (!e || e.target === document.getElementById('qr-overlay') || !e.target) {
-      document.getElementById('qr-overlay').classList.remove('show');
-    }
-  }
-
-  /* ===== 分类筛选 ===== */
+  // ===== 筛选功能 =====
   function filterNews(cat, btn) {
     document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
@@ -912,6 +902,76 @@
     });
     document.getElementById('stat-count').textContent = count;
   }
+
+  // ===== 分享：复制链接 =====
+  function copyLink(btn) {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      btn.classList.add('copied');
+      const orig = btn.textContent;
+      btn.textContent = '✅ 已复制';
+      setTimeout(() => { btn.classList.remove('copied'); btn.textContent = orig; }, 1800);
+    }).catch(() => {
+      prompt('请手动复制链接：', window.location.href);
+    });
+  }
+
+  // ===== 分享：系统分享 API =====
+  function nativeShare() {
+    if (navigator.share) {
+      navigator.share({ title: document.title, url: window.location.href });
+    }
+  }
+  if (navigator.share) {
+    document.getElementById('btn-native').style.display = '';
+  }
+
+  // ===== 分享：全文分享 =====
+  function sharePage() {
+    const title = document.title;
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({ title, url });
+    } else {
+      copyLink(document.getElementById('btn-copy'));
+    }
+  }
+
+  // ===== 分享单条新闻 =====
+  function shareCard(btn, title, url) {
+    if (navigator.share) {
+      navigator.share({ title, url });
+    } else {
+      navigator.clipboard.writeText(url).then(() => {
+        btn.classList.add('copied');
+        const orig = btn.textContent;
+        btn.textContent = '✅ 已复制';
+        setTimeout(() => { btn.classList.remove('copied'); btn.textContent = orig; }, 1800);
+      });
+    }
+  }
+
+  // ===== 二维码 =====
+  let qrCreated = false;
+  function showQR() {
+    document.getElementById('qr-overlay').classList.add('show');
+    if (!qrCreated) {
+      qrCreated = true;
+      new QRCode(document.getElementById('qrcanvas'), {
+        text: window.location.href,
+        width: 220,
+        height: 220,
+        colorDark: '#1d1d1f',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    }
+  }
+  function hideQR(e) {
+    if (!e || e.target === document.getElementById('qr-overlay')) {
+      document.getElementById('qr-overlay').classList.remove('show');
+    }
+  }
 </script>
+
 </body>
 </html>
