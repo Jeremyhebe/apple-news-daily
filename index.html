@@ -45,19 +45,14 @@
       content: ''; position: absolute; top: -30px; right: -30px; width: 160px; height: 160px;
       background: radial-gradient(circle, rgba(0,113,227,0.4) 0%, transparent 70%); border-radius: 50%;
     }
-    .heat-icon { display: flex; align-items: center; gap: 2px; margin-bottom: 10px; }
-    .heat-icon .flame { font-size: 18px; line-height: 1; }
-    .heat-label { font-size: 11px; font-weight: 600; margin-left: 6px; letter-spacing: 0.3px; }
-    .heat-boom .flame { color: #ff1744; }
-    .heat-boom .heat-label { color: #ff1744; }
-    .heat-trending .flame { color: #ff6d00; }
-    .heat-trending .heat-label { color: #ff6d00; }
-    .heat-hot .flame { color: #ffab00; }
-    .heat-hot .heat-label { color: #ffab00; }
-    .heat-warm .flame { color: #64dd17; }
-    .heat-warm .heat-label { color: #64dd17; }
-    .heat-new .flame { color: #2979ff; }
-    .heat-new .heat-label { color: #2979ff; }
+    .heat-hero { display: flex; align-items: center; gap: 6px; margin-bottom: 12px; }
+    .signal-bars { font-family: 'Menlo', 'Monaco', 'Courier New', monospace; font-size: 15px; letter-spacing: 1px; font-weight: 700; }
+    .signal-boom { color: #ff1744; }
+    .signal-trending { color: #ff6d00; }
+    .signal-hot { color: #ffab00; }
+    .signal-warm { color: #64dd17; }
+    .signal-new { color: #2979ff; }
+    .heat-label { font-size: 11px; font-weight: 600; letter-spacing: 0.3px; opacity: 0.85; }
     .hero-headline { font-size: 22px; font-weight: 700; line-height: 1.3; letter-spacing: -0.5px; margin-bottom: 10px; }
     .hero-sub { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.75); }
     .hero-link { display: inline-block; margin-top: 16px; background: var(--accent); color: #fff; padding: 10px 20px; border-radius: 25px; font-size: 13px; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
@@ -83,7 +78,8 @@
       position: absolute; top: 16px; right: 16px; font-size: 28px; font-weight: 800;
       color: rgba(0,113,227,0.12); letter-spacing: -1px; line-height: 1;
     }
-    .news-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
+    .news-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+    .signal-inline { font-family: 'Menlo', 'Monaco', 'Courier New', monospace; font-size: 13px; letter-spacing: 1px; font-weight: 700; margin-right: 4px; flex-shrink: 0; }
     .tag {
       font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.3px;
       text-transform: uppercase;
@@ -132,12 +128,12 @@
 
   <!-- Hero -->
   <div class="hero">
-    <div class="heat-icon heat-boom">
-      <span class="flame">🔥🔥🔥</span>
+    <div class="heat-hero">
+      <span class="signal-bars signal-boom">█████</span>
       <span class="heat-label">最高热度</span>
     </div>
     <div class="hero-headline">WWDC两周倒计时：genai.apple.com悄然上线，Siri迎15年来最大变革</div>
-    <div class="hero-sub">苹果在WWDC前夕为生成式AI子域名做好准备，iOS 27将带来全新独立Siri App、Liquid Glass设计语言，本届大会被视作苹果AI战略的关键亮剑时刻。</div>
+    <div class="hero-sub">苹果在WWDC前夕悄悄注册 genai.apple.com 子域名，被视为全力押注生成式AI的战略信号。iOS 27将带来全新独立Siri App与Liquid Glass设计语言，本届大会被业界广泛视作苹果AI战略的关键亮剑时刻，全球开发者与用户高度期待。</div>
     <a class="hero-link" href="https://www.ithome.com/0/954/457.htm" target="_blank">阅读原文 →</a>
   </div>
 
@@ -168,16 +164,13 @@
     <!-- Item 2 -->
     <div class="news-item">
       <div class="news-rank">2</div>
-      <div class="heat-icon heat-trending">
-        <span class="flame">🔥🔥</span>
-        <span class="heat-label">极高关注</span>
-      </div>
       <div class="news-tags">
+        <span class="signal-inline signal-bars signal-trending">████░</span>
         <span class="tag tag-media">媒体内容</span>
         <span class="tag tag-software">服务</span>
       </div>
       <div class="news-title">周杰伦新专辑《太阳之子》正式登陆 Apple Music 国区</div>
-      <div class="news-desc">结束两个月付费独占期，周杰伦最新专辑《太阳之子》终于正式上线 Apple Music 国区。专辑共收录13首歌曲，国内用户无需改区即可通过订阅直接收听，消息一出即在社交媒体引发广泛关注与讨论。</div>
+      <div class="news-desc">结束为期两个月的付费独占期后，周杰伦最新专辑《太阳之子》终于正式上线 Apple Music 国区，无需任何额外操作即可通过现有订阅直接收听。消息一经公布即在微博、小红书等社交平台引发大规模讨论，大量用户晒出收听截图，成为近期华语乐坛与 Apple Music 平台最受关注的联动事件。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> IT之家 · 5月26日</span>
         <a class="read-more" href="https://www.ithome.com/0/955/114.htm" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -187,17 +180,14 @@
     <!-- Item 3 -->
     <div class="news-item">
       <div class="news-rank">3</div>
-      <div class="heat-icon heat-trending">
-        <span class="flame">🔥🔥</span>
-        <span class="heat-label">极高关注</span>
-      </div>
       <div class="news-tags">
+        <span class="signal-inline signal-bars signal-trending">████░</span>
         <span class="tag tag-hardware">硬件</span>
         <span class="tag tag-product">新品</span>
         <span class="tag tag-ai">AI</span>
       </div>
       <div class="news-title">iPhone 18 全爆料：2nm A20 Pro + 可变光圈 + 折叠屏，苹果不再挤牙膏</div>
-      <div class="news-desc">综合分析 Mark Gurman、郭明錤等多方爆料：iPhone 18 Pro Max 将首发台积电2nm工艺A20 Pro芯片，主摄首次引入物理可变光圈，首款折叠屏iPhone同期亮相，产品线将首次采用"Pro先行、标准版延后"的分阶段发布策略。</div>
+      <div class="news-desc">综合分析 Mark Gurman、郭明錤等多方权威爆料：iPhone 18 Pro Max 将首发台积电2nm工艺A20 Pro芯片，性能与能效均实现跨越式提升；主摄首次引入物理可变光圈技术，媲美专业相机；首款折叠屏iPhone也将同期亮相。产品线将首次采用"Pro先行、标准版延后"的分阶段发布策略，被外界解读为苹果全面加速产品迭代节奏的重要信号。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> 综合 · 5月22日</span>
         <a class="read-more" href="https://m.zol.com.cn/article/11847083.html" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -207,17 +197,14 @@
     <!-- Item 4 -->
     <div class="news-item">
       <div class="news-rank">4</div>
-      <div class="heat-icon heat-hot">
-        <span class="flame">🔥🔥</span>
-        <span class="heat-label">广泛讨论</span>
-      </div>
       <div class="news-tags">
+        <span class="signal-inline signal-bars signal-hot">███░░</span>
         <span class="tag tag-company">公司</span>
         <span class="tag tag-ai">AI</span>
         <span class="tag tag-software">服务</span>
       </div>
       <div class="news-title">App Store 2025反欺诈报告：拦截22亿美元，AI日均拦截600万美元</div>
-      <div class="news-desc">苹果发布年度安全报告：2025年阻止超22亿美元潜在欺诈交易，日均约600万美元；驳回近200万款问题应用上架申请；封禁4040万个违规开发者账户。自2020年至今，六年累计拦截金额已突破112亿美元，创下历史新高。</div>
+      <div class="news-desc">苹果发布年度安全报告：2025年共阻止超过22亿美元潜在欺诈交易，日均拦截金额约600万美元；全年驳回近200万款问题应用的上架申请；封禁4040万个违规开发者账户。自2020年至今，累计拦截欺诈金额已突破112亿美元，创下历史新高。报告指出，AI驱动的欺诈手段正在快速演进，苹果也因此持续加大机器学习风控模型的投入力度。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> Apple 官方 · 5月22日</span>
         <a class="read-more" href="https://www.apple.com.cn/newsroom/2026/05/the-app-store-stopped-over-2-point-2-billion-usd-in-fraudulent-transactions-in-2025/" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -227,16 +214,13 @@
     <!-- Item 5 -->
     <div class="news-item">
       <div class="news-rank">5</div>
-      <div class="heat-icon heat-hot">
-        <span class="flame">🔥</span>
-        <span class="heat-label">广泛讨论</span>
-      </div>
       <div class="news-tags">
+        <span class="signal-inline signal-bars signal-hot">███░░</span>
         <span class="tag tag-software">软件</span>
         <span class="tag tag-media">媒体</span>
       </div>
       <div class="news-title">苹果公布2026设计大奖入围名单，《明日方舟：终末地》入选</div>
-      <div class="news-desc">Apple设计大奖六大类别入围名单正式出炉，每类各3款应用与3款游戏入围。其中国产游戏《明日方舟：终末地》入选"视觉图像"类别，成为本届大奖中国区最受关注的作品。最终获奖名单将在WWDC 2026主题演讲期间正式揭晓。</div>
+      <div class="news-desc">Apple设计大奖六大类别入围名单正式出炉，每类各有3款应用与3款游戏入围，覆盖视觉图像、交互设计、社会影响等多个维度。其中，国产游戏《明日方舟：终末地》凭借极具辨识度的美术风格与沉浸式世界构建，成功入选"视觉图像"类别，成为本届大奖中国区最受关注的作品。最终获奖名单将在WWDC 2026主题演讲期间正式揭晓，全球开发者密切关注。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> IT之家 · 5月19日</span>
         <a class="read-more" href="https://www.ithome.com/0/952/054.htm" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -246,16 +230,13 @@
     <!-- Item 6 -->
     <div class="news-item">
       <div class="news-rank">6</div>
-      <div class="heat-icon heat-hot">
-        <span class="flame">🔥</span>
-        <span class="heat-label">广泛讨论</span>
-      </div>
       <div class="news-tags">
+        <span class="signal-inline signal-bars signal-hot">███░░</span>
         <span class="tag tag-product">新品</span>
         <span class="tag tag-hardware">硬件</span>
       </div>
       <div class="news-title">苹果2026四款 Ultra 级产品曝光：折叠iPhone + 触控MacBook + 摄像头AirPods + Watch Ultra 4</div>
-      <div class="news-desc">据多方爆料汇总，苹果计划2026年推出四款Ultra旗舰产品：首款折叠屏iPhone Ultra、配备触控OLED屏的MacBook Ultra、内置摄像头的AirPods Pro Ultra、以及经过重新设计的Apple Watch Ultra 4，全面覆盖各产品线的高端市场。</div>
+      <div class="news-desc">据多方爆料汇总，苹果计划于2026年推出四款Ultra旗舰产品，全面覆盖各产品线的高端市场：首款折叠屏iPhone Ultra将重新定义大屏交互；配备触控OLED屏的MacBook Ultra颠覆传统输入方式；内置摄像头的AirPods Pro Ultra拓展可穿戴设备边界；经过重新设计的Apple Watch Ultra 4则在健康监测领域再进一步。这四款产品共同标志着苹果"Ultra战略"的正式落地。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> TechWeb · 5月19日</span>
         <a class="read-more" href="https://finance.sina.com.cn/tech/roll/2026-05-19/doc-inhymcpr7581419.shtml" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -265,16 +246,13 @@
     <!-- Item 7 -->
     <div class="news-item">
       <div class="news-rank">7</div>
-      <div class="heat-icon heat-warm">
-        <span class="flame">🔥</span>
-        <span class="heat-label">行业热点</span>
-      </div>
       <div class="news-tags">
+        <span class="signal-inline signal-bars signal-warm">██░░░</span>
         <span class="tag tag-software">系统</span>
         <span class="tag tag-ai">AI</span>
       </div>
       <div class="news-title">iOS 27 全面重塑：Siri 将作为独立 App 登场，Liquid Glass 设计语言贯穿全局</div>
-      <div class="news-desc">代号"Rave"的iOS 27中，Siri将被重新设计为独立聊天机器人App，支持接入第三方智能体，具备上下文记忆与跨应用调度能力。同时，全新Liquid Glass视觉语言将贯穿系统各处，取代现有设计体系，是iOS 27最受期待的两大核心变化。</div>
+      <div class="news-desc">代号"Rave"的iOS 27中，Siri将被重新设计为独立聊天机器人App，支持接入第三方智能体，具备上下文记忆与跨应用调度能力，是Siri问世15年来最彻底的重构。同时，全新Liquid Glass视觉语言将贯穿系统各处，以半透明、流动感的界面元素取代现有设计体系。这两大核心变化使iOS 27成为近年来最受期待的苹果系统更新，测试版有望在WWDC现场首次亮相。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> IT之家 · 5月3日</span>
         <a class="read-more" href="https://www.ithome.com/0/946/194.htm" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -284,16 +262,13 @@
     <!-- Item 8 -->
     <div class="news-item">
       <div class="news-rank">8</div>
-      <div class="heat-icon heat-warm">
-        <span class="flame">🔥</span>
-        <span class="heat-label">行业热点</span>
-      </div>
       <div class="news-tags">
+        <span class="signal-inline signal-bars signal-warm">██░░░</span>
         <span class="tag tag-product">新品</span>
         <span class="tag tag-hardware">硬件</span>
       </div>
       <div class="news-title">iPhone Ultra 折叠屏屏幕规格曝光：7.8英寸内屏，无感折痕，14999元起售</div>
-      <div class="news-desc">最新爆料披露苹果首款折叠屏iPhone Ultra详细规格：采用横向开合设计，外屏5.3英寸、内屏7.8英寸，可视面积接近iPad mini。苹果通过新型铰链技术实现近乎无感的折痕表现，预计起售价约14999元，将于2026年秋季正式发布。</div>
+      <div class="news-desc">最新爆料披露苹果首款折叠屏iPhone Ultra详细规格：采用横向书本式开合设计，外屏5.3英寸、内屏7.8英寸，可视面积接近iPad mini，可同时满足便携与沉浸式使用需求。苹果通过自研新型铰链与屏幕堆叠技术，实现了近乎无感的折痕表现，这是目前折叠屏行业最大的技术难点之一。预计起售价约14999元，将于2026年秋季正式发布，直接对标三星Galaxy Z Fold系列。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> ZOL · 5月21日</span>
         <a class="read-more" href="https://mobile.zol.com.cn/1184/11848022.html" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -303,16 +278,13 @@
     <!-- Item 9 -->
     <div class="news-item">
       <div class="news-rank">9</div>
-      <div class="heat-icon heat-warm">
-        <span class="flame">🔥</span>
-        <span class="heat-label">行业热点</span>
-      </div>
       <div class="news-tags">
+        <span class="signal-inline signal-bars signal-warm">██░░░</span>
         <span class="tag tag-company">公司</span>
         <span class="tag tag-market">市场</span>
       </div>
       <div class="news-title">Apple Card 拉新活动：办卡购 AirPods Pro 3，返现249美元</div>
-      <div class="news-desc">据Mark Gurman爆料，苹果计划在美国Apple Store推出Apple Card拉新促销活动：新用户成功申办Apple Card后购买AirPods Pro 3，可获得249美元现金返还，实际相当于免费获得这款尚未发布的新品耳机，引发大量美国用户关注。</div>
+      <div class="news-desc">据Mark Gurman爆料，苹果计划在美国Apple Store推出Apple Card限时拉新促销活动：新用户成功申办Apple Card后购买尚未发布的AirPods Pro 3，可获得249美元现金返还，实际相当于免费获得这款新品耳机。这一极具吸引力的策略被视为苹果打通硬件、金融服务与生态闭环的又一典型案例，消息曝光后在Reddit、Twitter等平台引发大量美国用户讨论，许多人表示将等待活动正式上线。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> DoNews · 5月16日</span>
         <a class="read-more" href="https://www.donews.com/news/detail/8/6558623.html" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -322,16 +294,13 @@
     <!-- Item 10 -->
     <div class="news-item">
       <div class="news-rank">10</div>
-      <div class="heat-icon heat-new">
-        <span class="flame">🔥</span>
-        <span class="heat-label">值得关注</span>
-      </div>
       <div class="news-tags">
+        <span class="signal-inline signal-bars signal-new">█░░░░</span>
         <span class="tag tag-ai">AI</span>
         <span class="tag tag-software">平台</span>
       </div>
       <div class="news-title">App Store 将引入 AI Agent：苹果为AI开"可控通道"</div>
-      <div class="news-desc">据The Information报道，苹果正积极研究让AI Agent正式进入App Store生态，允许其代替用户执行复杂操作并临时生成小工具，但苹果将保持严格的审核机制以确保安全可控。这一举措若落地，可能从根本上重塑App Store的应用分发与交互生态。</div>
+      <div class="news-desc">据The Information报道，苹果正积极研究让AI Agent正式进入App Store生态，允许其代替用户执行复杂操作并临时生成小工具，从而大幅降低用户使用门槛。但苹果将保持严格的审核与沙盒机制，确保AI行为安全可控，不会损害用户隐私或系统安全。这一举措若最终落地，可能从根本上重塑App Store的应用分发逻辑与交互生态，也对全球各大应用商店的AI化转型具有重要参考意义。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> 新浪财经 · 5月14日</span>
         <a class="read-more" href="https://finance.sina.com.cn/wm/2026-05-14/doc-inhxvpqq8798437.shtml" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -341,16 +310,13 @@
     <!-- Item 11 -->
     <div class="news-item">
       <div class="news-rank">11</div>
-      <div class="heat-icon heat-new">
-        <span class="flame">🔥</span>
-        <span class="heat-label">值得关注</span>
-      </div>
       <div class="news-tags">
+        <span class="signal-inline signal-bars signal-new">█░░░░</span>
         <span class="tag tag-company">大会</span>
         <span class="tag tag-ai">AI</span>
       </div>
       <div class="news-title">WWDC 2026 正式定档：6月9日凌晨1点主题演讲，Swift风格邀请函暗示AI新方向</div>
-      <div class="news-desc">苹果正式公布WWDC 2026详细日程，主题演讲定于北京时间6月9日凌晨1点准时开始。本届邀请函设计采用Swift编程语言标识与透明玻璃质感元素，被广泛解读为暗示AI能力与设计语言深度融合的产品方向，备受开发者与用户期待。</div>
+      <div class="news-desc">苹果正式公布WWDC 2026详细日程，主题演讲定于北京时间6月9日凌晨1点准时开始，全球开发者与媒体将通过线上直播共同见证。本届邀请函设计独具匠心，采用Swift编程语言标识与透明玻璃质感视觉元素，被广泛解读为暗示AI能力与设计语言深度融合的产品方向。距离大会仅剩两周，关于iOS 27、macOS 27、新Siri等重磅内容的预测与分析已在各大科技社区持续升温。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> PChome · 5月19日</span>
         <a class="read-more" href="https://article.pchome.net/news/13592.html" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
