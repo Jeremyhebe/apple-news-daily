@@ -72,6 +72,15 @@
       color: rgba(0,113,227,0.12); letter-spacing: -1px; line-height: 1;
     }
     .news-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+    .heat-badge {
+      display: inline-flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 700;
+      padding: 4px 10px; border-radius: 14px; letter-spacing: 0.3px; margin-bottom: 8px;
+    }
+    .heat-boom { background: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
+    .heat-trending { background: #fff3e0; color: #e65100; border: 1px solid #ffe0b2; }
+    .heat-hot { background: #fff8e1; color: #f57f17; border: 1px solid #ffecb3; }
+    .heat-warm { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+    .heat-new { background: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
     .tag {
       font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.3px;
       text-transform: uppercase;
@@ -120,7 +129,7 @@
 
   <!-- Hero -->
   <div class="hero">
-    <span class="hero-tag">头条 · WWDC 2026</span>
+    <span class="hero-tag">爆款 · 最高热度</span>
     <div class="hero-headline">WWDC两周倒计时：genai.apple.com悄然上线，Siri迎15年来最大变革</div>
     <div class="hero-sub">苹果在WWDC前夕为生成式AI子域名做好准备，iOS 27将带来全新独立Siri App、Liquid Glass设计语言，本届大会被视作苹果AI战略的关键亮剑时刻。</div>
     <a class="hero-link" href="https://www.ithome.com/0/954/457.htm" target="_blank">阅读原文 →</a>
@@ -153,6 +162,7 @@
     <!-- Item 2 -->
     <div class="news-item">
       <div class="news-rank">2</div>
+      <span class="heat-badge heat-trending">🔥 热搜 · 极高关注</span>
       <div class="news-tags">
         <span class="tag tag-media">媒体内容</span>
         <span class="tag tag-software">服务</span>
@@ -168,6 +178,7 @@
     <!-- Item 3 -->
     <div class="news-item">
       <div class="news-rank">3</div>
+      <span class="heat-badge heat-trending">🔥 热搜 · 极高关注</span>
       <div class="news-tags">
         <span class="tag tag-hardware">硬件</span>
         <span class="tag tag-product">新品</span>
@@ -184,6 +195,7 @@
     <!-- Item 4 -->
     <div class="news-item">
       <div class="news-rank">4</div>
+      <span class="heat-badge heat-hot">🔥 热议 · 广泛讨论</span>
       <div class="news-tags">
         <span class="tag tag-company">公司</span>
         <span class="tag tag-ai">AI</span>
@@ -200,6 +212,7 @@
     <!-- Item 5 -->
     <div class="news-item">
       <div class="news-rank">5</div>
+      <span class="heat-badge heat-hot">🔥 热议 · 广泛讨论</span>
       <div class="news-tags">
         <span class="tag tag-software">软件</span>
         <span class="tag tag-media">媒体</span>
@@ -215,6 +228,7 @@
     <!-- Item 6 -->
     <div class="news-item">
       <div class="news-rank">6</div>
+      <span class="heat-badge heat-hot">🔥 热议 · 广泛讨论</span>
       <div class="news-tags">
         <span class="tag tag-product">新品</span>
         <span class="tag tag-hardware">硬件</span>
@@ -230,6 +244,7 @@
     <!-- Item 7 -->
     <div class="news-item">
       <div class="news-rank">7</div>
+      <span class="heat-badge heat-warm">🔥 关注 · 行业热点</span>
       <div class="news-tags">
         <span class="tag tag-software">系统</span>
         <span class="tag tag-ai">AI</span>
@@ -245,6 +260,7 @@
     <!-- Item 8 -->
     <div class="news-item">
       <div class="news-rank">8</div>
+      <span class="heat-badge heat-warm">🔥 关注 · 行业热点</span>
       <div class="news-tags">
         <span class="tag tag-product">新品</span>
         <span class="tag tag-hardware">硬件</span>
@@ -260,6 +276,7 @@
     <!-- Item 9 -->
     <div class="news-item">
       <div class="news-rank">9</div>
+      <span class="heat-badge heat-warm">🔥 关注 · 行业热点</span>
       <div class="news-tags">
         <span class="tag tag-company">公司</span>
         <span class="tag tag-market">市场</span>
@@ -275,6 +292,7 @@
     <!-- Item 10 -->
     <div class="news-item">
       <div class="news-rank">10</div>
+      <span class="heat-badge heat-new">🔥 新讯 · 值得关注</span>
       <div class="news-tags">
         <span class="tag tag-ai">AI</span>
         <span class="tag tag-software">平台</span>
@@ -290,6 +308,7 @@
     <!-- Item 11 -->
     <div class="news-item">
       <div class="news-rank">11</div>
+      <span class="heat-badge heat-new">🔥 新讯 · 值得关注</span>
       <div class="news-tags">
         <span class="tag tag-company">大会</span>
         <span class="tag tag-ai">AI</span>
