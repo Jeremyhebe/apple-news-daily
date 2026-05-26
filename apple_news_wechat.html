@@ -45,7 +45,19 @@
       content: ''; position: absolute; top: -30px; right: -30px; width: 160px; height: 160px;
       background: radial-gradient(circle, rgba(0,113,227,0.4) 0%, transparent 70%); border-radius: 50%;
     }
-    .hero-tag { display: inline-block; background: rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 12px; }
+    .heat-icon { display: flex; align-items: center; gap: 2px; margin-bottom: 10px; }
+    .heat-icon .flame { font-size: 18px; line-height: 1; }
+    .heat-label { font-size: 11px; font-weight: 600; margin-left: 6px; letter-spacing: 0.3px; }
+    .heat-boom .flame { color: #ff1744; }
+    .heat-boom .heat-label { color: #ff1744; }
+    .heat-trending .flame { color: #ff6d00; }
+    .heat-trending .heat-label { color: #ff6d00; }
+    .heat-hot .flame { color: #ffab00; }
+    .heat-hot .heat-label { color: #ffab00; }
+    .heat-warm .flame { color: #64dd17; }
+    .heat-warm .heat-label { color: #64dd17; }
+    .heat-new .flame { color: #2979ff; }
+    .heat-new .heat-label { color: #2979ff; }
     .hero-headline { font-size: 22px; font-weight: 700; line-height: 1.3; letter-spacing: -0.5px; margin-bottom: 10px; }
     .hero-sub { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.75); }
     .hero-link { display: inline-block; margin-top: 16px; background: var(--accent); color: #fff; padding: 10px 20px; border-radius: 25px; font-size: 13px; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
@@ -71,16 +83,7 @@
       position: absolute; top: 16px; right: 16px; font-size: 28px; font-weight: 800;
       color: rgba(0,113,227,0.12); letter-spacing: -1px; line-height: 1;
     }
-    .news-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
-    .heat-badge {
-      display: inline-flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 700;
-      padding: 4px 10px; border-radius: 14px; letter-spacing: 0.3px; margin-bottom: 8px;
-    }
-    .heat-boom { background: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
-    .heat-trending { background: #fff3e0; color: #e65100; border: 1px solid #ffe0b2; }
-    .heat-hot { background: #fff8e1; color: #f57f17; border: 1px solid #ffecb3; }
-    .heat-warm { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
-    .heat-new { background: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
+    .news-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
     .tag {
       font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.3px;
       text-transform: uppercase;
@@ -92,8 +95,8 @@
     .tag-media { background: var(--tag-media); color: var(--tag-media-text); }
     .tag-hardware { background: var(--tag-hardware); color: var(--tag-hardware-text); }
     .tag-market { background: var(--tag-market); color: var(--tag-market-text); }
-    .news-title { font-size: 16px; font-weight: 700; line-height: 1.4; letter-spacing: -0.2px; margin-bottom: 8px; }
-    .news-desc { font-size: 13px; line-height: 1.6; color: var(--text-secondary); margin-bottom: 12px; }
+    .news-title { font-size: 16px; font-weight: 700; line-height: 1.4; letter-spacing: -0.2px; margin-bottom: 10px; }
+    .news-desc { font-size: 13px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 14px; }
     .news-meta { display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--text-secondary); }
     .news-source { display: flex; align-items: center; gap: 4px; }
     .news-source-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
@@ -129,7 +132,10 @@
 
   <!-- Hero -->
   <div class="hero">
-    <span class="hero-tag">爆款 · 最高热度</span>
+    <div class="heat-icon heat-boom">
+      <span class="flame">🔥🔥🔥</span>
+      <span class="heat-label">最高热度</span>
+    </div>
     <div class="hero-headline">WWDC两周倒计时：genai.apple.com悄然上线，Siri迎15年来最大变革</div>
     <div class="hero-sub">苹果在WWDC前夕为生成式AI子域名做好准备，iOS 27将带来全新独立Siri App、Liquid Glass设计语言，本届大会被视作苹果AI战略的关键亮剑时刻。</div>
     <a class="hero-link" href="https://www.ithome.com/0/954/457.htm" target="_blank">阅读原文 →</a>
@@ -162,13 +168,16 @@
     <!-- Item 2 -->
     <div class="news-item">
       <div class="news-rank">2</div>
-      <span class="heat-badge heat-trending">🔥 热搜 · 极高关注</span>
+      <div class="heat-icon heat-trending">
+        <span class="flame">🔥🔥</span>
+        <span class="heat-label">极高关注</span>
+      </div>
       <div class="news-tags">
         <span class="tag tag-media">媒体内容</span>
         <span class="tag tag-software">服务</span>
       </div>
       <div class="news-title">周杰伦新专辑《太阳之子》正式登陆 Apple Music 国区</div>
-      <div class="news-desc">结束两个月付费独占期，周杰伦《太阳之子》终于上线 Apple Music 国区。专辑收录13首歌曲，国内用户无需改区即可通过订阅收听，引发广泛关注。</div>
+      <div class="news-desc">结束两个月付费独占期，周杰伦最新专辑《太阳之子》终于正式上线 Apple Music 国区。专辑共收录13首歌曲，国内用户无需改区即可通过订阅直接收听，消息一出即在社交媒体引发广泛关注与讨论。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> IT之家 · 5月26日</span>
         <a class="read-more" href="https://www.ithome.com/0/955/114.htm" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -178,14 +187,17 @@
     <!-- Item 3 -->
     <div class="news-item">
       <div class="news-rank">3</div>
-      <span class="heat-badge heat-trending">🔥 热搜 · 极高关注</span>
+      <div class="heat-icon heat-trending">
+        <span class="flame">🔥🔥</span>
+        <span class="heat-label">极高关注</span>
+      </div>
       <div class="news-tags">
         <span class="tag tag-hardware">硬件</span>
         <span class="tag tag-product">新品</span>
         <span class="tag tag-ai">AI</span>
       </div>
       <div class="news-title">iPhone 18 全爆料：2nm A20 Pro + 可变光圈 + 折叠屏，苹果不再挤牙膏</div>
-      <div class="news-desc">综合Gurman、郭明錤等多方爆料，iPhone 18系列将迎三大颠覆：首款2nm手机芯片A20 Pro、物理可变光圈主摄、首款折叠屏iPhone，并首次采用"分阶段发布"策略。</div>
+      <div class="news-desc">综合分析 Mark Gurman、郭明錤等多方爆料：iPhone 18 Pro Max 将首发台积电2nm工艺A20 Pro芯片，主摄首次引入物理可变光圈，首款折叠屏iPhone同期亮相，产品线将首次采用"Pro先行、标准版延后"的分阶段发布策略。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> 综合 · 5月22日</span>
         <a class="read-more" href="https://m.zol.com.cn/article/11847083.html" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -195,14 +207,17 @@
     <!-- Item 4 -->
     <div class="news-item">
       <div class="news-rank">4</div>
-      <span class="heat-badge heat-hot">🔥 热议 · 广泛讨论</span>
+      <div class="heat-icon heat-hot">
+        <span class="flame">🔥🔥</span>
+        <span class="heat-label">广泛讨论</span>
+      </div>
       <div class="news-tags">
         <span class="tag tag-company">公司</span>
         <span class="tag tag-ai">AI</span>
         <span class="tag tag-software">服务</span>
       </div>
       <div class="news-title">App Store 2025反欺诈报告：拦截22亿美元，AI日均拦截600万美元</div>
-      <div class="news-desc">苹果发布年度安全报告，2025年阻止超22亿美元潜在欺诈交易，驳回200万款问题应用，封禁4040万个违规账户。六年累计拦截突破112亿美元。</div>
+      <div class="news-desc">苹果发布年度安全报告：2025年阻止超22亿美元潜在欺诈交易，日均约600万美元；驳回近200万款问题应用上架申请；封禁4040万个违规开发者账户。自2020年至今，六年累计拦截金额已突破112亿美元，创下历史新高。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> Apple 官方 · 5月22日</span>
         <a class="read-more" href="https://www.apple.com.cn/newsroom/2026/05/the-app-store-stopped-over-2-point-2-billion-usd-in-fraudulent-transactions-in-2025/" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -212,13 +227,16 @@
     <!-- Item 5 -->
     <div class="news-item">
       <div class="news-rank">5</div>
-      <span class="heat-badge heat-hot">🔥 热议 · 广泛讨论</span>
+      <div class="heat-icon heat-hot">
+        <span class="flame">🔥</span>
+        <span class="heat-label">广泛讨论</span>
+      </div>
       <div class="news-tags">
         <span class="tag tag-software">软件</span>
         <span class="tag tag-media">媒体</span>
       </div>
       <div class="news-title">苹果公布2026设计大奖入围名单，《明日方舟：终末地》入选</div>
-      <div class="news-desc">Apple设计大奖六大类别入围名单出炉，每类3款应用+3款游戏。《明日方舟：终末地》入围视觉图像类，获奖名单将在WWDC 2026期间揭晓。</div>
+      <div class="news-desc">Apple设计大奖六大类别入围名单正式出炉，每类各3款应用与3款游戏入围。其中国产游戏《明日方舟：终末地》入选"视觉图像"类别，成为本届大奖中国区最受关注的作品。最终获奖名单将在WWDC 2026主题演讲期间正式揭晓。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> IT之家 · 5月19日</span>
         <a class="read-more" href="https://www.ithome.com/0/952/054.htm" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -228,13 +246,16 @@
     <!-- Item 6 -->
     <div class="news-item">
       <div class="news-rank">6</div>
-      <span class="heat-badge heat-hot">🔥 热议 · 广泛讨论</span>
+      <div class="heat-icon heat-hot">
+        <span class="flame">🔥</span>
+        <span class="heat-label">广泛讨论</span>
+      </div>
       <div class="news-tags">
         <span class="tag tag-product">新品</span>
         <span class="tag tag-hardware">硬件</span>
       </div>
       <div class="news-title">苹果2026四款 Ultra 级产品曝光：折叠iPhone + 触控MacBook + 摄像头AirPods + Watch Ultra 4</div>
-      <div class="news-desc">苹果计划2026年推出四款Ultra旗舰：首款折叠屏iPhone Ultra、配备触控OLED的MacBook Ultra、内置摄像头的AirPods Pro、重新设计的Apple Watch Ultra 4。</div>
+      <div class="news-desc">据多方爆料汇总，苹果计划2026年推出四款Ultra旗舰产品：首款折叠屏iPhone Ultra、配备触控OLED屏的MacBook Ultra、内置摄像头的AirPods Pro Ultra、以及经过重新设计的Apple Watch Ultra 4，全面覆盖各产品线的高端市场。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> TechWeb · 5月19日</span>
         <a class="read-more" href="https://finance.sina.com.cn/tech/roll/2026-05-19/doc-inhymcpr7581419.shtml" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -244,13 +265,16 @@
     <!-- Item 7 -->
     <div class="news-item">
       <div class="news-rank">7</div>
-      <span class="heat-badge heat-warm">🔥 关注 · 行业热点</span>
+      <div class="heat-icon heat-warm">
+        <span class="flame">🔥</span>
+        <span class="heat-label">行业热点</span>
+      </div>
       <div class="news-tags">
         <span class="tag tag-software">系统</span>
         <span class="tag tag-ai">AI</span>
       </div>
       <div class="news-title">iOS 27 全面重塑：Siri 将作为独立 App 登场，Liquid Glass 设计语言贯穿全局</div>
-      <div class="news-desc">代号"Rave"的iOS 27中，Siri将被重新设计为独立聊天机器人App，支持第三方智能体，Liquid Glass视觉语言将贯穿系统各处。WWDC 2026正式发布。</div>
+      <div class="news-desc">代号"Rave"的iOS 27中，Siri将被重新设计为独立聊天机器人App，支持接入第三方智能体，具备上下文记忆与跨应用调度能力。同时，全新Liquid Glass视觉语言将贯穿系统各处，取代现有设计体系，是iOS 27最受期待的两大核心变化。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> IT之家 · 5月3日</span>
         <a class="read-more" href="https://www.ithome.com/0/946/194.htm" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -260,13 +284,16 @@
     <!-- Item 8 -->
     <div class="news-item">
       <div class="news-rank">8</div>
-      <span class="heat-badge heat-warm">🔥 关注 · 行业热点</span>
+      <div class="heat-icon heat-warm">
+        <span class="flame">🔥</span>
+        <span class="heat-label">行业热点</span>
+      </div>
       <div class="news-tags">
         <span class="tag tag-product">新品</span>
         <span class="tag tag-hardware">硬件</span>
       </div>
       <div class="news-title">iPhone Ultra 折叠屏屏幕规格曝光：7.8英寸内屏，无感折痕，14999元起售</div>
-      <div class="news-desc">爆料披露苹果首款折叠屏iPhone Ultra将采用横向开合设计，5.3英寸外屏+7.8英寸内屏，可视面积接近iPad mini，起售价约14999元。</div>
+      <div class="news-desc">最新爆料披露苹果首款折叠屏iPhone Ultra详细规格：采用横向开合设计，外屏5.3英寸、内屏7.8英寸，可视面积接近iPad mini。苹果通过新型铰链技术实现近乎无感的折痕表现，预计起售价约14999元，将于2026年秋季正式发布。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> ZOL · 5月21日</span>
         <a class="read-more" href="https://mobile.zol.com.cn/1184/11848022.html" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -276,13 +303,16 @@
     <!-- Item 9 -->
     <div class="news-item">
       <div class="news-rank">9</div>
-      <span class="heat-badge heat-warm">🔥 关注 · 行业热点</span>
+      <div class="heat-icon heat-warm">
+        <span class="flame">🔥</span>
+        <span class="heat-label">行业热点</span>
+      </div>
       <div class="news-tags">
         <span class="tag tag-company">公司</span>
         <span class="tag tag-market">市场</span>
       </div>
       <div class="news-title">Apple Card 拉新活动：办卡购 AirPods Pro 3，返现249美元</div>
-      <div class="news-desc">据Mark Gurman爆料，苹果计划在美国Apple Store推出Apple Card拉新活动，新用户办卡后购买AirPods Pro 3可获得249美元现金返还，相当于免费获得耳机。</div>
+      <div class="news-desc">据Mark Gurman爆料，苹果计划在美国Apple Store推出Apple Card拉新促销活动：新用户成功申办Apple Card后购买AirPods Pro 3，可获得249美元现金返还，实际相当于免费获得这款尚未发布的新品耳机，引发大量美国用户关注。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> DoNews · 5月16日</span>
         <a class="read-more" href="https://www.donews.com/news/detail/8/6558623.html" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -292,13 +322,16 @@
     <!-- Item 10 -->
     <div class="news-item">
       <div class="news-rank">10</div>
-      <span class="heat-badge heat-new">🔥 新讯 · 值得关注</span>
+      <div class="heat-icon heat-new">
+        <span class="flame">🔥</span>
+        <span class="heat-label">值得关注</span>
+      </div>
       <div class="news-tags">
         <span class="tag tag-ai">AI</span>
         <span class="tag tag-software">平台</span>
       </div>
       <div class="news-title">App Store 将引入 AI Agent：苹果为AI开"可控通道"</div>
-      <div class="news-desc">据The Information报道，苹果正研究让AI Agent进入App Store，允许其替用户执行复杂操作并临时生成小工具，但将保持严格审核。这可能重塑App Store生态。</div>
+      <div class="news-desc">据The Information报道，苹果正积极研究让AI Agent正式进入App Store生态，允许其代替用户执行复杂操作并临时生成小工具，但苹果将保持严格的审核机制以确保安全可控。这一举措若落地，可能从根本上重塑App Store的应用分发与交互生态。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> 新浪财经 · 5月14日</span>
         <a class="read-more" href="https://finance.sina.com.cn/wm/2026-05-14/doc-inhxvpqq8798437.shtml" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -308,13 +341,16 @@
     <!-- Item 11 -->
     <div class="news-item">
       <div class="news-rank">11</div>
-      <span class="heat-badge heat-new">🔥 新讯 · 值得关注</span>
+      <div class="heat-icon heat-new">
+        <span class="flame">🔥</span>
+        <span class="heat-label">值得关注</span>
+      </div>
       <div class="news-tags">
         <span class="tag tag-company">大会</span>
         <span class="tag tag-ai">AI</span>
       </div>
       <div class="news-title">WWDC 2026 正式定档：6月9日凌晨1点主题演讲，Swift风格邀请函暗示AI新方向</div>
-      <div class="news-desc">苹果公布WWDC 2026详细日程，主题演讲定于北京时间6月9日凌晨1点。邀请函采用Swift编程语言标识与透明玻璃质感，暗示AI与设计语言的融合方向。</div>
+      <div class="news-desc">苹果正式公布WWDC 2026详细日程，主题演讲定于北京时间6月9日凌晨1点准时开始。本届邀请函设计采用Swift编程语言标识与透明玻璃质感元素，被广泛解读为暗示AI能力与设计语言深度融合的产品方向，备受开发者与用户期待。</div>
       <div class="news-meta">
         <span class="news-source"><span class="news-source-dot"></span> PChome · 5月19日</span>
         <a class="read-more" href="https://article.pchome.net/news/13592.html" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
@@ -328,7 +364,7 @@
     <div style="font-weight:600;color:var(--text-primary);margin-bottom:4px;">Apple 每日资讯</div>
     <div>资讯来源：IT之家、Apple Newsroom、ZOL、PChome、DoNews 等</div>
     <div style="margin-top:4px;">
-      <a href="https://apple-daily-news-d0e96lledf704f0-1437261455.tcloudbaseapp.com" target="_blank">CloudBase</a>
+      <a href="https://jeremyhebe.github.io/apple-news-daily" target="_blank">CloudBase</a>
       <span class="divider-dot">·</span>
       <a href="https://jeremyhebe.github.io/apple-news-daily/" target="_blank">GitHub Pages</a>
     </div>
