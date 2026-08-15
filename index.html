@@ -2,348 +2,1083 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>Apple 每日资讯 · 2026年5月28日</title>
-  <meta property="og:title" content="Apple 每日资讯 · 2026年5月28日" />
-  <meta property="og:description" content="iPhone防抢夺自动锁定功能曝光 | 亚马逊116亿接手苹果卫星股份 | iOS 27新Siri深色界面+Gemini模型 | 折叠iPhone保护壳率先上架" />
-  <meta property="og:image" content="https://jeremyhebe.github.io/apple-news-daily/apple_og_logo.png?v=20260528" />
-  <meta property="og:image:width" content="600" />
-  <meta property="og:image:height" content="600" />
-  <meta property="og:type" content="article" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apple 每日资讯</title>
+
+  <!-- SEO -->
+  <meta name="description" content="每日自动收集苹果公司热点资讯，涵盖产品、软件、AI、商业等维度。每日 09:15 自动更新。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Apple 每日资讯" />
+  <meta property="og:description" content="每日自动收集苹果公司热点资讯。每日 09:15 自动更新。" />
+  <meta property="og:image" content="https://jeremyhebe.github.io/apple-news-daily/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #f5f5f7; --card-bg: #ffffff; --text-primary: #1d1d1f; --text-secondary: #6e6e73;
-      --accent: #0071e3; --accent-light: #e8f1fb;
-      --tag-product: #e3f0ff; --tag-product-text: #0057b8;
-      --tag-software: #e8f5e9; --tag-software-text: #1b5e20;
-      --tag-company: #fff3e0; --tag-company-text: #e65100;
-      --tag-media: #f3e5f5; --tag-media-text: #6a1b9a;
-      --tag-hardware: #e0f7fa; --tag-hardware-text: #006064;
-      --tag-market: #fff9e6; --tag-market-text: #b8860b;
-      --tag-security: #fce4ec; --tag-security-text: #880e4f;
-      --divider: #d2d2d7; --radius: 18px; --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      --blue: #0071e3;
+      --blue-hover: #0077ED;
+      --black: #1d1d1f;
+      --gray: #f5f5f7;
+      --gray-2: #e8e8ed;
+      --gray-3: #d2d2d7;
+      --gray-4: #86868b;
+      --text: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --white: #ffffff;
+      --red: #ff3b30;
+      --orange: #ff9500;
+      --yellow: #ffcc00;
+      --green: #34c759;
+      --purple: #af52de;
+      --pink: #ff2d55;
+      --radius: 20px;
+      --radius-sm: 12px;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-hover: 0 12px 40px rgba(0,0,0,0.12);
     }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 15px; }
     body {
-      font-family: -apple-system, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
-      background: var(--bg); color: var(--text-primary); min-height: 100vh;
-      max-width: 390px; margin: 0 auto; padding-bottom: 32px;
+      font-family: var(--font);
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
-    .header {
-      background: rgba(255,255,255,0.85); backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px); position: sticky; top: 0; z-index: 100;
-      padding: 16px 20px 12px; border-bottom: 1px solid var(--divider);
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
     }
-    .header-top { display: flex; align-items: center; justify-content: space-between; }
-    .apple-logo svg { width: 40px; height: 40px; fill: #1d1d1f; }
-    .header-title { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; color: var(--text-primary); }
-    .header-date { font-size: 12px; color: var(--text-secondary); margin-top: 3px; }
+    .nav-inner {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 48px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: -0.3px;
+    }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-date { font-size: 14px; color: var(--gray-4); font-weight: 500; }
+    .nav-btn {
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      border-radius: 980px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: var(--font);
+    }
+    .nav-btn:hover { background: var(--blue-hover); text-decoration: none; }
+
+    /* Hero — 紧凑轻盈 */
     .hero {
-      margin: 16px 16px 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-      border-radius: var(--radius); padding: 28px 24px; color: #fff; position: relative; overflow: hidden;
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 26px 24px 30px;
+      position: relative;
     }
-    .hero::before {
-      content: ''; position: absolute; top: -30px; right: -30px; width: 160px; height: 160px;
-      background: radial-gradient(circle, rgba(255,50,50,0.3) 0%, transparent 70%); border-radius: 50%;
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
     }
-    .hero-heat { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-    .signal-bars { font-family: 'Menlo', 'Monaco', 'Courier New', monospace; font-weight: 700; letter-spacing: 1.5px; }
-    .signal-5 { color: #ff1744; font-size: 15px; }
-    .signal-4 { color: #ff6d00; font-size: 14px; }
-    .signal-3 { color: #ffab00; font-size: 13px; }
-    .signal-2 { color: #64dd17; font-size: 13px; }
-    .signal-1 { color: #2979ff; font-size: 13px; }
-    .hero-headline { font-size: 22px; font-weight: 700; line-height: 1.3; letter-spacing: -0.5px; margin-bottom: 10px; }
-    .hero-sub { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.78); }
-    .hero-link { display: inline-block; margin-top: 16px; background: #ff1744; color: #fff; padding: 10px 20px; border-radius: 25px; font-size: 13px; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
-    .hero-link:hover { opacity: 0.85; }
-    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 16px 0; }
-    .stat-card { background: var(--card-bg); border-radius: 14px; padding: 14px 8px; text-align: center; box-shadow: var(--shadow); }
-    .stat-num { font-size: 24px; font-weight: 700; letter-spacing: -1px; color: var(--accent); }
-    .stat-label { font-size: 10px; color: var(--text-secondary); margin-top: 4px; }
-    .section-title { margin: 24px 16px 12px; font-size: 18px; font-weight: 700; letter-spacing: -0.3px; }
-    .news-list { padding: 0 16px; }
-    .news-item {
-      background: var(--card-bg); border-radius: var(--radius); padding: 20px; margin-bottom: 12px;
-      box-shadow: var(--shadow); transition: transform 0.15s; position: relative;
-    }
-    .news-item:active { transform: scale(0.98); }
-    .news-rank {
-      position: absolute; top: 16px; right: 16px; font-size: 28px; font-weight: 800;
-      color: rgba(0,113,227,0.10); letter-spacing: -1px; line-height: 1;
-    }
-    .news-tags { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; margin-bottom: 8px; }
-    .signal-inline { font-family: 'Menlo', 'Monaco', 'Courier New', monospace; font-weight: 700; letter-spacing: 1px; margin-right: 2px; flex-shrink: 0; }
-    .tag {
-      font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 12px; letter-spacing: 0.3px;
+    .hero-content { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-eyebrow {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--blue);
+      letter-spacing: 0.06em;
       text-transform: uppercase;
+      margin-bottom: 6px;
     }
-    .tag-ai { background: #ede7f6; color: #4527a0; }
-    .tag-product { background: var(--tag-product); color: var(--tag-product-text); }
-    .tag-software { background: var(--tag-software); color: var(--tag-software-text); }
-    .tag-company { background: var(--tag-company); color: var(--tag-company-text); }
-    .tag-media { background: var(--tag-media); color: var(--tag-media-text); }
-    .tag-hardware { background: var(--tag-hardware); color: var(--tag-hardware-text); }
-    .tag-market { background: var(--tag-market); color: var(--tag-market-text); }
-    .tag-security { background: var(--tag-security); color: var(--tag-security-text); }
-    .news-title { font-size: 16px; font-weight: 700; line-height: 1.4; letter-spacing: -0.2px; margin-bottom: 10px; }
-    .news-desc { font-size: 13px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 14px; }
-    .news-meta { display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--text-secondary); }
-    .news-source { display: flex; align-items: center; gap: 4px; }
-    .news-source-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-    .read-more {
-      display: inline-flex; align-items: center; gap: 4px; background: var(--accent-light);
-      color: var(--accent); font-size: 12px; font-weight: 600; padding: 7px 16px;
-      border-radius: 20px; text-decoration: none; transition: background 0.2s;
+    .hero h1 {
+      font-size: clamp(20px, 4vw, 32px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 8px;
     }
-    .read-more:hover { background: #d0e3f8; }
-    .read-more svg { width: 14px; height: 14px; }
-    .footer {
-      margin: 24px 16px; text-align: center; padding: 24px 0; border-top: 1px solid var(--divider);
-      font-size: 12px; color: var(--text-secondary); line-height: 1.8;
+    .hero-subtitle {
+      font-size: clamp(12px, 1.4vw, 13px);
+      color: rgba(255,255,255,0.65);
+      font-weight: 400;
+      line-height: 1.5;
     }
-    .footer a { color: var(--accent); text-decoration: none; }
-    .footer .divider-dot { margin: 0 8px; }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 18px;
+    }
+    .hero-stat-num {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+    .hero-stat-label {
+      font-size: 9px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+    }
+
+    /* Info Strip */
+    .info-strip {
+      background: var(--gray);
+      border-bottom: 1px solid var(--gray-2);
+      padding: 13px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+    .info-strip .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100% {opacity:1} 50% {opacity:.4} }
+
+    /* Share */
+    .share-section {
+      background: var(--white);
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--gray-2);
+    }
+    .share-inner {
+      max-width: 1024px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .share-label { font-size: 13px; color: var(--text-secondary); font-weight: 500; flex-shrink: 0; }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--gray);
+      border: 1px solid var(--gray-3);
+      border-radius: 980px;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--font);
+    }
+    .share-btn:hover { background: var(--blue); color: var(--white); border-color: var(--blue); text-decoration: none; }
+    .share-btn.copied { background: var(--green); color: var(--white); border-color: var(--green); }
+
+    /* QR Modal */
+    .qr-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .qr-overlay.show { display: flex; }
+    .qr-modal {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 40px;
+      text-align: center;
+      max-width: 340px;
+      width: 100%;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.25);
+    }
+    .qr-title { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .qr-sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 28px; }
+    .qr-close {
+      margin-top: 28px;
+      width: 100%;
+      background: var(--gray);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: var(--font);
+    }
+    .qr-close:hover { background: var(--gray-2); }
+
+    /* Filter */
+    .filter-bar {
+      background: var(--white);
+      padding: 20px 24px 0;
+      position: sticky;
+      top: 52px;
+      z-index: 50;
+      border-bottom: 1px solid var(--gray-2);
+    }
+    .filter-inner {
+      max-width: 1024px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 18px;
+      scrollbar-width: none;
+    }
+    .filter-inner::-webkit-scrollbar { display: none; }
+    .filter-label { font-size: 13px; color: var(--text-secondary); font-weight: 500; white-space: nowrap; flex-shrink: 0; }
+    .filter-btn {
+      background: var(--gray);
+      border: none;
+      border-radius: 980px;
+      padding: 9px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      font-family: var(--font);
+    }
+    .filter-btn:hover { background: var(--gray-2); }
+    .filter-btn.active { background: var(--blue); color: var(--white); }
+
+    /* Main */
+    .main {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 32px 24px 100px;
+    }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--gray-2);
+    }
+    .section-title { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; color: var(--black); }
+    .section-count { font-size: 13px; color: var(--text-secondary); }
+
+    /* News Card */
+    .news-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--gray-2);
+      transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+      display: flex;
+      gap: 18px;
+      margin-bottom: 14px;
+    }
+    .news-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+    .news-card.top {
+      background: var(--black);
+      color: var(--white);
+      border: none;
+    }
+    .news-card.top .card-tag { border-color: rgba(255,255,255,0.2); }
+    .news-card.top .card-title, .news-card.top .card-summary { color: var(--white); }
+
+    /* Rank */
+    .card-rank { min-width: 48px; flex-shrink: 0; text-align: center; }
+    .rank-num {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--gray-3);
+    }
+    .rank-1 .rank-num { color: var(--red); }
+    .rank-2 .rank-num { color: var(--orange); }
+    .rank-3 .rank-num { color: var(--yellow); }
+    .news-card.top .rank-num { color: var(--blue); }
+
+    /* Heat Indicator */
+    .heat-indicator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      justify-content: center;
+    }
+    .heat-bars { display: flex; gap: 2px; align-items: flex-end; }
+    .heat-bar { width: 4px; border-radius: 2px; background: var(--gray-3); }
+    .rank-1 .heat-bar { background: var(--red); }
+    .rank-2 .heat-bar { background: var(--orange); }
+    .rank-3 .heat-bar { background: var(--yellow); }
+    .news-card.top .heat-bar { background: var(--blue); }
+    .heat-label { font-size: 10px; color: var(--gray-4); font-weight: 600; letter-spacing: 0.02em; }
+    .rank-1 .heat-label { color: var(--red); }
+    .rank-2 .heat-label { color: var(--orange); }
+    .rank-3 .heat-label { color: var(--orange); }
+    .news-card.top .heat-label { color: var(--blue); }
+
+    /* Card Body */
+    .card-body { flex: 1; min-width: 0; }
+    .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+    .card-tag {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 980px;
+      border: 1px solid;
+      letter-spacing: 0.01em;
+    }
+    .tag-market { background: rgba(0,113,227,0.1); color: #0066cc; border-color: rgba(0,113,227,0.2); }
+    .tag-product { background: rgba(88,86,214,0.1); color: #5856d6; border-color: rgba(88,86,214,0.2); }
+    .tag-software { background: rgba(52,199,89,0.1); color: #248a3d; border-color: rgba(52,199,89,0.2); }
+    .tag-business { background: rgba(255,149,0,0.1); color: #b35900; border-color: rgba(255,149,0,0.2); }
+    .tag-ai { background: rgba(175,82,222,0.1); color: #9625c9; border-color: rgba(175,82,222,0.2); }
+    .tag-health { background: rgba(255,69,58,0.1); color: #c92216; border-color: rgba(255,69,58,0.2); }
+    .tag-community { background: rgba(0,122,255,0.1); color: #007aff; border-color: rgba(0,122,255,0.2); }
+    .tag-milestone { background: rgba(255,204,0,0.1); color: #996b00; border-color: rgba(255,204,0,0.2); }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+      margin-bottom: 8px;
+      color: var(--black);
+    }
+    .card-summary {
+      font-size: 12px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin-bottom: 11px;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .card-meta { display: flex; align-items: center; gap: 10px; }
+    .card-date { font-size: 11px; color: var(--gray-4); }
+    .card-days {
+      font-size: 10px;
+      color: var(--gray-4);
+      background: var(--gray);
+      padding: 3px 9px;
+      border-radius: 980px;
+    }
+    .rank-1 .card-days { background: rgba(255,59,48,0.15); color: var(--red); }
+    .rank-2 .card-days { background: rgba(255,149,0,0.15); color: var(--orange); }
+    .rank-3 .card-days { background: rgba(255,204,0,0.15); color: #996b00; }
+    .news-card.top .card-days { background: rgba(0,113,227,0.25); color: #7cb8ff; }
+
+    .card-actions { display: flex; gap: 10px; }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--blue);
+      padding: 8px 15px;
+      border-radius: 980px;
+      border: 1px solid var(--blue);
+      transition: all 0.2s;
+    }
+    .card-link:hover { background: var(--blue); color: var(--white); text-decoration: none; }
+    .card-share {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: var(--gray);
+      border: none;
+      border-radius: 980px;
+      padding: 8px 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--font);
+    }
+    .card-share:hover { background: var(--gray-2); color: var(--text); }
+    .card-share.copied { background: var(--green); color: var(--white); }
+
+    /* Footer */
+    footer {
+      background: var(--gray);
+      border-top: 1px solid var(--gray-2);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    footer p { font-size: 12px; color: var(--text-secondary); line-height: 1.8; }
+
+    /* FAB */
+    .fab {
+      display: none;
+      position: fixed;
+      right: 20px;
+      bottom: 32px;
+      z-index: 150;
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      border-radius: 50px;
+      padding: 16px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(0,113,227,0.4);
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font);
+    }
+    .fab:active { transform: scale(0.96); }
+    @media (min-width: 734px) { .fab { display: none !important; } }
+
+    /* Responsive */
+    @media (max-width: 734px) {
+      .nav-inner { padding: 0 24px; }
+      .nav-date { display: none; }
+      .hero { padding: 28px 20px 32px; }
+      .hero h1 { font-size: 24px; }
+      .hero-stats { gap: 32px; margin-top: 18px; }
+      .hero-stat-num { font-size: 26px; }
+      .news-card { flex-direction: column; padding: 18px; gap: 14px; }
+      .card-rank { display: flex; align-items: center; gap: 14px; }
+      .card-title { font-size: 16px; }
+      .card-summary { font-size: 13px; }
+      .nav-btn span { display: none; }
+      .nav-btn { padding: 10px 14px; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <div class="header">
-    <div class="header-top">
-      <div class="apple-logo">
-        <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">🍎 Apple 每日资讯</a>
+    <div class="nav-right">
+      <span class="nav-date" id="nav-date"></span>
+      <a href="#" class="nav-btn" onclick="sharePage(); return false;">分享</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">每日 09:15 自动更新 · 第 34 期</p>
+    <h1>Apple 每日资讯</h1>
+    <p class="hero-subtitle">苹果联合阿里打造中国专属 AI 大模型 · App Store 外链佣金降至 15% · 首款折叠 iPhone 下月登场</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num" id="stat-count">12</div>
+        <div class="hero-stat-label">今日资讯</div>
       </div>
-      <div style="text-align:right">
-        <div class="header-title">Apple 每日资讯</div>
-        <div class="header-date">2026年5月28日 · 周四</div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">2</div>
+        <div class="hero-stat-label">天内覆盖</div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Hero -->
-  <div class="hero">
-    <div class="hero-heat">
-      <span class="signal-bars signal-5">█████</span>
-    </div>
-    <div class="hero-headline">苹果开发 iPhone 防抢夺自动锁定功能，被抢瞬间全面封锁</div>
-    <div class="hero-sub">苹果正研发新防盗功能：利用陀螺仪、加速度传感器及Apple Watch配对，实时识别"手机被人突然抢走"的运动特征。一旦触发，设备在解锁状态下也会立刻锁定，并自动启用"被盗设备保护"，全面阻断非授权操作，填补现有防盗机制在解锁状态下的安全空白。</div>
-    <a class="hero-link" href="https://www.163.com/dy/article/KTUQTLC90544A0AO.html" target="_blank">阅读原文 →</a>
+<!-- Info Strip -->
+<div class="info-strip">
+  <div class="dot"></div>
+  <span>数据收集范围：过去 48 小时内最新资讯（周二至周日规则）· 2026年8月15日</span>
+</div>
+
+<!-- Share -->
+<div class="share-section">
+  <div class="share-inner">
+    <span class="share-label">分享：</span>
+    <button class="share-btn" id="btn-copy" onclick="copyLink(this)">🔗 复制链接</button>
+    <button class="share-btn" onclick="showQR()">📱 二维码</button>
+    <button class="share-btn" id="btn-native" onclick="nativeShare()" style="display:none">↗ 系统分享</button>
+  </div>
+</div>
+
+<!-- QR Modal -->
+<div class="qr-overlay" id="qr-overlay" onclick="hideQR(event)">
+  <div class="qr-modal" onclick="event.stopPropagation()">
+    <div class="qr-title">扫码查看</div>
+    <div class="qr-sub">用手机扫描二维码即可阅读</div>
+    <div id="qrcanvas"></div>
+    <button class="qr-close" onclick="hideQR()">关闭</button>
+  </div>
+</div>
+
+<!-- Filter -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <span class="filter-label">筛选：</span>
+    <button class="filter-btn active" onclick="filterNews('all', this)">全部</button>
+    <button class="filter-btn" onclick="filterNews('product', this)">产品</button>
+    <button class="filter-btn" onclick="filterNews('software', this)">软件</button>
+    <button class="filter-btn" onclick="filterNews('business', this)">商业</button>
+    <button class="filter-btn" onclick="filterNews('ai', this)">AI</button>
+    <button class="filter-btn" onclick="filterNews('market', this)">市场</button>
+    <button class="filter-btn" onclick="filterNews('health', this)">健康</button>
+    <button class="filter-btn" onclick="filterNews('milestone', this)">里程碑</button>
+  </div>
+</div>
+
+<!-- News -->
+<main class="main">
+  <div class="section-head">
+    <h2 class="section-title">今日热点</h2>
+    <span class="section-count">共 <span id="total-count">12</span> 条</span>
   </div>
 
-  <!-- Stats -->
-  <div class="stats-row">
-    <div class="stat-card">
-      <div class="stat-num">12</div>
-      <div class="stat-label">今日资讯</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num">8</div>
-      <div class="stat-label">中文来源</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num">5</div>
-      <div class="stat-label">AI 相关</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num">6</div>
-      <div class="stat-label">新品动态</div>
-    </div>
+  <div id="news-container">
+
+    <!-- #1 头条 - 苹果联合阿里大模型 -->
+    <article class="news-card top rank-1" data-category="ai">
+      <div class="card-rank">
+        <div class="rank-num">1</div>
+        <div class="heat-indicator">
+          <div class="heat-bars">
+            <div class="heat-bar" style="height:18px"></div>
+            <div class="heat-bar" style="height:17px"></div>
+            <div class="heat-bar" style="height:16px"></div>
+            <div class="heat-bar" style="height:14px"></div>
+            <div class="heat-bar" style="height:12px"></div>
+          </div>
+          <span class="heat-label">极高</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-ai">AI</span>
+          <span class="card-tag tag-business">商业</span>
+        </div>
+        <div class="card-title">🤖 苹果联合阿里专为中国市场训练大模型，Apple Intelligence 数月内落地</div>
+        <div class="card-summary">路透社援引三位知情人士报道，苹果已专门针对中国市场训练了一款大语言模型，由阿里巴巴合作开发并提供训练支持，标志着苹果在华 AI 策略从"依赖第三方模型"转向"自研 + 本土合作"双轨布局。Apple Intelligence 预计将在未来数月内随 iOS 更新正式进入中国，苹果或将成为首家获准在华提供自研 AI 模型的境外企业。此前"Apple 智能"已于 7 月完成国内生成式 AI 服务备案。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, '苹果联合阿里专为中国市场训练大模型 Apple Intelligence 数月内落地', 'https://www.ithome.com/0/989/676.htm')">分享</button>
+            <a class="card-link" href="https://www.ithome.com/0/989/676.htm" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #2 - App Store 外链佣金 -->
+    <article class="news-card rank-2" data-category="business">
+      <div class="card-rank">
+        <div class="rank-num">2</div>
+        <div class="heat-indicator">
+          <div class="heat-bars">
+            <div class="heat-bar" style="height:17px"></div>
+            <div class="heat-bar" style="height:16px"></div>
+            <div class="heat-bar" style="height:14px"></div>
+            <div class="heat-bar" style="height:12px"></div>
+            <div class="heat-bar" style="height:10px"></div>
+          </div>
+          <span class="heat-label">极高</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-business">商业</span>
+        </div>
+        <div class="card-title">⚖️ 苹果提交 App Store 外链佣金新规：最高 15%，小企业仅 5%</div>
+        <div class="card-summary">在与 Epic Games 的反垄断诉讼中，苹果向美国法院提交外链交易佣金新方案：标准应用抽成 15%（原 27%），视频/新闻/小程序合作计划及订阅续费 10%，小微企业计划仅 5%。此前苹果 27% 的外链抽成被法院认定为藐视法庭，最高法院已驳回其暂停审理的请求。Epic 已表态：只要抽成高于 0% 就将继续上诉。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, '苹果提交 App Store 外链佣金新规最高15%小企业仅5%', 'https://www.ithome.com/0/989/503.htm')">分享</button>
+            <a class="card-link" href="https://www.ithome.com/0/989/503.htm" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #3 - iPhone Ultra 发布会 -->
+    <article class="news-card rank-3" data-category="product">
+      <div class="card-rank">
+        <div class="rank-num">3</div>
+        <div class="heat-indicator">
+          <div class="heat-bars">
+            <div class="heat-bar" style="height:16px"></div>
+            <div class="heat-bar" style="height:14px"></div>
+            <div class="heat-bar" style="height:12px"></div>
+            <div class="heat-bar" style="height:11px"></div>
+            <div class="heat-bar" style="height:9px"></div>
+          </div>
+          <span class="heat-label">极高</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-product">产品</span>
+        </div>
+        <div class="card-title">📱 苹果最贵手机：折叠 iPhone Ultra 曝 9 月 8 日发布，不与 Pro 同步上市</div>
+        <div class="card-summary">据 channelnews 报道，苹果计划 9 月 8 日召开秋季发布会，推出 iPhone 18 Pro、Pro Max 及首款折叠手机 iPhone Ultra。因铰链与可折叠屏幕良率问题，iPhone Ultra 或不会当场公布售价，也不与 Pro 系列同步开售，澳大利亚售价或达 3699 澳元（约 1.76 万元人民币），有望成为苹果史上最贵手机。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-08-13</span>
+            <span class="card-days">🔥 前天</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, '折叠iPhone Ultra曝9月8日发布不与Pro同步上市', 'https://www.ithome.com/0/989/240.htm')">分享</button>
+            <a class="card-link" href="https://www.ithome.com/0/989/240.htm" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #4 - 休斯顿制造中心 -->
+    <article class="news-card" data-category="business">
+      <div class="card-rank">
+        <div class="rank-num">4</div>
+        <div class="heat-indicator">
+          <div class="heat-bars">
+            <div class="heat-bar" style="height:15px"></div>
+            <div class="heat-bar" style="height:13px"></div>
+            <div class="heat-bar" style="height:11px"></div>
+            <div class="heat-bar" style="height:9px"></div>
+            <div class="heat-bar" style="height:7px"></div>
+          </div>
+          <span class="heat-label">高</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-business">商业</span>
+          <span class="card-tag tag-milestone">里程碑</span>
+        </div>
+        <div class="card-title">🏭 苹果休斯顿先进制造中心启用，今年启动 Mac mini 美国生产</div>
+        <div class="card-summary">苹果在美国休斯顿正式启用全新先进制造中心（AMC），这座约 2 万平方英尺的设施将为中小企业提供免费智能制造培训。库克表示九个月内已向该基地投资数亿美元并下线首批 AI 服务器，今年晚些时候将启动 Mac mini 生产。这也是库克任期内最后几周的重要公开亮相，呼应苹果 6000 亿美元的美国制造承诺。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, '苹果休斯顿先进制造中心启用今年启动Mac mini美国生产', 'https://www.ithome.com/0/989/491.htm')">分享</button>
+            <a class="card-link" href="https://www.ithome.com/0/989/491.htm" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #5 - iPhone X 停产 -->
+    <article class="news-card" data-category="milestone">
+      <div class="card-rank">
+        <div class="rank-num">5</div>
+        <div class="heat-indicator">
+          <div class="heat-bars">
+            <div class="heat-bar" style="height:14px"></div>
+            <div class="heat-bar" style="height:13px"></div>
+            <div class="heat-bar" style="height:11px"></div>
+            <div class="heat-bar" style="height:9px"></div>
+            <div class="heat-bar" style="height:7px"></div>
+          </div>
+          <span class="heat-label">高</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-milestone">里程碑</span>
+        </div>
+        <div class="card-title">🕰️ iPhone X 与 2018 款 15 英寸 MacBook Pro 正式列为停产产品</div>
+        <div class="card-summary">苹果更新官方支持文档，将 iPhone X 及 2018 款 15 英寸 MacBook Pro 列入停产（Obsolete）产品列表，此后苹果及授权服务商将不再提供硬件维修、也无法订购原装配件。iPhone X 于 2017 年发布，是首款采用 OLED 全面屏与 Face ID 的机型，系统最终停留在 iOS 16，标志着一个时代的落幕。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, 'iPhone X与2018款15英寸MacBook Pro正式列为停产产品', 'https://www.ithome.com/0/989/494.htm')">分享</button>
+            <a class="card-link" href="https://www.ithome.com/0/989/494.htm" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #6 - iPhone 涨价 -->
+    <article class="news-card" data-category="market">
+      <div class="card-rank">
+        <div class="rank-num">6</div>
+        <div class="heat-indicator">
+          <div class="heat-bars">
+            <div class="heat-bar" style="height:14px"></div>
+            <div class="heat-bar" style="height:12px"></div>
+            <div class="heat-bar" style="height:10px"></div>
+            <div class="heat-bar" style="height:8px"></div>
+            <div class="heat-bar" style="height:6px"></div>
+          </div>
+          <span class="heat-label">高</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-market">市场</span>
+        </div>
+        <div class="card-title">💰 曝苹果 iPhone 全线涨价 100 美元，折叠屏或 2000 美元起</div>
+        <div class="card-summary">据爆料人 Yogesh Brar 消息，苹果计划将全部在售 iPhone 及 9 月新机统一上调 100 美元。受 AI 数据中心对存储芯片的虹吸效应影响，DRAM/NAND 价格暴涨，苹果发言人坦言"从未见过零部件价格涨得如此之快"。古尔曼预测折叠 iPhone 起售价至少 2000 美元，iPhone 18 Pro 预计涨价 100-200 美元。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, '曝苹果iPhone全线涨价100美元折叠屏或2000美元起', 'https://www.ifanr.com/1675193')">分享</button>
+            <a class="card-link" href="https://www.ifanr.com/1675193" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #7 - 和硕确认 iPhone 18 Pro -->
+    <article class="news-card" data-category="product">
+      <div class="card-rank">
+        <div class="rank-num">7</div>
+        <div class="heat-indicator">
+          <div class="heat-bars">
+            <div class="heat-bar" style="height:13px"></div>
+            <div class="heat-bar" style="height:12px"></div>
+            <div class="heat-bar" style="height:10px"></div>
+            <div class="heat-bar" style="height:8px"></div>
+            <div class="heat-bar" style="height:6px"></div>
+          </div>
+          <span class="heat-label">高</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-product">产品</span>
+        </div>
+        <div class="card-title">🔄 和硕确认：iPhone 18 Pro 今秋发布，标准版推迟至 2027 年</div>
+        <div class="card-summary">苹果供应商和硕在业绩电话会上间接确认，某客户将调整出货节奏——苹果计划今年 9 月推出 iPhone 18 Pro、Pro Max 及折叠 iPhone Ultra，标准版 iPhone 18、iPhone 18e、iPhone Air 2 则推迟至 2027 年一季度发布。这是苹果多年来首次拆分旗舰机型的发布节奏。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-08-13</span>
+            <span class="card-days">🔥 前天</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, '和硕确认iPhone 18 Pro今秋发布标准版推迟至2027年', 'https://www.ithome.com/0/989/008.htm')">分享</button>
+            <a class="card-link" href="https://www.ithome.com/0/989/008.htm" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #8 - Apple Watch 陶瓷 -->
+    <article class="news-card" data-category="product">
+      <div class="card-rank">
+        <div class="rank-num">8</div>
+        <div class="heat-indicator">
+          <div class="heat-bars">
+            <div class="heat-bar" style="height:12px"></div>
+            <div class="heat-bar" style="height:11px"></div>
+            <div class="heat-bar" style="height:10px"></div>
+            <div class="heat-bar" style="height:8px"></div>
+            <div class="heat-bar" style="height:6px"></div>
+          </div>
+          <span class="heat-label">中高</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-product">产品</span>
+        </div>
+        <div class="card-title">⌚ 白色陶瓷回归？Gurman：Apple Watch Series 12 或重新采用陶瓷表壳</div>
+        <div class="card-summary">彭博社 Mark Gurman 爆料，苹果计划让白色陶瓷 Apple Watch 表壳回归，最快今年 Series 12、最晚 2027 年。陶瓷材质在 2020 年 Series 6 后停产，因硬度达不锈钢 4 倍而在二手市场备受追捧。除此之外，Series 12 与 Ultra 4 预计仍是"小幅升级"，重点在新芯片、健康功能与新配色，外观无大改。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, 'Gurman爆料Apple Watch Series 12或重新采用陶瓷表壳', 'https://www.macrumors.com/2026/08/14/the-macrumors-show-where-does-the-apple-watch-go-next/')">分享</button>
+            <a class="card-link" href="https://www.macrumors.com/2026/08/14/the-macrumors-show-where-does-the-apple-watch-go-next/" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #9 - iOS 27 beta 5 代号 -->
+    <article class="news-card" data-category="software">
+      <div class="card-rank">
+        <div class="rank-num">9</div>
+        <div class="heat-indicator">
+          <div class="heat-bars">
+            <div class="heat-bar" style="height:12px"></div>
+            <div class="heat-bar" style="height:11px"></div>
+            <div class="heat-bar" style="height:9px"></div>
+            <div class="heat-bar" style="height:7px"></div>
+            <div class="heat-bar" style="height:5px"></div>
+          </div>
+          <span class="heat-label">中高</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-software">软件</span>
+          <span class="card-tag tag-product">产品</span>
+        </div>
+        <div class="card-title">🧬 iOS 27 Beta 5 泄露 6 款 iPhone 内部代号，含首款折叠屏 Ultra</div>
+        <div class="card-summary">外媒 Macworld 在 iOS 27 Beta 5 的电池驱动与 Battery Intelligence 系统文件中，发现 6 款未发布 iPhone 的内部代号：V62 iPhone Air 2、V63 iPhone 18 Pro、V64 Pro Max、V67 iPhone 18、V68 iPhone Ultra、V69 iPhone 18e。这是 iOS 测试版首次完整列出下一代 iPhone 产品线，印证苹果"高端先行、大众后置"的分批发布策略。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-08-13</span>
+            <span class="card-days">🔥 前天</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, 'iOS 27 Beta 5泄露6款iPhone内部代号含折叠屏Ultra', 'https://www.toutiao.com/article/7673453656007639615/')">分享</button>
+            <a class="card-link" href="https://www.toutiao.com/article/7673453656007639615/" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #10 - AirPods Pro 4 -->
+    <article class="news-card" data-category="product">
+      <div class="card-rank">
+        <div class="rank-num">10</div>
+        <div class="heat-indicator">
+          <div class="heat-bars">
+            <div class="heat-bar" style="height:11px"></div>
+            <div class="heat-bar" style="height:10px"></div>
+            <div class="heat-bar" style="height:8px"></div>
+            <div class="heat-bar" style="height:7px"></div>
+            <div class="heat-bar" style="height:5px"></div>
+          </div>
+          <span class="heat-label">中</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-product">产品</span>
+        </div>
+        <div class="card-title">🎧 AirPods Pro 4 消息汇总：红外摄像头与 AI 手势识别成焦点</div>
+        <div class="card-summary">据 AppleInsider 汇总，苹果 AirPods Pro 产品线或迎来升级，其中一个版本可能搭载红外摄像头并引入 AI 能力。郭明錤曾预计摄像头版 AirPods 于 2026 年亮相，iOS 27 已出现"B790"产品代码。爆料普遍认为，苹果可能先推小幅升级改款（提升降噪、音质、续航并增加温度传感器），重大升级或延至 2027 年。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, 'AirPods Pro 4消息汇总红外摄像头与AI手势识别成焦点', 'https://www.ithome.com/0/989/955.htm')">分享</button>
+            <a class="card-link" href="https://www.ithome.com/0/989/955.htm" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #11 - 库克卸任 -->
+    <article class="news-card" data-category="milestone">
+      <div class="card-rank">
+        <div class="rank-num">11</div>
+        <div class="heat-indicator">
+          <div class="heat-bars">
+            <div class="heat-bar" style="height:11px"></div>
+            <div class="heat-bar" style="height:10px"></div>
+            <div class="heat-bar" style="height:8px"></div>
+            <div class="heat-bar" style="height:7px"></div>
+            <div class="heat-bar" style="height:5px"></div>
+          </div>
+          <span class="heat-label">中高</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-milestone">里程碑</span>
+          <span class="card-tag tag-business">商业</span>
+        </div>
+        <div class="card-title">👨‍💼 库克 9 月 1 日卸任 CEO 转任执行董事长，特努斯接棒主持秋季发布会</div>
+        <div class="card-summary">苹果此前宣布，蒂姆·库克将于 9 月 1 日卸任 CEO、转任董事会执行主席，硬件工程高级副总裁约翰·特努斯接任 CEO 并加入董事会。库克任内带领苹果市值从约 3500 亿美元增至 4 万亿美元。此次人事安排获董事会一致批准，属长期继任规划。特努斯上任后的首场重大发布会，正是 9 月的 iPhone 18 / 折叠 iPhone 秋季发布会。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, '库克9月1日卸任CEO转任执行董事长特努斯接棒', 'https://www.ibtimes.sg/john-ternus-take-over-apple-ceo-sept-1-what-changes-expect-after-tim-cook-92132')">分享</button>
+            <a class="card-link" href="https://www.ibtimes.sg/john-ternus-take-over-apple-ceo-sept-1-what-changes-expect-after-tim-cook-92132" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- #12 - BOM 成本 -->
+    <article class="news-card" data-category="market">
+      <div class="card-rank">
+        <div class="rank-num">12</div>
+        <div class="heat-indicator">
+          <div class="heat-bars">
+            <div class="heat-bar" style="height:10px"></div>
+            <div class="heat-bar" style="height:9px"></div>
+            <div class="heat-bar" style="height:8px"></div>
+            <div class="heat-bar" style="height:7px"></div>
+            <div class="heat-bar" style="height:5px"></div>
+          </div>
+          <span class="heat-label">中</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-tag tag-market">市场</span>
+        </div>
+        <div class="card-title">📊 iPhone 18 Pro 物料成本上涨 38%，存储芯片占比跃至 34%</div>
+        <div class="card-summary">据 Counterpoint Research 测算，受存储芯片涨价冲击，iPhone 18 Pro 的 256GB 版本 BOM（物料清单）成本同比增长约 38%，存储芯片占比从上代 10% 跃升至 34%。iPhone 18 Pro 的 12GB 内存单颗成本从上代 39 美元飙升至 145 美元。为对冲压力，苹果已加大 OLED 面板备货、压价面板供应商，并将长鑫存储纳入备份供应链。</div>
+        <div class="card-footer">
+          <div class="card-meta">
+            <span class="card-date">📅 2026-08-13</span>
+            <span class="card-days">🔥 前天</span>
+          </div>
+          <div class="card-actions">
+            <button class="card-share" onclick="shareCard(this, 'iPhone 18 Pro物料成本上涨38%存储芯片占比跃至34%', 'https://product.dzsc.com/news/2026-08-13/252385.html')">分享</button>
+            <a class="card-link" href="https://product.dzsc.com/news/2026-08-13/252385.html" target="_blank" rel="noopener">阅读原文 →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
   </div>
+</main>
 
-  <!-- News List -->
-  <div class="section-title">今日要闻</div>
-  <div class="news-list">
+<!-- Footer -->
+<footer>
+  <p>数据来源：IT之家 · 爱范儿 · 路透社 · 彭博社 · MacRumors · 智东西 · 中关村在线 · AppleInsider<br>每日 09:15 自动更新 · 资讯覆盖过去 48 小时 · 第 34 期</p>
+</footer>
 
-    <!-- Item 2 -->
-    <div class="news-item">
-      <div class="news-rank">2</div>
-      <div class="news-tags">
-        <span class="signal-inline signal-bars signal-4" style="font-size:14px;">████░</span>
-        <span class="tag tag-company">公司</span>
-        <span class="tag tag-hardware">卫星</span>
-      </div>
-      <div class="news-title">亚马逊116亿美元接手苹果 Globalstar 卫星股份，iPhone 卫星功能不受影响</div>
-      <div class="news-desc">亚马逊向美国联邦通信委员会（FCC）提交文件，确认将通过子公司斥资约116亿美元（约合788亿元人民币）收购卫星运营商Globalstar，同时接管苹果持有的20% Class B股份及投票权。亚马逊在文件中明确承诺，将继续履行Globalstar与苹果的全部合作协议，iPhone 14及后续机型的紧急SOS卫星通信、卫星短信等功能不受任何影响。此次并购是近年来卫星互联网领域规模最大的交易之一，也标志着亚马逊星链网络与苹果生态的深度绑定。</div>
-      <div class="news-meta">
-        <span class="news-source"><span class="news-source-dot"></span> IT之家 · 5月28日</span>
-        <a class="read-more" href="https://www.ithome.com/0/956/244.htm" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
-      </div>
-    </div>
+<!-- FAB -->
+<button class="fab" onclick="sharePage()">📤 分享</button>
 
-    <!-- Item 3 -->
-    <div class="news-item">
-      <div class="news-rank">3</div>
-      <div class="news-tags">
-        <span class="signal-inline signal-bars signal-4" style="font-size:14px;">████░</span>
-        <span class="tag tag-software">系统</span>
-        <span class="tag tag-ai">AI</span>
-      </div>
-      <div class="news-title">iOS 27 新 Siri 深色界面曝光：粉紫橙配色+Gemini 模型加持，WWDC 首发</div>
-      <div class="news-desc">据彭博社 Mark Gurman 最新披露，iOS 27 中全面重构的 Siri 将采用深色背景界面，以粉色、深蓝、紫色和橙色渐变为视觉主色，与苹果 WWDC 2026 官方宣传视觉高度吻合。技术层面，新版 Siri 将引入 Google Gemini 大语言模型作为 AI 推理骨干，同时支持持续对话、跨应用任务调度和 Dynamic Island 集成。此前爆料显示，Siri 将以独立 App 形式登场，与现有系统级 Siri 并存，是苹果 AI 战略最重要的落地产品。距离 WWDC 6月9日主题演讲仅剩11天。</div>
-      <div class="news-meta">
-        <span class="news-source"><span class="news-source-dot"></span> CNMO · 5月27日</span>
-        <a class="read-more" href="https://phone.cnmo.com/news/809824.html" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
-      </div>
-    </div>
+<script>
+  // Date
+  const today = new Date();
+  const dateStr = today.getFullYear() + '年' + (today.getMonth() + 1) + '月' + today.getDate() + '日';
+  document.getElementById('nav-date').textContent = dateStr;
+  document.title = '🍎 Apple 每日资讯 · ' + dateStr;
 
-    <!-- Item 4 -->
-    <div class="news-item">
-      <div class="news-rank">4</div>
-      <div class="news-tags">
-        <span class="signal-inline signal-bars signal-4" style="font-size:14px;">████░</span>
-        <span class="tag tag-product">新品</span>
-        <span class="tag tag-hardware">折叠</span>
-      </div>
-      <div class="news-title">折叠 iPhone 首批第三方保护壳上架：双摄+MagSafe+Camera Control，设计定版</div>
-      <div class="news-desc">配件厂商 iFunSmart 已在电商平台上架苹果折叠 iPhone 首批第三方保护壳，成为迄今最直接的设计定版信号。保护壳开孔细节揭示：折叠 iPhone 后置为横向双摄（无长焦），支持 Camera Control 快捷按键和 MagSafe 磁吸充电，壳体采用多段拼合卡扣结构以适配折叠开合。同期曝光数据显示，折叠 iPhone 外屏 5.5 英寸、内屏 7.8 英寸，折叠厚度约 9.5mm，预计与 iPhone 18 Pro 系列在2026年秋季同步发布，起售价约 2000 美元（约合14500元人民币）。</div>
-      <div class="news-meta">
-        <span class="news-source"><span class="news-source-dot"></span> IT之家 · 5月27日</span>
-        <a class="read-more" href="https://www.macrumors.com/2026/05/27/ases-for-foldable-iphone-surface-online/" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
-      </div>
-    </div>
+  // Filter
+  function filterNews(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    let count = 0;
+    document.querySelectorAll('.news-card').forEach(card => {
+      const show = cat === 'all' || card.dataset.category === cat;
+      card.style.display = show ? '' : 'none';
+      if (show) count++;
+    });
+    document.getElementById('stat-count').textContent = count;
+    document.getElementById('total-count').textContent = count;
+  }
 
-    <!-- Item 5 -->
-    <div class="news-item">
-      <div class="news-rank">5</div>
-      <div class="news-tags">
-        <span class="signal-inline signal-bars signal-3" style="font-size:13px;">███░░</span>
-        <span class="tag tag-software">软件</span>
-        <span class="tag tag-media">创意</span>
-      </div>
-      <div class="news-title">苹果 Creator Studio 订阅版应用升级 Liquid Glass 图标，6款专业工具焕新</div>
-      <div class="news-desc">苹果更新支持文档，宣布 Apple Creator Studio 订阅版（月费38元/年费380元）旗下6款专业创意应用——Final Cut Pro、Logic Pro、MainStage、Motion、Compressor、Pixelmator Pro——全部启用 Liquid Glass 液态玻璃风格新图标，与买断版图标形成明显区分。新图标采用半透明磨砂玻璃质感，与苹果为 iOS 27 / macOS 27 预设的全局设计语言高度统一，被业界解读为苹果正式将 Liquid Glass 推向专业生产力领域的重要信号。订阅服务支持家庭共享，最多5名家庭成员可同享全部软件权益。</div>
-      <div class="news-meta">
-        <span class="news-source"><span class="news-source-dot"></span> IT之家 · 5月28日</span>
-        <a class="read-more" href="https://www.ithome.com/0/956/249.htm" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
-      </div>
-    </div>
+  // Copy
+  function copyLink(btn) {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      btn.classList.add('copied');
+      const orig = btn.textContent;
+      btn.textContent = '✅ 已复制';
+      setTimeout(() => { btn.classList.remove('copied'); btn.textContent = orig; }, 1800);
+    });
+  }
 
-    <!-- Item 6 -->
-    <div class="news-item">
-      <div class="news-rank">6</div>
-      <div class="news-tags">
-        <span class="signal-inline signal-bars signal-3" style="font-size:13px;">███░░</span>
-        <span class="tag tag-market">市场</span>
-        <span class="tag tag-company">国内</span>
-      </div>
-      <div class="news-title">京东 Apple 旗舰店粉丝突破 1 亿，iPhone 17 Pro 全线降价 1000 元</div>
-      <div class="news-desc">5月27日，京东宣布 Apple 产品自营旗舰店粉丝数正式突破1亿，跻身京东3C品类首个"亿级粉丝"品牌。与此同时，京东同步启动大促：iPhone 17 Pro 全系直降1000元，Pro Max 叠加优惠后最低6999元起，创历史新低；苹果全产品线均有不同幅度折扣，AirPods、MacBook、iPad 均参与活动。此次活动是苹果与京东深度战略合作的集中体现，也被视为苹果在国内电商渠道持续扩大影响力的重要里程碑。</div>
-      <div class="news-meta">
-        <span class="news-source"><span class="news-source-dot"></span> CNMO · 5月27日</span>
-        <a class="read-more" href="https://phone.cnmo.com/news/809848.html" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
-      </div>
-    </div>
+  // Share
+  function nativeShare() {
+    if (navigator.share) navigator.share({ title: document.title, url: window.location.href });
+  }
+  if (navigator.share) document.getElementById('btn-native').style.display = '';
 
-    <!-- Item 7 -->
-    <div class="news-item">
-      <div class="news-rank">7</div>
-      <div class="news-tags">
-        <span class="signal-inline signal-bars signal-3" style="font-size:13px;">███░░</span>
-        <span class="tag tag-company">大会</span>
-        <span class="tag tag-ai">AI</span>
-      </div>
-      <div class="news-title">WWDC 2026 倒计时11天：genai.apple.com 启用，苹果全力押注生成式AI</div>
-      <div class="news-desc">距苹果 WWDC 2026 主题演讲仅剩11天，业界期待情绪持续升温。MacRumors 发现苹果已为子域名 genai.apple.com 完成技术部署，虽暂未指向公开页面，但被广泛解读为苹果即将推出独立生成式AI产品或服务入口的明确信号。根据已确认信息，iOS 27 将带来全新独立 Siri App、Liquid Glass 视觉语言、以及 genai.apple.com 相关AI能力。本届WWDC被业界定性为"苹果近十年战略意义最重大的一次大会"，全球开发者与媒体高度聚焦。</div>
-      <div class="news-meta">
-        <span class="news-source"><span class="news-source-dot"></span> IT之家 · 5月24日</span>
-        <a class="read-more" href="https://www.ithome.com/0/954/457.htm" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
-      </div>
-    </div>
+  function sharePage() {
+    if (navigator.share) {
+      navigator.share({ title: document.title, url: window.location.href });
+    } else {
+      copyLink(document.getElementById('btn-copy'));
+    }
+  }
 
-    <!-- Item 8 -->
-    <div class="news-item">
-      <div class="news-rank">8</div>
-      <div class="news-tags">
-        <span class="signal-inline signal-bars signal-2" style="font-size:13px;">██░░░</span>
-        <span class="tag tag-market">以旧换新</span>
-        <span class="tag tag-company">苹果官方</span>
-      </div>
-      <div class="news-title">苹果上调多款设备以旧换新估值，iPhone 16 Pro Max 最高回收 695 美元</div>
-      <div class="news-desc">苹果官方更新了 iPhone、iPad、Mac 及 Apple Watch 的以旧换新估值，大部分在售型号均有上调。主要亮点：iPhone 16 Pro Max 最高回收价提升至695美元；MacBook Air M3 最高520美元；Mac mini M4 最高375美元；Apple Watch Series 10 最高130美元。值得注意的是，苹果同步下调了多款安卓机型的换购折抵价，被解读为苹果加码鼓励用户"安转苹"的促销策略，配合即将到来的 iPhone 18 系列发布做铺垫。</div>
-      <div class="news-meta">
-        <span class="news-source"><span class="news-source-dot"></span> MacRumors · 5月27日</span>
-        <a class="read-more" href="https://www.macrumors.com/2026/05/27/apple-updates-trade-in-values-may-2026/" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
-      </div>
-    </div>
+  function shareCard(btn, title, url) {
+    if (navigator.share) {
+      navigator.share({ title, url });
+    } else {
+      navigator.clipboard.writeText(url).then(() => {
+        btn.classList.add('copied');
+        const orig = btn.textContent;
+        btn.textContent = '✅ 已复制';
+        setTimeout(() => { btn.classList.remove('copied'); btn.textContent = orig; }, 1800);
+      });
+    }
+  }
 
-    <!-- Item 9 -->
-    <div class="news-item">
-      <div class="news-rank">9</div>
-      <div class="news-tags">
-        <span class="signal-inline signal-bars signal-2" style="font-size:13px;">██░░░</span>
-        <span class="tag tag-software">Wallet</span>
-        <span class="tag tag-product">服务</span>
-      </div>
-      <div class="news-title">苹果 Wallet 数字驾照扩至14个州，250+ 机场 TSA 安检可用</div>
-      <div class="news-desc">阿肯色州正式加入苹果 Wallet 数字身份证（Digital ID）支持名单，成为第14个支持州。目前该功能已覆盖全美250多个机场的 TSA 安检通道，用户通过 Face ID 验证后可直接刷手机通关，无需出示实体证件。此外苹果已与康涅狄格、肯塔基、密西西比、俄克拉荷马、犹他、弗吉尼亚6个州签署协议，后续将陆续上线。Apple Watch 也支持该功能，且内置"快捷支付模式"，即使手机电量耗尽仍可正常使用长达5小时。</div>
-      <div class="news-meta">
-        <span class="news-source"><span class="news-source-dot"></span> MacRumors · 5月27日</span>
-        <a class="read-more" href="https://www.macrumors.com/2026/05/27/apple-wallet-ids-14th-state/" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
-      </div>
-    </div>
-
-    <!-- Item 10 -->
-    <div class="news-item">
-      <div class="news-rank">10</div>
-      <div class="news-tags">
-        <span class="signal-inline signal-bars signal-2" style="font-size:13px;">██░░░</span>
-        <span class="tag tag-product">新品</span>
-        <span class="tag tag-hardware">硬件</span>
-      </div>
-      <div class="news-title">Vision Pro 黑色头带组件曝光，新配色版本有望随 M5 版本同步上市</div>
-      <div class="news-desc">博主 LusiRoy8 在 X 平台发布了苹果 Vision Pro 第二代（M5版本）黑色配色头带组件的实物图，并暗示该配色版本极有可能与新款 Vision Pro 同步发售。对比当前银色唯一配色，黑色版本外观更为沉稳低调，契合部分专业用户的审美需求。此前有消息称苹果正在加快推进 Vision Pro M5 版本的量产，其在 AI 处理能力和续航方面均有大幅提升，定价策略或将有所下调以扩大用户基础。</div>
-      <div class="news-meta">
-        <span class="news-source"><span class="news-source-dot"></span> IT之家 · 5月26日</span>
-        <a class="read-more" href="https://www.ithome.com/0/955/601.htm" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
-      </div>
-    </div>
-
-    <!-- Item 11 -->
-    <div class="news-item">
-      <div class="news-rank">11</div>
-      <div class="news-tags">
-        <span class="signal-inline signal-bars signal-1" style="font-size:13px;">█░░░░</span>
-        <span class="tag tag-company">法律</span>
-        <span class="tag tag-company">反垄断</span>
-      </div>
-      <div class="news-title">苹果 DOJ 反垄断诉讼再起波澜：指控美国司法部"程序性拖沓"</div>
-      <div class="news-desc">苹果在向法院提交的最新文件中，正式指责美国司法部在证据开示环节存在严重拖延，要求法院强制介入以推进程序。该反垄断诉讼已持续近两年，涉及苹果在 App Store、iMessage 生态、NFC 支付等核心领域的市场支配地位问题。苹果方面坚持认为其商业行为属于正当竞争，DOJ 的证据要求则被批评为"刻意拖延以制造舆论压力"。法律分析人士普遍认为此案还将持续多年，结果对全球科技反垄断监管具有重要参考价值。</div>
-      <div class="news-meta">
-        <span class="news-source"><span class="news-source-dot"></span> IT之家 · 5月26日</span>
-        <a class="read-more" href="https://www.ithome.com/0/955/079.htm" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
-      </div>
-    </div>
-
-    <!-- Item 12 -->
-    <div class="news-item">
-      <div class="news-rank">12</div>
-      <div class="news-tags">
-        <span class="signal-inline signal-bars signal-1" style="font-size:13px;">█░░░░</span>
-        <span class="tag tag-media">媒体</span>
-        <span class="tag tag-software">服务</span>
-      </div>
-      <div class="news-title">Apple News 携「After the Whistle」播客回归，为 FIFA 世界杯保驾护航</div>
-      <div class="news-desc">苹果宣布，Apple News 独家播客节目"After the Whistle with Brendan Hunt and Rebecca Lowe"将于6月7日正式回归，为2026年北美 FIFA 世界杯提供全程深度解析。节目每周将多次更新，内容涵盖赛事回顾、战术分析、球员故事及幕后花絮。本届世界杯在美国、加拿大和墨西哥三国联合举办，是史上规模最大的世界杯。该播客将同时在 Apple News、Apple Podcasts 及各主流平台同步分发，苹果借此进一步强化其内容生态的独特性与黏性。</div>
-      <div class="news-meta">
-        <span class="news-source"><span class="news-source-dot"></span> MacRumors · 5月27日</span>
-        <a class="read-more" href="https://www.macrumors.com/2026/05/27/after-the-whistle-podcast-to-return/" target="_blank">阅读原文 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Footer -->
-  <div class="footer">
-    <div style="font-weight:600;color:var(--text-primary);margin-bottom:4px;">Apple 每日资讯</div>
-    <div>资讯来源：IT之家、MacRumors、CNMO、ZOL、9to5Mac 等</div>
-    <div style="margin-top:4px;">
-      <a href="https://apple-daily-news-d0e96lledf704f0-1437261455.tcloudbaseapp.com" target="_blank">CloudBase</a>
-      <span class="divider-dot">·</span>
-      <a href="https://jeremyhebe.github.io/apple-news-daily/" target="_blank">GitHub Pages</a>
-    </div>
-    <div style="margin-top:8px;font-size:11px;opacity:0.6;">© 2026 Apple Daily News · 内容仅供参考</div>
-  </div>
+  // QR
+  let qrCreated = false;
+  function showQR() {
+    document.getElementById('qr-overlay').classList.add('show');
+    if (!qrCreated) {
+      qrCreated = true;
+      new QRCode(document.getElementById('qrcanvas'), {
+        text: window.location.href,
+        width: 200,
+        height: 200,
+        colorDark: '#1d1d1f',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    }
+  }
+  function hideQR(e) {
+    if (!e || e.target === document.getElementById('qr-overlay')) {
+      document.getElementById('qr-overlay').classList.remove('show');
+    }
+  }
+</script>
 
 </body>
 </html>

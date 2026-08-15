@@ -97,12 +97,12 @@
     }
     .nav-btn:hover { background: var(--blue-hover); text-decoration: none; }
 
-    /* Hero */
+    /* Hero — 紧凑轻盈 */
     .hero {
       background: var(--black);
       color: var(--white);
       text-align: center;
-      padding: 48px 24px 52px;
+      padding: 26px 24px 30px;
       position: relative;
     }
     .hero::after {
@@ -116,22 +116,22 @@
     }
     .hero-content { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
     .hero-eyebrow {
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 600;
       color: var(--blue);
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .hero h1 {
-      font-size: clamp(24px, 5vw, 40px);
+      font-size: clamp(20px, 4vw, 32px);
       font-weight: 700;
       letter-spacing: -0.03em;
       line-height: 1.1;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .hero-subtitle {
-      font-size: clamp(13px, 1.6vw, 15px);
+      font-size: clamp(12px, 1.4vw, 13px);
       color: rgba(255,255,255,0.65);
       font-weight: 400;
       line-height: 1.5;
@@ -139,19 +139,19 @@
     .hero-stats {
       display: flex;
       justify-content: center;
-      gap: 48px;
-      margin-top: 28px;
+      gap: 40px;
+      margin-top: 18px;
     }
     .hero-stat-num {
-      font-size: 30px;
+      font-size: 24px;
       font-weight: 700;
       letter-spacing: -0.02em;
       color: var(--white);
     }
     .hero-stat-label {
-      font-size: 10px;
+      font-size: 9px;
       color: rgba(255,255,255,0.5);
-      margin-top: 4px;
+      margin-top: 3px;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       font-weight: 500;
@@ -161,12 +161,12 @@
     .info-strip {
       background: var(--gray);
       border-bottom: 1px solid var(--gray-2);
-      padding: 14px 24px;
+      padding: 13px 24px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text-secondary);
     }
     .info-strip .dot {
@@ -181,7 +181,7 @@
     /* Share */
     .share-section {
       background: var(--white);
-      padding: 24px 24px;
+      padding: 22px 24px;
       border-bottom: 1px solid var(--gray-2);
     }
     .share-inner {
@@ -290,24 +290,24 @@
     .main {
       max-width: 1024px;
       margin: 0 auto;
-      padding: 36px 24px 100px;
+      padding: 32px 24px 100px;
     }
     .section-head {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       padding-bottom: 14px;
       border-bottom: 1px solid var(--gray-2);
     }
-    .section-title { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--black); }
+    .section-title { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; color: var(--black); }
     .section-count { font-size: 13px; color: var(--text-secondary); }
 
     /* News Card */
     .news-card {
       background: var(--white);
       border-radius: var(--radius);
-      padding: 22px;
+      padding: 20px;
       box-shadow: var(--shadow);
       border: 1px solid var(--gray-2);
       transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -327,7 +327,7 @@
     /* Rank */
     .card-rank { min-width: 48px; flex-shrink: 0; text-align: center; }
     .rank-num {
-      font-size: 36px;
+      font-size: 32px;
       font-weight: 700;
       letter-spacing: -0.03em;
       line-height: 1;
@@ -360,9 +360,9 @@
 
     /* Card Body */
     .card-body { flex: 1; min-width: 0; }
-    .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+    .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
     .card-tag {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
       padding: 3px 10px;
       border-radius: 980px;
@@ -379,18 +379,18 @@
     .tag-milestone { background: rgba(255,204,0,0.1); color: #996b00; border-color: rgba(255,204,0,0.2); }
 
     .card-title {
-      font-size: 17px;
+      font-size: 15px;
       font-weight: 700;
       letter-spacing: -0.01em;
       line-height: 1.35;
-      margin-bottom: 9px;
+      margin-bottom: 8px;
       color: var(--black);
     }
     .card-summary {
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.65;
       color: var(--text-secondary);
-      margin-bottom: 12px;
+      margin-bottom: 11px;
     }
     .card-footer {
       display: flex;
@@ -400,9 +400,9 @@
       gap: 12px;
     }
     .card-meta { display: flex; align-items: center; gap: 10px; }
-    .card-date { font-size: 12px; color: var(--gray-4); }
+    .card-date { font-size: 11px; color: var(--gray-4); }
     .card-days {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--gray-4);
       background: var(--gray);
       padding: 3px 9px;
@@ -418,10 +418,10 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       color: var(--blue);
-      padding: 9px 16px;
+      padding: 8px 15px;
       border-radius: 980px;
       border: 1px solid var(--blue);
       transition: all 0.2s;
@@ -431,13 +431,13 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 500;
       color: var(--text-secondary);
       background: var(--gray);
       border: none;
       border-radius: 980px;
-      padding: 9px 14px;
+      padding: 8px 14px;
       cursor: pointer;
       transition: all 0.2s;
       font-family: var(--font);
@@ -470,7 +470,6 @@
       font-weight: 600;
       cursor: pointer;
       box-shadow: 0 8px 32px rgba(0,113,227,0.4);
-      display: flex;
       align-items: center;
       gap: 8px;
       font-family: var(--font);
@@ -482,14 +481,14 @@
     @media (max-width: 734px) {
       .nav-inner { padding: 0 24px; }
       .nav-date { display: none; }
-      .hero { padding: 50px 20px 56px; }
-      .hero h1 { font-size: 30px; }
-      .hero-stats { gap: 32px; margin-top: 28px; }
-      .hero-stat-num { font-size: 32px; }
-      .news-card { flex-direction: column; padding: 20px; gap: 14px; }
+      .hero { padding: 28px 20px 32px; }
+      .hero h1 { font-size: 24px; }
+      .hero-stats { gap: 32px; margin-top: 18px; }
+      .hero-stat-num { font-size: 26px; }
+      .news-card { flex-direction: column; padding: 18px; gap: 14px; }
       .card-rank { display: flex; align-items: center; gap: 14px; }
-      .card-title { font-size: 18px; }
-      .card-summary { font-size: 14px; }
+      .card-title { font-size: 16px; }
+      .card-summary { font-size: 13px; }
       .nav-btn span { display: none; }
       .nav-btn { padding: 10px 14px; }
     }
@@ -511,16 +510,16 @@
 <!-- Hero -->
 <section class="hero">
   <div class="hero-content">
-    <p class="hero-eyebrow">每日 09:15 自动更新 · 第 33 期</p>
+    <p class="hero-eyebrow">每日 09:15 自动更新 · 第 34 期</p>
     <h1>Apple 每日资讯</h1>
-    <p class="hero-subtitle">富士康数据泄露震动供应链 · WWDC 2026 定档 · OpenAI 与苹果反目 · 股价首破300美元</p>
+    <p class="hero-subtitle">苹果联合阿里打造中国专属 AI 大模型 · App Store 外链佣金降至 15% · 首款折叠 iPhone 下月登场</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num" id="stat-count">13</div>
+        <div class="hero-stat-num" id="stat-count">12</div>
         <div class="hero-stat-label">今日资讯</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-num">2</div>
         <div class="hero-stat-label">天内覆盖</div>
       </div>
     </div>
@@ -530,7 +529,7 @@
 <!-- Info Strip -->
 <div class="info-strip">
   <div class="dot"></div>
-  <span>数据收集范围：过去 48 小时内最新资讯（周二至周日规则）· 2026年5月22日</span>
+  <span>数据收集范围：过去 48 小时内最新资讯（周二至周日规则）· 2026年8月15日</span>
 </div>
 
 <!-- Share -->
@@ -572,13 +571,13 @@
 <main class="main">
   <div class="section-head">
     <h2 class="section-title">今日热点</h2>
-    <span class="section-count">共 <span id="total-count">13</span> 条</span>
+    <span class="section-count">共 <span id="total-count">12</span> 条</span>
   </div>
 
   <div id="news-container">
 
-    <!-- #1 头条 - 富士康数据泄露 -->
-    <article class="news-card top rank-1" data-category="business">
+    <!-- #1 头条 - 苹果联合阿里大模型 -->
+    <article class="news-card top rank-1" data-category="ai">
       <div class="card-rank">
         <div class="rank-num">1</div>
         <div class="heat-indicator">
@@ -594,25 +593,26 @@
       </div>
       <div class="card-body">
         <div class="card-header">
+          <span class="card-tag tag-ai">AI</span>
           <span class="card-tag tag-business">商业</span>
         </div>
-        <div class="card-title">🚨 富士康遭入侵：超30份苹果机密文件流出，8TB数据被窃</div>
-        <div class="card-summary">富士康遭遇严重网络安全入侵事件，黑客窃取超过 8TB 数据，其中包括超过 30 份涉及苹果产品的机密文件。泄露内容涵盖 iPhone 未来产品设计图、生产规格、供应链布局等敏感信息。此次攻击被指为有组织的国家级黑客行动，已引发苹果高层紧急介入调查。事件对苹果全球供应链安全构成重大威胁，可能导致部分未发布产品信息提前曝光。</div>
+        <div class="card-title">🤖 苹果联合阿里专为中国市场训练大模型，Apple Intelligence 数月内落地</div>
+        <div class="card-summary">路透社援引三位知情人士报道，苹果已专门针对中国市场训练了一款大语言模型，由阿里巴巴合作开发并提供训练支持，标志着苹果在华 AI 策略从"依赖第三方模型"转向"自研 + 本土合作"双轨布局。Apple Intelligence 预计将在未来数月内随 iOS 更新正式进入中国，苹果或将成为首家获准在华提供自研 AI 模型的境外企业。此前"Apple 智能"已于 7 月完成国内生成式 AI 服务备案。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-05-21</span>
+            <span class="card-date">📅 2026-08-14</span>
             <span class="card-days">🔥 昨天</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, '富士康遭入侵：超30份苹果机密文件流出8TB数据被窃', 'https://www.ithome.com/0/950/654.htm')">分享</button>
-            <a class="card-link" href="https://www.ithome.com/0/950/654.htm" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, '苹果联合阿里专为中国市场训练大模型 Apple Intelligence 数月内落地', 'https://www.ithome.com/0/989/676.htm')">分享</button>
+            <a class="card-link" href="https://www.ithome.com/0/989/676.htm" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
-    <!-- #2 - WWDC 2026 定档 -->
-    <article class="news-card rank-2" data-category="software">
+    <!-- #2 - App Store 外链佣金 -->
+    <article class="news-card rank-2" data-category="business">
       <div class="card-rank">
         <div class="rank-num">2</div>
         <div class="heat-indicator">
@@ -628,26 +628,25 @@
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-software">软件</span>
-          <span class="card-tag tag-ai">AI</span>
+          <span class="card-tag tag-business">商业</span>
         </div>
-        <div class="card-title">🍎 苹果官宣 WWDC 2026 定档6月9日，Siri 与 AI 重大革新</div>
-        <div class="card-summary">苹果正式宣布 WWDC 2026（全球开发者大会）定于 6 月 9 日开幕，本次大会将以「AI First」为核心主题，重点展示 Siri 的全面重构——从底层架构升级为独立应用，支持多轮对话上下文记忆和跨设备连续对话。iOS 27、macOS 27、watchOS 13 等全系统平台将同步预览，Apple Intelligence 功能将迎来大规模扩展，涵盖写作辅助、图像生成、个性化推荐等全新能力。Keynote 将于北京时间 6 月 10 日凌晨 1 点举行。</div>
+        <div class="card-title">⚖️ 苹果提交 App Store 外链佣金新规：最高 15%，小企业仅 5%</div>
+        <div class="card-summary">在与 Epic Games 的反垄断诉讼中，苹果向美国法院提交外链交易佣金新方案：标准应用抽成 15%（原 27%），视频/新闻/小程序合作计划及订阅续费 10%，小微企业计划仅 5%。此前苹果 27% 的外链抽成被法院认定为藐视法庭，最高法院已驳回其暂停审理的请求。Epic 已表态：只要抽成高于 0% 就将继续上诉。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-05-19</span>
-            <span class="card-days">🔥 3天前</span>
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, '苹果WWDC 2026定档6月9日 SIRI与AI重大革新', 'https://www.apple.com/newsroom/')">分享</button>
-            <a class="card-link" href="https://www.apple.com/newsroom/" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, '苹果提交 App Store 外链佣金新规最高15%小企业仅5%', 'https://www.ithome.com/0/989/503.htm')">分享</button>
+            <a class="card-link" href="https://www.ithome.com/0/989/503.htm" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
-    <!-- #3 - OpenAI与苹果反目 -->
-    <article class="news-card rank-3" data-category="ai">
+    <!-- #3 - iPhone Ultra 发布会 -->
+    <article class="news-card rank-3" data-category="product">
       <div class="card-rank">
         <div class="rank-num">3</div>
         <div class="heat-indicator">
@@ -663,26 +662,25 @@
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-ai">AI</span>
-          <span class="card-tag tag-business">商业</span>
+          <span class="card-tag tag-product">产品</span>
         </div>
-        <div class="card-title">⚔️ OpenAI 与苹果反目：考虑法律行动，合作濒临破裂</div>
-        <div class="card-summary">OpenAI 正在评估针对苹果的法律行动选项，双方合作关系急剧恶化。核心矛盾在于：OpenAI 认为苹果在 Apple Intelligence 中过度使用其 ChatGPT 技术但支付远低于预期的费用；同时苹果正加速将 Google Gemini 作为 Apple Intelligence 的主要后端替代方案。彭博社报道称，双方在收入分成模式上存在根本分歧——OpenAI 希望按使用量计费而苹果坚持固定授权费。若谈判破裂，iOS 27 可能完全转向 Gemini 驱动，这将是苹果 AI 战略的重大转折点。</div>
+        <div class="card-title">📱 苹果最贵手机：折叠 iPhone Ultra 曝 9 月 8 日发布，不与 Pro 同步上市</div>
+        <div class="card-summary">据 channelnews 报道，苹果计划 9 月 8 日召开秋季发布会，推出 iPhone 18 Pro、Pro Max 及首款折叠手机 iPhone Ultra。因铰链与可折叠屏幕良率问题，iPhone Ultra 或不会当场公布售价，也不与 Pro 系列同步开售，澳大利亚售价或达 3699 澳元（约 1.76 万元人民币），有望成为苹果史上最贵手机。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-05-15</span>
-            <span class="card-days">🔥 7天前</span>
+            <span class="card-date">📅 2026-08-13</span>
+            <span class="card-days">🔥 前天</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, 'OpenAI与苹果反目考虑法律行动合作濒临破裂', 'https://www.ithome.com/0/949/876.htm')">分享</button>
-            <a class="card-link" href="https://www.ithome.com/0/949/876.htm" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, '折叠iPhone Ultra曝9月8日发布不与Pro同步上市', 'https://www.ithome.com/0/989/240.htm')">分享</button>
+            <a class="card-link" href="https://www.ithome.com/0/989/240.htm" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
-    <!-- #4 - Gurman爆料 iOS 27 AI功能 -->
-    <article class="news-card" data-category="ai">
+    <!-- #4 - 休斯顿制造中心 -->
+    <article class="news-card" data-category="business">
       <div class="card-rank">
         <div class="rank-num">4</div>
         <div class="heat-indicator">
@@ -698,26 +696,26 @@
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-ai">AI 智能</span>
-          <span class="card-tag tag-software">软件</span>
+          <span class="card-tag tag-business">商业</span>
+          <span class="card-tag tag-milestone">里程碑</span>
         </div>
-        <div class="card-title">🧠 Gurman 爆料：iOS 27 AI 写作辅助 + 壁纸生成 + Siri 独立 App</div>
-        <div class="card-summary">彭博社知名记者 Mark Gurman 最新爆料揭示了 iOS 27 的三大 AI 核心功能：① 全新 AI 写作辅助工具，可在邮件、备忘录、Pages 等原生 App 中实时提供文案润色、风格转换和多语言翻译；② AI 壁纸生成器，支持文字描述或照片参考一键生成动态壁纸；③ Siri 升级为独立可交互 App，不再仅以语音形式存在，新增可视化界面和操作历史记录。这些功能将在 WWDC 26 Keynote 上首次公开演示。</div>
+        <div class="card-title">🏭 苹果休斯顿先进制造中心启用，今年启动 Mac mini 美国生产</div>
+        <div class="card-summary">苹果在美国休斯顿正式启用全新先进制造中心（AMC），这座约 2 万平方英尺的设施将为中小企业提供免费智能制造培训。库克表示九个月内已向该基地投资数亿美元并下线首批 AI 服务器，今年晚些时候将启动 Mac mini 生产。这也是库克任期内最后几周的重要公开亮相，呼应苹果 6000 亿美元的美国制造承诺。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-05-19</span>
-            <span class="card-days">🔥 3天前</span>
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, 'Guran爆料iOS 27 AI写作辅助+壁纸生成+Siri独立App', 'https://www.bloomberg.com/news/articles/2026-05-19')">分享</button>
-            <a class="card-link" href="https://www.bloomberg.com/news/articles/2026-05-19" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, '苹果休斯顿先进制造中心启用今年启动Mac mini美国生产', 'https://www.ithome.com/0/989/491.htm')">分享</button>
+            <a class="card-link" href="https://www.ithome.com/0/989/491.htm" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
-    <!-- #5 - 苹果股价突破300美元 -->
-    <article class="news-card" data-category="market">
+    <!-- #5 - iPhone X 停产 -->
+    <article class="news-card" data-category="milestone">
       <div class="card-rank">
         <div class="rank-num">5</div>
         <div class="heat-indicator">
@@ -733,25 +731,25 @@
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-market">市场</span>
+          <span class="card-tag tag-milestone">里程碑</span>
         </div>
-        <div class="card-title">📈 苹果股价首次突破 300 美元，创历史新高，市值 4.25 万亿</div>
-        <div class="card-summary">苹果公司股票（AAPL）在纳斯达克交易中首次突破每股 300 美元大关，收盘价达到 302.47 美元，创下历史新高纪录。以此计算，苹果市值突破 4.25 万亿美元，继续稳居全球市值最高公司宝座。推动本轮上涨的核心催化剂包括：Q2 财报超预期、AI 战略逐步清晰、以及即将到来的 WWDC 开发者大会预期。华尔街多家机构上调目标价至 330-350 美元区间，认为 AI 相关业务将为苹果打开新的增长空间。</div>
+        <div class="card-title">🕰️ iPhone X 与 2018 款 15 英寸 MacBook Pro 正式列为停产产品</div>
+        <div class="card-summary">苹果更新官方支持文档，将 iPhone X 及 2018 款 15 英寸 MacBook Pro 列入停产（Obsolete）产品列表，此后苹果及授权服务商将不再提供硬件维修、也无法订购原装配件。iPhone X 于 2017 年发布，是首款采用 OLED 全面屏与 Face ID 的机型，系统最终停留在 iOS 16，标志着一个时代的落幕。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-05-15</span>
-            <span class="card-days">🔥 7天前</span>
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, '苹果股价首次突破300美元创历史新高市值4.25万亿', 'https://finance.sina.com.cn/stock/usstock/2026-05-15/doc-inhxzqft9821345.shtml')">分享</button>
-            <a class="card-link" href="https://finance.sina.com.cn/stock/usstock/2026-05-15/doc-inhxzqft9821345.shtml" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, 'iPhone X与2018款15英寸MacBook Pro正式列为停产产品', 'https://www.ithome.com/0/989/494.htm')">分享</button>
+            <a class="card-link" href="https://www.ithome.com/0/989/494.htm" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
-    <!-- #6 - 苹果硬件大重组 -->
-    <article class="news-card" data-category="business">
+    <!-- #6 - iPhone 涨价 -->
+    <article class="news-card" data-category="market">
       <div class="card-rank">
         <div class="rank-num">6</div>
         <div class="heat-indicator">
@@ -767,24 +765,24 @@
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-business">商业</span>
+          <span class="card-tag tag-market">市场</span>
         </div>
-        <div class="card-title">🔧 苹果硬件大重组：Johny Srouji 重塑产品设计监管体系</div>
-        <div class="card-summary">据 Mark Gurman 报道，苹果芯片工程负责人 Johny Srouji 正在领导一场深刻的硬件部门重组，核心目标是重塑产品设计与技术监管流程。重组内容包括：整合分散在各产品线中的硬件架构团队、统一芯片设计标准、建立跨部门的 DRI（Directly Responsible Individual）问责机制。此举被认为是库克时代以来最大规模的组织调整之一，旨在加速苹果自研芯片的迭代节奏并应对日益复杂的 AI 硬件需求。多名高级工程经理的职责发生变更。</div>
+        <div class="card-title">💰 曝苹果 iPhone 全线涨价 100 美元，折叠屏或 2000 美元起</div>
+        <div class="card-summary">据爆料人 Yogesh Brar 消息，苹果计划将全部在售 iPhone 及 9 月新机统一上调 100 美元。受 AI 数据中心对存储芯片的虹吸效应影响，DRAM/NAND 价格暴涨，苹果发言人坦言"从未见过零部件价格涨得如此之快"。古尔曼预测折叠 iPhone 起售价至少 2000 美元，iPhone 18 Pro 预计涨价 100-200 美元。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-05-19</span>
-            <span class="card-days">🔥 3天前</span>
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, '苹果硬件大重组Johny Srouji重塑产品设计监管', 'https://www.macrumors.com/2026/05/19/apple-hardware-reorg-srouji/')">分享</button>
-            <a class="card-link" href="https://www.macrumors.com/2026/05/19/apple-hardware-reorg-srouji/" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, '曝苹果iPhone全线涨价100美元折叠屏或2000美元起', 'https://www.ifanr.com/1675193')">分享</button>
+            <a class="card-link" href="https://www.ifanr.com/1675193" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
-    <!-- #7 - 2026四款Ultra旗舰曝光 -->
+    <!-- #7 - 和硕确认 iPhone 18 Pro -->
     <article class="news-card" data-category="product">
       <div class="card-rank">
         <div class="rank-num">7</div>
@@ -803,23 +801,23 @@
         <div class="card-header">
           <span class="card-tag tag-product">产品</span>
         </div>
-        <div class="card-title">🚀 2026 苹果 4 款 Ultra 旗舰曝光：折叠 iPhone / MacBook Ultra 等</div>
-        <div class="card-summary">多方消息源综合显示，苹果正在筹备 4 款全新的 "Ultra" 级别旗舰产品，预计将在今年下半年至明年初陆续亮相：① **iPhone Ultra Fold** —— 苹果首款折叠屏手机，内屏约 7.8 英寸，采用铰链专利设计，定价或达 14999 元起；② **MacBook Ultra** —— 搭载 M5 Extreme 芯片，定位超越当前 MacBook Pro 的专业级工作站；③ **iPad Pro Ultra** —— 配备 Mini-LED 显示屏升级版，面向专业创作场景；④ **Watch Ultra 3** —— 新增 micro-LED 展示屏方案。这些产品标志着苹果正式建立 Ultra 子品牌矩阵。</div>
+        <div class="card-title">🔄 和硕确认：iPhone 18 Pro 今秋发布，标准版推迟至 2027 年</div>
+        <div class="card-summary">苹果供应商和硕在业绩电话会上间接确认，某客户将调整出货节奏——苹果计划今年 9 月推出 iPhone 18 Pro、Pro Max 及折叠 iPhone Ultra，标准版 iPhone 18、iPhone 18e、iPhone Air 2 则推迟至 2027 年一季度发布。这是苹果多年来首次拆分旗舰机型的发布节奏。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-05-19</span>
-            <span class="card-days">🔥 3天前</span>
+            <span class="card-date">📅 2026-08-13</span>
+            <span class="card-days">🔥 前天</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, '2026苹果4款Ultra旗舰曝光折叠iPhone MacBook Ultra等', 'https://www.ithome.com/0/949/120.htm')">分享</button>
-            <a class="card-link" href="https://www.ithome.com/0/949/120.htm" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, '和硕确认iPhone 18 Pro今秋发布标准版推迟至2027年', 'https://www.ithome.com/0/989/008.htm')">分享</button>
+            <a class="card-link" href="https://www.ithome.com/0/989/008.htm" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
-    <!-- #8 - 设计大奖明日方舟入围 -->
-    <article class="news-card" data-category="milestone">
+    <!-- #8 - Apple Watch 陶瓷 -->
+    <article class="news-card" data-category="product">
       <div class="card-rank">
         <div class="rank-num">8</div>
         <div class="heat-indicator">
@@ -835,60 +833,60 @@
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-milestone">里程碑</span>
+          <span class="card-tag tag-product">产品</span>
         </div>
-        <div class="card-title">🏆 苹果公布 2026 设计大奖入围名单，《明日方舟：终末地》入选</div>
-        <div class="card-summary">苹果官方公布 2026 年度 Apple Design Awards（苹果设计大奖）入围名单，共 36 款 App 和游戏入围 12 个奖项类别。中国开发者作品表现亮眼：鹰角网络《明日方舟：终末地》入围「视觉与图形」类别，成为本年度最受关注的中国游戏入围者。其他值得关注的中国区入围者还包括多款独立开发者的创意应用。最终获奖名单将于 WWDC 2026 期间（6 月 9-13 日）公布，颁奖典礼将在 Apple Park 史蒂夫·乔布斯剧院举行。</div>
+        <div class="card-title">⌚ 白色陶瓷回归？Gurman：Apple Watch Series 12 或重新采用陶瓷表壳</div>
+        <div class="card-summary">彭博社 Mark Gurman 爆料，苹果计划让白色陶瓷 Apple Watch 表壳回归，最快今年 Series 12、最晚 2027 年。陶瓷材质在 2020 年 Series 6 后停产，因硬度达不锈钢 4 倍而在二手市场备受追捧。除此之外，Series 12 与 Ultra 4 预计仍是"小幅升级"，重点在新芯片、健康功能与新配色，外观无大改。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-05-18</span>
-            <span class="card-days">🔥 4天前</span>
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, '苹果2026设计大奖入围名单明日方舟终末地入选', 'https://developer.apple.com/design/awards/')">分享</button>
-            <a class="card-link" href="https://developer.apple.com/design/awards/" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, 'Gurman爆料Apple Watch Series 12或重新采用陶瓷表壳', 'https://www.macrumors.com/2026/08/14/the-macrumors-show-where-does-the-apple-watch-go-next/')">分享</button>
+            <a class="card-link" href="https://www.macrumors.com/2026/08/14/the-macrumors-show-where-does-the-apple-watch-go-next/" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
-    <!-- #9 - Replit回归App Store -->
-    <article class="news-card" data-category="business">
+    <!-- #9 - iOS 27 beta 5 代号 -->
+    <article class="news-card" data-category="software">
       <div class="card-rank">
         <div class="rank-num">9</div>
         <div class="heat-indicator">
           <div class="heat-bars">
+            <div class="heat-bar" style="height:12px"></div>
             <div class="heat-bar" style="height:11px"></div>
-            <div class="heat-bar" style="height:10px"></div>
             <div class="heat-bar" style="height:9px"></div>
             <div class="heat-bar" style="height:7px"></div>
             <div class="heat-bar" style="height:5px"></div>
           </div>
-          <span class="heat-label">中</span>
+          <span class="heat-label">中高</span>
         </div>
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-business">商业</span>
           <span class="card-tag tag-software">软件</span>
+          <span class="card-tag tag-product">产品</span>
         </div>
-        <div class="card-title">🛒 App Store 放行 Replit：AI 编程应用时隔 4 个月重新上架</div>
-        <div class="card-summary">热门 AI 编程应用 Replit 在被 App Store 下架近 4 个月后重新获准上架。此前因违反苹果关于「App 内代码执行引擎」的审核指南第 3.2.2 条款而被拒。Replit 团队在此期间进行了大幅改版：移除了 App 内嵌的完整代码编译环境，改为云端远程执行架构，并通过 Safari View Controller 提供完整 IDE 体验。这一案例被视为苹果对 AI 编程工具态度软化的信号，此前类似项目如 Cursor iOS 版也面临同样困境。Replit 上架首日即进入工具类下载榜前十。</div>
+        <div class="card-title">🧬 iOS 27 Beta 5 泄露 6 款 iPhone 内部代号，含首款折叠屏 Ultra</div>
+        <div class="card-summary">外媒 Macworld 在 iOS 27 Beta 5 的电池驱动与 Battery Intelligence 系统文件中，发现 6 款未发布 iPhone 的内部代号：V62 iPhone Air 2、V63 iPhone 18 Pro、V64 Pro Max、V67 iPhone 18、V68 iPhone Ultra、V69 iPhone 18e。这是 iOS 测试版首次完整列出下一代 iPhone 产品线，印证苹果"高端先行、大众后置"的分批发布策略。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-05-16</span>
-            <span class="card-days">🔥 6天前</span>
+            <span class="card-date">📅 2026-08-13</span>
+            <span class="card-days">🔥 前天</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, 'App Store放行Replit AI编程应用时隔4个月重新上架', 'https://www.ithome.com/0/949/045.htm')">分享</button>
-            <a class="card-link" href="https://www.ithome.com/0/949/045.htm" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, 'iOS 27 Beta 5泄露6款iPhone内部代号含折叠屏Ultra', 'https://www.toutiao.com/article/7673453656007639615/')">分享</button>
+            <a class="card-link" href="https://www.toutiao.com/article/7673453656007639615/" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
-    <!-- #10 - iOS 26.5推送 -->
-    <article class="news-card" data-category="software">
+    <!-- #10 - AirPods Pro 4 -->
+    <article class="news-card" data-category="product">
       <div class="card-rank">
         <div class="rank-num">10</div>
         <div class="heat-indicator">
@@ -904,59 +902,60 @@
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-software">软件</span>
+          <span class="card-tag tag-product">产品</span>
         </div>
-        <div class="card-title">📱 iOS 26.5 正式版推送：RCS 端到端加密 + Apple Intelligence 扩展</div>
-        <div class="card-summary">苹果向所有兼容设备推送 iOS 26.5 正式版本更新。本次更新的两大亮点：① **RCS 端到端加密** —— iPhone 与 Android 用户间的 RCS 消息现在默认启用端到端加密通信，解决了长期以来跨平台短信安全性问题；② **Apple Intelligence 扩展** —— 新增邮件智能摘要、照片回忆故事生成、Safari 阅读摘要等 AI 功能。此外还修复了多项安全漏洞（包括一个已被积极利用的 CoreGraphics 内存损坏漏洞），建议所有用户尽快更新。更新包大小约 850MB。</div>
+        <div class="card-title">🎧 AirPods Pro 4 消息汇总：红外摄像头与 AI 手势识别成焦点</div>
+        <div class="card-summary">据 AppleInsider 汇总，苹果 AirPods Pro 产品线或迎来升级，其中一个版本可能搭载红外摄像头并引入 AI 能力。郭明錤曾预计摄像头版 AirPods 于 2026 年亮相，iOS 27 已出现"B790"产品代码。爆料普遍认为，苹果可能先推小幅升级改款（提升降噪、音质、续航并增加温度传感器），重大升级或延至 2027 年。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-05-12</span>
-            <span class="card-days">🔥 10天前</span>
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, 'iOS 26.5正式版推送RCS端到端加密+Apple Intelligence扩展', 'https://www.ithome.com/0/948/320.htm')">分享</button>
-            <a class="card-link" href="https://www.ithome.com/0/948/320.htm" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, 'AirPods Pro 4消息汇总红外摄像头与AI手势识别成焦点', 'https://www.ithome.com/0/989/955.htm')">分享</button>
+            <a class="card-link" href="https://www.ithome.com/0/989/955.htm" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
-    <!-- #11 - 收购Animato -->
-    <article class="news-card" data-category="product">
+    <!-- #11 - 库克卸任 -->
+    <article class="news-card" data-category="milestone">
       <div class="card-rank">
         <div class="rank-num">11</div>
         <div class="heat-indicator">
           <div class="heat-bars">
+            <div class="heat-bar" style="height:11px"></div>
             <div class="heat-bar" style="height:10px"></div>
-            <div class="heat-bar" style="height:9px"></div>
             <div class="heat-bar" style="height:8px"></div>
             <div class="heat-bar" style="height:7px"></div>
             <div class="heat-bar" style="height:5px"></div>
           </div>
-          <span class="heat-label">中</span>
+          <span class="heat-label">中高</span>
         </div>
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-product">产品</span>
+          <span class="card-tag tag-milestone">里程碑</span>
+          <span class="card-tag tag-business">商业</span>
         </div>
-        <div class="card-title">👤 苹果收购 Animato 优化 Vision Pro 虚拟形象功能</div>
-        <div class="card-summary">苹果已完成对初创公司 Animato 的收购交易，具体金额未披露但业内估计在数千万美元级别。Animato 专注于基于 AI 的实时虚拟形象（Avatar）生成技术，其核心产品能够通过单张自拍照片快速创建高保真 3D 数字分身，并支持实时的表情和动作驱动。苹果计划将该技术深度整合进 Vision Pro 的 Persona（拟我表情）系统和 FaceTime 通话体验中，大幅降低用户创建虚拟形象的门槛。这也是苹果在空间计算领域的又一笔战略性收购。</div>
+        <div class="card-title">👨‍💼 库克 9 月 1 日卸任 CEO 转任执行董事长，特努斯接棒主持秋季发布会</div>
+        <div class="card-summary">苹果此前宣布，蒂姆·库克将于 9 月 1 日卸任 CEO、转任董事会执行主席，硬件工程高级副总裁约翰·特努斯接任 CEO 并加入董事会。库克任内带领苹果市值从约 3500 亿美元增至 4 万亿美元。此次人事安排获董事会一致批准，属长期继任规划。特努斯上任后的首场重大发布会，正是 9 月的 iPhone 18 / 折叠 iPhone 秋季发布会。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-05-19</span>
-            <span class="card-days">🔥 3天前</span>
+            <span class="card-date">📅 2026-08-14</span>
+            <span class="card-days">🔥 昨天</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, '苹果收购Animato优化Vision Pro虚拟形象功能', 'https://www.ithome.com/0/949/135.htm')">分享</button>
-            <a class="card-link" href="https://www.ithome.com/0/949/135.htm" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, '库克9月1日卸任CEO转任执行董事长特努斯接棒', 'https://www.ibtimes.sg/john-ternus-take-over-apple-ceo-sept-1-what-changes-expect-after-tim-cook-92132')">分享</button>
+            <a class="card-link" href="https://www.ibtimes.sg/john-ternus-take-over-apple-ceo-sept-1-what-changes-expect-after-tim-cook-92132" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
     </article>
 
-    <!-- #12 - AI无障碍功能 -->
-    <article class="news-card" data-category="health">
+    <!-- #12 - BOM 成本 -->
+    <article class="news-card" data-category="market">
       <div class="card-rank">
         <div class="rank-num">12</div>
         <div class="heat-indicator">
@@ -964,42 +963,7 @@
             <div class="heat-bar" style="height:10px"></div>
             <div class="heat-bar" style="height:9px"></div>
             <div class="heat-bar" style="height:8px"></div>
-            <div class="heat-bar" style="height:6px"></div>
-            <div class="heat-bar" style="height:5px"></div>
-          </div>
-          <span class="heat-label">中</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-header">
-          <span class="card-tag tag-health">健康</span>
-          <span class="card-tag tag-ai">AI</span>
-        </div>
-        <div class="card-title">♿ Apple Intelligence 无障碍新功能：Vision Pro 眼控轮椅</div>
-        <div class="card-summary">苹果在年度无障碍功能发布会上展示了一系列基于 AI 的辅助技术突破。其中最引人注目的是 **Vision Pro 眼控轮椅控制** 功能——通过 Vision Pro 头显的眼球追踪技术，让运动障碍用户仅凭视线就能控制电动轮椅的方向和速度。该功能利用 Apple Intelligence 的实时眼动分析算法，结合空间音频反馈提供沉浸式导航体验。此外还发布了：听力障碍用户的 AI 实时手语翻译、视障用户的场景描述增强等功能。这些功能将在 iOS 27 / visionOS 3 更新中推出。</div>
-        <div class="card-footer">
-          <div class="card-meta">
-            <span class="card-date">📅 2026-05-19</span>
-            <span class="card-days">🔥 3天前</span>
-          </div>
-          <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, 'Apple Intelligence无障碍新功能Vision Pro眼控轮椅', 'https://www.apple.com/accessibility/')">分享</button>
-            <a class="card-link" href="https://www.apple.com/accessibility/" target="_blank" rel="noopener">阅读原文 →</a>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- #13 - iPhone Ultra折叠屏规格泄露 -->
-    <article class="news-card" data-category="product">
-      <div class="card-rank">
-        <div class="rank-num">13</div>
-        <div class="heat-indicator">
-          <div class="heat-bars">
-            <div class="heat-bar" style="height:9px"></div>
-            <div class="heat-bar" style="height:8px"></div>
             <div class="heat-bar" style="height:7px"></div>
-            <div class="heat-bar" style="height:6px"></div>
             <div class="heat-bar" style="height:5px"></div>
           </div>
           <span class="heat-label">中</span>
@@ -1007,18 +971,18 @@
       </div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-tag tag-product">产品</span>
+          <span class="card-tag tag-market">市场</span>
         </div>
-        <div class="card-title">📱 iPhone Ultra 折叠屏详细规格泄露：7.8 寸内屏 14999 起</div>
-        <div class="card-summary">供应链消息源向中关村在线透露了苹果首款折叠屏手机 iPhone Ultra Fold 的详细规格参数：内屏采用 7.8 英寸三星定制 UTG（超薄柔性玻璃），分辨率 2480×1856，支持 120Hz LTPO 自适应刷新率；外屏 6.3 英寸作为快速查看窗口；铰链采用苹果自研的「水滴」结构专利，折痕控制在 0.1mm 以内；搭载 A19 Pro 芯片 + 12GB RAM；起售价预计 14999 元人民币（256GB 版本），顶配 1TB 版或超 20000 元。量产时间表指向 2026 年 Q4 或 2027 年 Q1，取决于良率爬坡进度。</div>
+        <div class="card-title">📊 iPhone 18 Pro 物料成本上涨 38%，存储芯片占比跃至 34%</div>
+        <div class="card-summary">据 Counterpoint Research 测算，受存储芯片涨价冲击，iPhone 18 Pro 的 256GB 版本 BOM（物料清单）成本同比增长约 38%，存储芯片占比从上代 10% 跃升至 34%。iPhone 18 Pro 的 12GB 内存单颗成本从上代 39 美元飙升至 145 美元。为对冲压力，苹果已加大 OLED 面板备货、压价面板供应商，并将长鑫存储纳入备份供应链。</div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="card-date">📅 2026-05-21</span>
-            <span class="card-days">🔥 昨天</span>
+            <span class="card-date">📅 2026-08-13</span>
+            <span class="card-days">🔥 前天</span>
           </div>
           <div class="card-actions">
-            <button class="card-share" onclick="shareCard(this, 'iPhone Ultra折叠屏详细规格泄露7.8寸内屏14999起', 'https://www.zol.com.cn/')"分享</button>
-            <a class="card-link" href="https://www.zol.com.cn/" target="_blank" rel="noopener">阅读原文 →</a>
+            <button class="card-share" onclick="shareCard(this, 'iPhone 18 Pro物料成本上涨38%存储芯片占比跃至34%', 'https://product.dzsc.com/news/2026-08-13/252385.html')">分享</button>
+            <a class="card-link" href="https://product.dzsc.com/news/2026-08-13/252385.html" target="_blank" rel="noopener">阅读原文 →</a>
           </div>
         </div>
       </div>
@@ -1029,7 +993,7 @@
 
 <!-- Footer -->
 <footer>
-  <p>数据来源：IT之家 · 彭博社 · MacRumors · 36氪 · 快科技 · AppleInsider · 中关村在线<br>每日 09:15 自动更新 · 资讯覆盖过去 48 小时 · 第 33 期</p>
+  <p>数据来源：IT之家 · 爱范儿 · 路透社 · 彭博社 · MacRumors · 智东西 · 中关村在线 · AppleInsider<br>每日 09:15 自动更新 · 资讯覆盖过去 48 小时 · 第 34 期</p>
 </footer>
 
 <!-- FAB -->
